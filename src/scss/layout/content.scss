@@ -1,0 +1,11 @@
+.content {
+  width: calc(100% - #{$width-aside});
+
+  &__wrapper {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+}

@@ -1,0 +1,25 @@
+.card {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  width: calc((#{$width} - #{$width-aside} - 80px) / #{$card});
+  background: #92c3f0;
+  margin: 5px;
+
+  &__img {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+
+  &__name {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  &__price {
+    font-size: 14px;
+  }
+}
