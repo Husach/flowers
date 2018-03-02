@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Home from './pages/home/index';
 import About from './pages/about/index';
 import Catalog from './pages/catalog/index';
+import Details from './pages/details/index';
 import Contacts from './pages/contacts/index';
 
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
           <Route exact path='/about' component={About} />
           <Route exact path='/catalog' component={Catalog} />
           <Route exact path='/contacts' component={Contacts} />
+          <Route exact path='/details/:id' component={Details} />
         </Switch>
       </div>
     );
