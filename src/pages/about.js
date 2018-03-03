@@ -3,6 +3,7 @@ import Header from './../components/layout/Header';
 
 class About extends Component {
   render() {
+    debugger
     return (
       <div className="page">
         <Header />

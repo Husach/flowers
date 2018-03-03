@@ -16,6 +16,7 @@ class Shop extends Component {
   }
 
   render() {
+    debugger
     return (
       <div className="page">
         <Header />

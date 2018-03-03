@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import Header from './../../components/layout/Header';
+import Content from './../../components/layout/Content';
 
-class Catalog extends Component {
+import { data } from './../../data/data';
+
+class Balloons extends Component {
   render() {
     return (
       <div className="page">
         <Header />
-        <div>catalog</div>
+        <Content data={data}/>
       </div>
     )
   }
 }
 
-export default Catalog;
+export default Balloons;

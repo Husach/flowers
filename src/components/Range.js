@@ -3,31 +3,31 @@ import { Link } from 'react-router-dom';
 
 const menu = [
   {
-    link: '/bouquet',
+    link: '/shop/bouquet',
     label: 'Букеты'
   },
   {
-    link: '/',
+    link: '/shop/compositions',
     label: 'Композиции'
   },
   {
-    link: '/',
+    link: '/shop/piece',
     label: 'Поштучно'
   },
   {
-    link: '/',
+    link: '/shop/indoor',
     label: 'Комнатные'
   },
   {
-    link: '/sweets',
+    link: '/shop/sweets',
     label: 'Сладости'
   },
   {
-    link: '/',
+    link: '/shop/balloons',
     label: 'Шары'
   },
   {
-    link: '/',
+    link: '/shop/toys',
     label: 'Игрушки'
   }
 ];
