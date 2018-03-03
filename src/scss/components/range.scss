@@ -1,0 +1,38 @@
+.range {
+  height: $height-filter;
+  @include bg-gradient();
+
+  &__wrapper {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    width: $width;
+    margin: 0 auto;
+  }
+
+  &__item {
+    display: flex;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    &:hover {
+      border: 1px solid #000;
+
+      & .range__link {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    width: calc(#{$width} / #{$range-items});
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: calc(#{$height-filter} - 2px);
+    color: #000;
+    transition: all 0.2s ease;
+  }
+}

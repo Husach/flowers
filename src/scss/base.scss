@@ -1,8 +1,14 @@
+@import "./mixin/bg-gradient";
+
 @import "./base/variables";
 
 @import "./layout/content";
-@import "./layout/menu";
+@import "./layout/header";
+
 @import "./layout/main";
 
-@import "./components/filter";
 @import "./components/card";
+@import "./components/menu";
+@import "./components/range";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700&subset=cyrillic');

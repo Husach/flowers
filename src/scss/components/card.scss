@@ -6,6 +6,7 @@
   border-radius: 4px;
   text-decoration: none;
   color: #000;
+  margin-bottom: 20px;
 
   &:hover {
     z-index: 2;
@@ -25,13 +26,12 @@
       top: 0;
       left: 0;
       height: calc((#{$width} / #{$card}) + 150px);
-      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
       background: #fff;
       transition: all 0.3s ease;
 
       & .card__btn {
         opacity: 1;
-        transition: all 0.01s linear;
       }
     }
   }
@@ -48,8 +48,8 @@
   }
 
   &__price {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 30px;
   }
 
   &__btn {

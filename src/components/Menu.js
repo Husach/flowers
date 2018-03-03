@@ -4,19 +4,23 @@ import { Link } from 'react-router-dom';
 const menu = [
   {
     link: '/',
-    label: 'Home'
+    label: 'Главная'
   },
   {
     link: '/catalog',
-    label: 'Catalog'
+    label: 'Доставка и оплата'
   },
   {
-    link: '/about',
-    label: 'About us'
+    link: '/catalog',
+    label: 'Наши работы'
   },
   {
     link: '/contacts',
-    label: 'Contacts'
+    label: 'Контакты'
+  },
+  {
+    link: '/about',
+    label: 'О нас'
   }
 ];
 

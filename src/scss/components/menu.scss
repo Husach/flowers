@@ -1,0 +1,27 @@
+.menu {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: flex-end;
+  height: $height-menu;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+  }
+
+  &__link {
+    display: inline-block;
+    padding: 15px;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #000;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

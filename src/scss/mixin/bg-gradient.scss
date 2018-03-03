@@ -1,0 +1,7 @@
+@mixin bg-gradient() {
+  background: #b4e391; /* Old browsers */
+  background: -webkit-linear-gradient(left, #b4e391 0%, #61c419 50%, #b4e391 100%);
+  background: -o-linear-gradient(left, #b4e391 0%, #61c419 50%, #b4e391 100%);
+  background: linear-gradient(to right, #b4e391 0%, #61c419 50%, #b4e391 100%); /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=1 ); /* IE6-9 */
+}

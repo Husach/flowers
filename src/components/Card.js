@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { blue200 } from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
 
-
 const btnStyle = {
   width: 240,
   marginBottom: 10

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const database = require('./../data/bouquet.js');
+const database = require('./../data/data');
 
 class Description extends Component {
   state = {
@@ -13,9 +13,7 @@ class Description extends Component {
 
     let {id} = this.props.params;
 
-    debugger
-
-    let item = database.bouquet.find(itm => itm.id == id);
+    let item = database.data.find(itm => itm.id == id);
     if(!item) {
       return {};
     }

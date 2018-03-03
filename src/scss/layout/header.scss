@@ -1,0 +1,33 @@
+.header {
+  height: $height-header;
+
+  &__wrapper {
+    position: relative;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    width: $width;
+    height: calc(#{$height-header} - #{$height-filter});
+    margin: 0 auto;
+
+    &:after {
+      content: 'floret';
+      position: absolute;
+      top: 0px;
+      left: 130px;
+      color: #ee64c0;
+      font-size: 60px;
+      line-height: 150px;
+      font-style: italic;
+    }
+  }
+
+  &__top {
+    width: calc(100% - #{$logo};
+  }
+
+  &__logo {
+    width: $logo;
+    height: $logo;
+  }
+}
