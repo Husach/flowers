@@ -29,6 +29,10 @@ const menu = [
   {
     link: '/shop/toys',
     label: 'Игрушки'
+  },
+  {
+    link: '/shop/vases',
+    label: 'Вазы'
   }
 ];
 

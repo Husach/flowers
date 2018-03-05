@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import Header from './../../components/layout/Header';
+import Content from './../../components/layout/Content';
 
-class Ourworks extends Component {
+import { data } from './../../data/data';
+
+class Vases extends Component {
   render() {
     return (
       <div className="page">
         <Header />
-        <div>catalog</div>
+        <Content data={data}/>
       </div>
     )
   }
 }
 
-export default Ourworks;
+export default Vases;

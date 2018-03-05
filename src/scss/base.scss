@@ -1,13 +1,16 @@
 @import "./mixin/bg-gradient";
 
 @import "./base/variables";
+@import "./base/scaffolding";
 
 @import "./layout/content";
 @import "./layout/header";
 
 @import "./layout/main";
 
+@import "./components/btn";
 @import "./components/card";
+@import "./components/description";
 @import "./components/menu";
 @import "./components/range";
 

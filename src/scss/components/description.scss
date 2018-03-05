@@ -1,0 +1,30 @@
+.description {
+  max-width: $width;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  margin-top: 50px;
+
+  &__img {
+    width: 70%;
+    padding: 0 200px;
+    height: 100%;
+  }
+
+  &__info {
+    width: 30%;
+  }
+
+  &__name {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &__price {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+}

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Header from './../../components/layout/Header';
-import Content from './../../components/layout/Content';
+import Header from './../components/layout/Header';
+import Content from './../components/layout/Content';
 
-import { data } from './../../data/data';
+import { data } from './../data/data';
 
 class Shop extends Component {
 
@@ -16,7 +16,6 @@ class Shop extends Component {
   }
 
   render() {
-    debugger
     return (
       <div className="page">
         <Header />

@@ -7,11 +7,11 @@ const menu = [
     label: 'Главная'
   },
   {
-    link: '/catalog',
+    link: '/delivery',
     label: 'Доставка и оплата'
   },
   {
-    link: '/catalog',
+    link: '/ourworks',
     label: 'Наши работы'
   },
   {

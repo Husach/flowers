@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import Header from './../components/layout/Header';
 
-class About extends Component {
-  render() {    
+class Order extends Component {
+  render() {
     return (
       <div className="page">
         <Header />
-        <div className="main">about</div>
+        <div className="main">order page</div>
       </div>
     )
   }
 }
 
-export default About;
+export default Order;

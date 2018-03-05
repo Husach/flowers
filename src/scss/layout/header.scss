@@ -1,12 +1,12 @@
 .header {
-  height: $height-header;
+  min-height: $height-header;
 
   &__wrapper {
     position: relative;
     display: -webkit-flex;
     display: -ms-flex;
-    display: flex;
-    width: $width;
+    display: flex;    
+    max-width: $width;
     height: calc(#{$height-header} - #{$height-filter});
     margin: 0 auto;
 

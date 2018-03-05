@@ -7,7 +7,7 @@ class Home extends Component {
     return (
       <div className="page">
         <Header />
-        <div>welcome</div>
+        <div className="main">welcome</div>
       </div>
     )
   }

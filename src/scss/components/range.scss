@@ -1,17 +1,20 @@
 .range {
-  height: $height-filter;
+  min-height: $height-filter;
   @include bg-gradient();
 
   &__wrapper {
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
-    width: $width;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: $width;
     margin: 0 auto;
   }
 
   &__item {
     display: flex;
+    width: calc(#{$width} / #{$range-items});
     border: 1px solid transparent;
     border-radius: 4px;
 
@@ -26,7 +29,7 @@
 
   &__link {
     display: inline-block;
-    width: calc(#{$width} / #{$range-items});
+    width: 100%;
     text-align: center;
     font-size: 16px;
     text-transform: uppercase;
