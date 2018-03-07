@@ -4,14 +4,15 @@
 @import "./base/scaffolding";
 
 @import "./layout/content";
+@import "./layout/footer";
 @import "./layout/header";
-
-@import "./layout/main";
 
 @import "./components/btn";
 @import "./components/card";
 @import "./components/description";
 @import "./components/menu";
 @import "./components/range";
+
+@import "./base/page";
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700&subset=cyrillic');

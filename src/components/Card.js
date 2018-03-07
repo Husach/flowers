@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { blue200 } from 'material-ui/styles/colors';
-import RaisedButton from 'material-ui/RaisedButton';
-
-const btnStyle = {
-  width: 240,
-  marginBottom: 10
-}
+import BtnOrder from './button/BtnOrder';
 
 class Card extends Component {
 
@@ -17,18 +11,10 @@ class Card extends Component {
               <img className="card__img" src={this.props.item.src} alt={this.props.item.name} />
               <div className="card__name">{this.props.item.name}</div>
               <div className="card__price">{this.props.item.price}</div>
-              <RaisedButton
-                  label="Заказать"
-                  className="card__btn"
-                  backgroundColor={blue200}
-                  style={btnStyle} />                  
-              <RaisedButton
-                  label="Подробнее"
-                  className="card__btn"
-                  style={btnStyle} />
+              <BtnOrder item={this.props.item} />
           </div>
       </Link>
-    )
+    );
   }
 }
 

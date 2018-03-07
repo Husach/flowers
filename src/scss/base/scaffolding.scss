@@ -10,6 +10,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.page {
-  min-height: 100vh;
+.app {
+  overflow-y: scroll;
+  height: 100vh;
 }

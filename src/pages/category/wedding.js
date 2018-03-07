@@ -11,7 +11,7 @@ class Vases extends Component {
         <Header />
         <Content data={data}/>
       </div>
-    )
+    );
   }
 }
 

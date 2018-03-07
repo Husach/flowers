@@ -7,9 +7,9 @@ class Home extends Component {
     return (
       <div className="page">
         <Header />
-        <div className="main">welcome</div>
+        <div className="page-main">welcome</div>
       </div>
-    )
+    );
   }
 }
 

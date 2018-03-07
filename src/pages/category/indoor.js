@@ -11,7 +11,7 @@ class Indoor extends Component {
         <Header />
         <Content data={data}/>
       </div>
-    )
+    );
   }
 }
 

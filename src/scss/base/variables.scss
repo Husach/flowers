@@ -1,12 +1,14 @@
 $width: 1280px;
 
-$height-header: 200px;
+$height-header: 170px;
 $height-menu: 50px;
 $height-filter: 50px;
+$height-footer: 100px;
 
-$logo: 150px;
+$logo: calc(#{$height-header} - #{$height-menu};
 
 $menu-items: 5;
 $range-items: 8;
 
 $card: 4;
+$img-size: 250px;

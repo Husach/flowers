@@ -1,17 +1,18 @@
 .card {
   position: relative;
-  height: calc(#{$width} / #{$card});
+  height: calc((#{$width} / #{$card}) + 30px);
   width: calc(#{$width} / #{$card});
   border: 1px solid transparent;
   border-radius: 4px;
   text-decoration: none;
   color: #000;
   margin-bottom: 20px;
+  overflow: hidden;
 
   &:hover {
     z-index: 2;
+    overflow: visible;
   }
-
   &__wrapper {
     display: -webkit-flex;
     display: -ms-flex;
@@ -24,8 +25,9 @@
     &:hover {
       position: absolute;
       top: 0;
-      left: 0;
-      height: calc((#{$width} / #{$card}) + 150px);
+      left: -6px;
+      height: calc((#{$width} / #{$card}) + 115px);
+      width: calc(#{$width} / #{$card} + 10px);
       box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
       background: #fff;
       transition: box-shadow 0.2s ease;
@@ -37,23 +39,22 @@
   }
 
   &__img {
-    width: 240px;
-    height: 240px;
-    margin-bottom: 20px;
+    width: $img-size;
+    height: $img-size;
+    margin-bottom: 15px;
   }
-
   &__name {
+    display: inline-block;
+    text-align: center;
+    max-width: $img-size;
     font-size: 14px;
+    height: 40px;
+  }
+  &__price {
+    font-size: 24px;
     margin-bottom: 20px;
   }
-
-  &__price {
-    font-size: 18px;
-    margin-bottom: 30px;
-  }
-
   &__btn {
     opacity: 0;
-    transition: all 0.01s linear;
   }
 }

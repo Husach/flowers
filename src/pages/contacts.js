@@ -6,9 +6,9 @@ class Contacts extends Component {
     return (
       <div className="page">
         <Header />
-        <div className="main">contacts</div>
+        <div className="page-main">contacts</div>
       </div>
-    )
+    );
   }
 }
 

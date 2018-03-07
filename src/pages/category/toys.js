@@ -11,7 +11,7 @@ class Toys extends Component {
         <Header />
         <Content data={data}/>
       </div>
-    )
+    );
   }
 }
 

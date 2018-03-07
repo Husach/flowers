@@ -1,0 +1,16 @@
+.page {
+  &-header {
+    min-height: $height-header;
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - #{$height-header} - #{$height-footer});
+  }
+
+  &-footer {
+    height: $height-footer;
+    @include bg-gradient();
+  }
+}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Back from './../components/button/Back';
+import Back from './../components/button/BtnBack';
 
 import Header from './../components/layout/Header';
 import Description from './../components/Description';

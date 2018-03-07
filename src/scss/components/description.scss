@@ -24,7 +24,16 @@
   }
 
   &__price {
-    font-size: 36px;
+    font-size: 48px;
     margin-bottom: 30px;
+  }
+
+  &__text {
+    margin-bottom: 40px;
+  }
+
+  &__note {
+    font-style: italic;
+    text-decoration: underline;
   }
 }

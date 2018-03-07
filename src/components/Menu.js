@@ -15,6 +15,10 @@ const menu = [
     label: 'Наши работы'
   },
   {
+    link: '/franchise',
+    label: 'Франшиза'
+  },
+  {
     link: '/contacts',
     label: 'Контакты'
   },
@@ -35,7 +39,7 @@ class Menu extends Component {
             </div>
           )}
       </div>
-    )
+    );
   }
 }
 

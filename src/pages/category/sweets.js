@@ -11,7 +11,7 @@ class Sweets extends Component {
         <Header />
         <Content data={data}/>
       </div>
-    )
+    );
   }
 }
 

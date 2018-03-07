@@ -21,12 +21,12 @@ class Shop extends Component {
         <Header />
         <Content data={this.getData.call(this)}/>
       </div>
-    )
+    );
   }
 }
 
 Shop.contextTypes = {
   router: PropTypes.object
-}
+};
 
 export default Shop;

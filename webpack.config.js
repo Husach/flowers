@@ -1,6 +1,6 @@
-var webpack = require('webpack');
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+// let webpack = require('webpack');
+let path = require('path');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   devtool: "source-map",
@@ -18,7 +18,7 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        use: ['babel-loader', 'eslint-loader'],
         exclude: /node_modules/
       },
       {
@@ -31,6 +31,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("css/[name].styles.css"),
+    new ExtractTextPlugin("css/[name].styles.css")
   ]
 };

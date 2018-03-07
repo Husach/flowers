@@ -6,9 +6,9 @@ class Ourworks extends Component {
     return (
       <div className="page">
         <Header />
-        <div className="main">our works</div>
+        <div className="page-main">our works</div>
       </div>
-    )
+    );
   }
 }
 

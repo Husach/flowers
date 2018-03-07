@@ -11,7 +11,7 @@ class Piece extends Component {
         <Header />
         <Content data={data}/>
       </div>
-    )
+    );
   }
 }
 

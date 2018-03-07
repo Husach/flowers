@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Order from './button/Order';
+import BtnOrder from './button/BtnOrder';
 
 const database = require('./../data/data');
 
@@ -28,10 +28,13 @@ class Description extends Component {
         <div className="description__info">
           <div className="description__name">{item.name}</div>
           <div className="description__price">{item.price}</div>
-          <Order item={item} />
+          <BtnOrder item={item} />
+          <div className="description__text">{item.description}</div>
+          <div className="description__text"><b>Состав:</b> {item.composition}</div>
+          <div className="description__note">{item.note}</div>
         </div>
       </div>
-    )
+    );
   }
 }
 

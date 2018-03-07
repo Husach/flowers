@@ -5,6 +5,7 @@ import Home from './pages/index';
 import Shop from './pages/shop';
 import Details from './pages/details';
 
+import Franchise from './pages/franchise';
 import Delivery from './pages/delivery';
 import Ourworks from './pages/ourworks';
 import Contacts from './pages/contacts';
@@ -20,11 +21,12 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route exact path='/shop/:category' component={Shop} />
           <Route exact path='/shop/details/:id' component={Details} />
+          <Route exact path='/franchise' component={Franchise} />
           <Route exact path='/delivery' component={Delivery} />
           <Route exact path='/ourworks' component={Ourworks} />
           <Route exact path='/contacts' component={Contacts} />
           <Route exact path='/about' component={About} />
-          <Route exact path='/order' component={Order} />
+          <Route exact path='/order/:id' component={Order} />
         </Switch>
       </div>
     );

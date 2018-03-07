@@ -5,7 +5,7 @@ const Back = ({history}) => (
   <div className="btn__back">
     <RaisedButton
         label="Вернуться"
-        primary={true}
+        backgroundColor="#efd8bd"
         onClick={() => history.goBack()} />
   </div>
 );
