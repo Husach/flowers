@@ -1,0 +1,11 @@
+.social {
+  position: absolute;
+  right: 5px;
+  top: 3px;
+
+  &__img {
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+  }
+}

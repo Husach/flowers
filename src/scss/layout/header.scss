@@ -1,10 +1,8 @@
 .header {
   position: relative;
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
   max-width: $width;
-  height: calc(#{$height-header} - #{$height-filter});
+  height: calc(#{$height-header} - #{$height-range});
   margin: 0 auto;
 
   &:after {
@@ -18,7 +16,6 @@
     line-height: 150px;
     font-style: italic;
   }
-
   &:before {
     content: 'Мы передадим Вашу заботу';
     position: absolute;
@@ -38,5 +35,23 @@
   &__logo {
     width: $logo;
     height: $logo;
+    margin-right: 200px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 26px;
+    line-height: 50px;
+  }
+
+  &__tel {
+    padding-left: 30px;
+  }
+
+  &__viber {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
   }
 }

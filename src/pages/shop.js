@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from './../components/layout/Header';
 import Content from './../components/layout/Content';
+import Footer from './../components/layout/Footer';
 
 import { data } from './../data/data';
 
@@ -20,6 +21,7 @@ class Shop extends Component {
       <div className="page">
         <Header />
         <Content data={this.getData.call(this)}/>
+        <Footer />
       </div>
     );
   }

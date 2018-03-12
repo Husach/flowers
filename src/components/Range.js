@@ -3,20 +3,24 @@ import { Link } from 'react-router-dom';
 
 const menu = [
   {
+    link: '/shop/tulips',
+    label: 'Тюльпаны'
+  },
+  {
+    link: '/shop/roses',
+    label: 'Розы'
+  },
+  {
     link: '/shop/bouquet',
     label: 'Букеты'
-  },
+  },  
   {
     link: '/shop/compositions',
     label: 'Композиции'
   },
   {
     link: '/shop/wedding',
-    label: 'Для свадьбы'
-  },
-  {
-    link: '/shop/piece',
-    label: 'Поштучно'
+    label: 'Свадебные'
   },
   {
     link: '/shop/indoor',
@@ -25,14 +29,6 @@ const menu = [
   {
     link: '/shop/sweets',
     label: 'Сладости'
-  },
-  {
-    link: '/shop/balloons',
-    label: 'Шары'
-  },
-  {
-    link: '/shop/toys',
-    label: 'Игрушки'
   }
 ];
 

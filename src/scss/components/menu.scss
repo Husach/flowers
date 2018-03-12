@@ -3,7 +3,7 @@
   display: -ms-flex;
   display: flex;
   justify-content: flex-end;
-  height: $height-menu;
+  min-height: $height-menu;
 
   &__item {
     display: flex;

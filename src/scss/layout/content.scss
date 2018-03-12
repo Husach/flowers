@@ -1,9 +1,5 @@
 .content {
-  display: -webkit-flex;
-  display: -ms-flex;
   display: flex;
   flex-wrap: wrap;
-  width: $width;
-  margin: 0 auto;
-  padding: 20px 0 90px 0;
+  padding-bottom: 60px;
 }

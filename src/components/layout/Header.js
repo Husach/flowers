@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Menu from './../Menu';
 import Range from './../Range';
+import Social from './../Social';
 
 class Header extends Component {
 
@@ -15,9 +16,15 @@ class Header extends Component {
           </Link>
           <div className="header__top">
             <Menu />
+            <div className="header__content">
+              <span className="header__tel">+38 (050) 222-33-55</span>
+              <span className="header__tel">+38 (067) 222-33-55</span>
+              <img src="img/social/viber.png" alt="viber" className="header__viber" />
+            </div>
           </div>
         </div>
         <Range />
+        <Social />
       </div>
     );
   }

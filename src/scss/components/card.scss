@@ -1,6 +1,6 @@
 .card {
   position: relative;
-  height: calc((#{$width} / #{$card}) + 30px);
+  height: calc((#{$width} / #{$card}) + 50px);
   width: calc(#{$width} / #{$card});
   border: 1px solid transparent;
   border-radius: 4px;
@@ -26,7 +26,7 @@
       position: absolute;
       top: 0;
       left: -6px;
-      height: calc((#{$width} / #{$card}) + 115px);
+      height: calc((#{$width} / #{$card}) + 125px);
       width: calc(#{$width} / #{$card} + 10px);
       box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
       background: #fff;

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './../components/layout/Header';
+import Footer from './../components/layout/Footer';
 
 const database = require('./../data/data');
 
@@ -30,6 +31,7 @@ class Order extends Component {
           <div>{item.name}</div>
           <div>{item.price}</div>
         </div>
+        <Footer />
       </div>
     );
   }
