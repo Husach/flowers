@@ -20,12 +20,12 @@ body {
 
 .footer__wrapper {
   display: flex;
-  width: 1200px;
+  width: 1280px;
   height: calc(180px - 30px);
   margin: 0 auto; }
 
 .footer__item {
-  width: calc(1200px / 3); }
+  width: calc(1280px / 3); }
   .footer__item .menu {
     flex-direction: column;
     align-items: center;
@@ -80,7 +80,7 @@ body {
 .header {
   position: relative;
   display: flex;
-  max-width: 1200px;
+  max-width: 1280px;
   height: calc(170px - 50px);
   margin: 0 auto; }
   .header:after {
@@ -122,12 +122,13 @@ body {
     margin: 10px; }
 
 .btn__back {
-  margin: 20px 0; }
+  text-align: right;
+  margin-bottom: 20px; }
 
 .card {
   position: relative;
-  height: calc((1200px / 4) + 50px);
-  width: calc(1200px / 4);
+  height: calc((1280px / 4) + 50px);
+  width: calc(1280px / 4);
   border: 1px solid transparent;
   border-radius: 4px;
   text-decoration: none;
@@ -149,8 +150,8 @@ body {
       position: absolute;
       top: 0;
       left: -6px;
-      height: calc((1200px / 4) + 125px);
-      width: calc(1200px / 4 + 10px);
+      height: calc((1280px / 4) + 125px);
+      width: calc(1280px / 4 + 10px);
       box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
       background: #fff;
       transition: box-shadow 0.2s ease; }
@@ -173,15 +174,15 @@ body {
     opacity: 0; }
 
 .description {
-  max-width: 1200px;
+  max-width: 1280px;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  margin-top: 50px; }
+  margin-top: 40px; }
   .description__img {
-    width: 70%;
+    width: 68%;
     padding: 0 200px;
     height: 100%; }
   .description__info {
@@ -194,7 +195,7 @@ body {
     font-size: 48px;
     margin-bottom: 30px; }
   .description__text {
-    margin-top: 30px; }
+    margin-top: 25px; }
   .description__note {
     font-style: italic;
     text-decoration: underline;
@@ -202,7 +203,8 @@ body {
 
 .filter {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 0 40px; }
 
 .menu {
   display: -webkit-flex;
@@ -243,11 +245,11 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto; }
   .range__item {
     display: flex;
-    width: calc(1200px / 7);
+    width: calc(1280px / 7);
     border: 1px solid transparent;
     border-radius: 4px; }
     .range__item:hover {
@@ -280,7 +282,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 170px - 180px);
-  width: 1200px;
+  width: 1280px;
   margin: 0 auto; }
 
 .page-footer {

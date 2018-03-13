@@ -7,20 +7,53 @@ import Footer from './../components/layout/Footer';
 import { data } from './../data/data';
 
 class Shop extends Component {
+  constructor() {
+    super();
+    this.state = {
+      sortValue: 'default'
+    };
+  }
 
   getData() {
     let {router: {route: {match: {params}}}} = this.context;
-    if(params.category) {
+    if (params.category) {
       return data.filter(itm => itm.category === params.category);
     }
     return data;
+  }
+
+  mysort(field, a, b) {
+    if (a[field] > b[field]) return -1;
+    if (a[field] < b[field]) return 1;
+    return 0;
+  }
+
+  sorter(value) {
+    if (value === '1') {
+      data.sort(this.mysort.bind(this, "rating"));
+    } else if (value === '2') {
+      data.sort(this.mysort.bind(this, "latest"));
+    } else if (value === '3') {
+      data.sort(this.mysort.bind(this, "price")).reverse();
+    } else if (value === '4') {
+      data.sort(this.mysort.bind(this, "price"));
+    }
+    this.setState({
+      data,
+      sortValue: value
+    });
+    console.log(this.state.sortValue);
   }
 
   render() {
     return (
       <div className="page">
         <Header />
-        <Content data={this.getData.call(this)}/>
+        <Content
+            data={this.getData.call(this)}
+            sorter={this.sorter.bind(this)}
+            sortValue={this.state.sortValue}
+        />
         <Footer />
       </div>
     );

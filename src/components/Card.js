@@ -10,7 +10,7 @@ class Card extends Component {
           <div className="card__wrapper">
               <img className="card__img" src={this.props.item.src} alt={this.props.item.name} />
               <div className="card__name">{this.props.item.name}</div>
-              <div className="card__price">{this.props.item.price}</div>
+              <div className="card__price">{this.props.item.price} грн.</div>
               <BtnOrder item={this.props.item} />
           </div>
       </Link>
