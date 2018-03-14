@@ -1,6 +1,6 @@
 .card {
   position: relative;
-  height: calc((#{$width} / #{$card}) + 50px);
+  height: calc((#{$width} / #{$card}) + 45px);
   width: calc(#{$width} / #{$card});
   border: 1px solid transparent;
   border-radius: 4px;
@@ -14,11 +14,6 @@
     overflow: visible;
   }
   &__wrapper {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
     padding: 15px;
 
@@ -31,11 +26,15 @@
       box-shadow: 0px 0px 60px 0px rgba(0,0,0,0.3);
       background: #fff;
       transition: box-shadow 0.2s ease;
-
-      & .card__btn {
-        opacity: 1;
-      }
     }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
   }
 
   &__img {
@@ -48,13 +47,14 @@
     text-align: center;
     max-width: $img-size;
     font-size: 14px;
-    height: 40px;
+    height: 45px;
   }
   &__price {
     font-size: 24px;
     margin-bottom: 20px;
   }
   &__btn {
-    opacity: 0;
+    display: flex;
+    justify-content: center;
   }
 }

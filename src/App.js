@@ -5,12 +5,12 @@ import Home from './pages/index';
 import Shop from './pages/shop';
 import Details from './pages/details';
 
-import Franchise from './pages/franchise';
+import About from './pages/about';
+import Order from './pages/order';
 import Delivery from './pages/delivery';
 import Ourworks from './pages/ourworks';
 import Contacts from './pages/contacts';
-import About from './pages/about';
-import Order from './pages/order';
+import Franchise from './pages/franchise';
 
 class App extends Component {
 

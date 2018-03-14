@@ -10,7 +10,7 @@ class Shop extends Component {
   constructor() {
     super();
     this.state = {
-      sortValue: 'default'
+      sortValue: ''
     };
   }
 
@@ -29,20 +29,29 @@ class Shop extends Component {
   }
 
   sorter(value) {
-    if (value === '1') {
-      data.sort(this.mysort.bind(this, "rating"));
-    } else if (value === '2') {
-      data.sort(this.mysort.bind(this, "latest"));
-    } else if (value === '3') {
-      data.sort(this.mysort.bind(this, "price")).reverse();
-    } else if (value === '4') {
-      data.sort(this.mysort.bind(this, "price"));
+
+    switch (value) {
+      case '1':
+        data.sort(this.mysort.bind(this, "rating"));
+        break;
+      case '2':
+        data.sort(this.mysort.bind(this, "latest"));
+        break;
+      case '3':
+        data.sort(this.mysort.bind(this, "price")).reverse();
+        break;
+      case '4':
+        data.sort(this.mysort.bind(this, "price"));
+        break;
+      default:
+        break;
     }
     this.setState({
       data,
       sortValue: value
     });
     console.log(this.state.sortValue);
+    
   }
 
   render() {
