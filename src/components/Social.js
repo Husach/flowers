@@ -23,7 +23,7 @@ const Social = () => {
     <div className="social">
         {social.map((item, index) =>
           <div className="social__item" key={index}>
-            <a href={item.link} className="social__link">
+            <a href={item.link} className="social__link" target="_blank">
               <img src={item.logo} alt={item.label} className="social__img" />
             </a>
           </div>
