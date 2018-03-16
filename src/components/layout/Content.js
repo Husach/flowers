@@ -22,15 +22,15 @@ const sort = [
 ];
 const citys = [
   {
-    value: '11',
+    value: 11,
     primaryText: 'Кременчуг'
   },
   {
-    value: '12',
+    value: 12,
     primaryText: 'Киев'
   },
   {
-    value: '13',
+    value: 13,
     primaryText: 'Харьков'
   }
 ];
@@ -40,16 +40,17 @@ class Content extends Component {
     this.props.sorter(value);
   }
 
-  cityChange(event, index) {
-    this.props.city(citys[index].primaryText);
+  cityChange(event, index, value) {
+    this.props.city(value);
   }
 
   render() {
+      console.log("props content",this.props.currentCity);
     return (
       <div className="page-main">
         <div className="filter">
           <Select options={citys}
-                  selected={this.props.сurrentCity}
+                  selected={this.props.currentCity}
                   name="Город"
                   handleChange={this.cityChange.bind(this)} />
           <Select options={sort}

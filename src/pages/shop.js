@@ -10,7 +10,7 @@ class Shop extends Component {
     super();
     this.state = {
       sortValue: '1',
-      currentCity: 'Кременчуг', //'Киев',
+      currentCity: 11,
       data
     };
     this.getData = this.getData.bind(this);
@@ -83,8 +83,8 @@ class Shop extends Component {
         <Content data={this.getOptions.call(this)}
                  city={this.city.bind(this)}
                  sorter={this.sorter.bind(this)}
-                 cityValue={this.state.currentCity}
-                 sortValue={this.state.sortValue} />
+                 sortValue={this.state.sortValue}
+                 currentCity={this.state.currentCity} />
         <Footer />
       </div>
     );

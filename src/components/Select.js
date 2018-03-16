@@ -12,7 +12,8 @@ const Select = ({options, handleChange, selected, name}) => (
           return (
             <MenuItem key={index}
                       value={item.value}
-                      primaryText={item.primaryText} />
+                      primaryText={item.primaryText}
+            />
           );
       })}
   </SelectField>

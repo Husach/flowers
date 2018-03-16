@@ -10,7 +10,7 @@ export const data = [
     note: '',
     rating: 4,
     latest: 9,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '01-0001-02',
@@ -23,7 +23,7 @@ export const data = [
     note: '',
     rating: 4,
     latest: 9,
-    city: 'Киев'
+    city: 12
   },
   {
     id: '01-0002',
@@ -36,7 +36,7 @@ export const data = [
     note: '',
     rating: 2,
     latest: 2,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '01-0003',
@@ -49,7 +49,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '01-0004',
@@ -62,7 +62,7 @@ export const data = [
     note: '',
     rating: 3,
     latest: 7,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '01-0005',
@@ -75,7 +75,7 @@ export const data = [
     note: '',
     rating: 4,
     latest: 5,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '01-0006',
@@ -88,7 +88,7 @@ export const data = [
     note: '',
     rating: 3,
     latest: 6,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '01-0007',
@@ -101,7 +101,7 @@ export const data = [
     note: '',
     rating: 2,
     latest: 8,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '01-0008',
@@ -114,7 +114,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 2,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0001-01',
@@ -127,7 +127,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0001-02',
@@ -140,7 +140,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 12
   },
   {
     id: '02-0002',
@@ -153,7 +153,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 12
   },
   {
     id: '02-0003',
@@ -166,7 +166,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0004',
@@ -179,7 +179,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0005',
@@ -192,7 +192,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0006',
@@ -205,7 +205,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0007',
@@ -218,7 +218,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0008',
@@ -231,7 +231,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0009',
@@ -244,7 +244,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0010',
@@ -257,7 +257,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '02-0011',
@@ -270,7 +270,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0001-01',
@@ -283,20 +283,20 @@ export const data = [
     note: 'В случае отсутствия данной модели игрушки  на складе, она может быть заменена на подобную.',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0001-02',
     category: 'roses',
     name: 'Букет к Дню Влюбленных "25 красных роз и мишка!"',
-    price: 1539,
+    price: 1649,
     src: 'img/roses/03-0001.jpg',
     description: 'Подарите своей возлюбленной, в День всех влюбленных, двадцать пять красных роз! Двадцать пять роз, это лучший выбор, как по объему букета, так и по стоимости! И конечно наш подарок ко Дню всех влюбленных, мишка тедди со скидкой. Заказывайте 25 красных роз ко Дню влюбленных, доставте радость любимым и близким.',
     composition: '25 красных роз, мишка Тедди.',
     note: 'В случае отсутствия данной модели игрушки  на складе, она может быть заменена на подобную.',
     rating: 1,
     latest: 1,
-    city: 'Киев'
+    city: 12
   },
   {
     id: '03-0002',
@@ -309,7 +309,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0003',
@@ -322,7 +322,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0004',
@@ -335,7 +335,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0005',
@@ -348,7 +348,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0006',
@@ -361,7 +361,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0007',
@@ -374,7 +374,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0008',
@@ -387,7 +387,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '03-0009',
@@ -400,7 +400,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '06-0001-01',
@@ -413,20 +413,20 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '06-0001-02',
     category: 'indoor',
     name: 'Орхидея розовая (Фаленопсис)',
-    price: 659,
+    price: 679,
     src: 'img/indoor/06-0001.jpg',
     description: '',
     composition: '',
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Киев'
+    city: 12
   },
   {
     id: '06-0002',
@@ -439,7 +439,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '06-0003',
@@ -452,7 +452,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '06-0004',
@@ -465,7 +465,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '06-0005',
@@ -478,7 +478,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '06-0006',
@@ -491,7 +491,7 @@ export const data = [
     note: '',
     rating: 1,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '11-0001',
@@ -504,7 +504,7 @@ export const data = [
     note: '',
     rating: 3,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '11-0002',
@@ -517,7 +517,7 @@ export const data = [
     note: '',
     rating: 4,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '11-0003',
@@ -530,7 +530,7 @@ export const data = [
     note: '',
     rating: 3,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '11-0004-1',
@@ -543,7 +543,7 @@ export const data = [
     note: '',
     rating: 3,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   },
   {
     id: '11-0004-2',
@@ -556,7 +556,7 @@ export const data = [
     note: '',
     rating: 3,
     latest: 1,
-    city: 'Киев'
+    city: 12
   },
   {
     id: '11-0005',
@@ -569,6 +569,6 @@ export const data = [
     note: '',
     rating: 2,
     latest: 1,
-    city: 'Кременчуг'
+    city: 11
   }
 ];

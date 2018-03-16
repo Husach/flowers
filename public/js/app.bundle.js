@@ -3323,6 +3323,546 @@ module.exports = exports['default'];
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var data = exports.data = [{
+  id: '01-0001-01',
+  category: 'bouquet',
+  name: 'Букет "Моей нежной"',
+  price: 1489,
+  src: 'img/bouquet/01-0001.jpg',
+  description: '',
+  composition: '7 кремовых роз, 6 веток белой и розовой эустомы, зелень, оформление.',
+  note: '',
+  rating: 4,
+  latest: 9,
+  city: 11
+}, {
+  id: '01-0001-02',
+  category: 'bouquet',
+  name: 'Букет "Моей нежной"',
+  price: 1649,
+  src: 'img/bouquet/01-0001.jpg',
+  description: '',
+  composition: '7 кремовых роз, 6 веток белой и розовой эустомы, зелень, оформление.',
+  note: '',
+  rating: 4,
+  latest: 9,
+  city: 12
+}, {
+  id: '01-0002',
+  category: 'bouquet',
+  name: 'Букет цветов "Нежные мечты"',
+  price: 809,
+  src: 'img/bouquet/01-0002.jpg',
+  description: '',
+  composition: '9 веток кустовой хризантемы, солидаго, зелень, флористический материал.',
+  note: '',
+  rating: 2,
+  latest: 2,
+  city: 11
+}, {
+  id: '01-0003',
+  category: 'bouquet',
+  name: 'Букет "Весенняя капель"',
+  price: 739,
+  src: 'img/bouquet/01-0003.jpg',
+  description: '',
+  composition: '7 белых тюльпанов, 5 синих (фиолетовых) ирисов, 3 ветки кустовой розы, зелень, оформление.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '01-0004',
+  category: 'bouquet',
+  name: 'Букет тюльпанов "Весенний микс"',
+  price: 1019,
+  src: 'img/bouquet/01-0004.jpg',
+  description: '',
+  composition: 'тюльпаны, ирисы, нарциссы, зелень.',
+  note: '',
+  rating: 3,
+  latest: 7,
+  city: 11
+}, {
+  id: '01-0005',
+  category: 'bouquet',
+  name: 'Букет "Северное сияние"',
+  price: 1479,
+  src: 'img/bouquet/01-0005.jpg',
+  description: '',
+  composition: '9 белых роз, 7 орхидей, 11 ирисов, зелень, оформление.',
+  note: '',
+  rating: 4,
+  latest: 5,
+  city: 11
+}, {
+  id: '01-0006',
+  category: 'bouquet',
+  name: 'Букет для девушки "Нежность"',
+  price: 1029,
+  src: 'img/bouquet/01-0006.jpg',
+  description: '',
+  composition: 'роза, лилия, ирис, ирис, зелень, флористический материал',
+  note: '',
+  rating: 3,
+  latest: 6,
+  city: 11
+}, {
+  id: '01-0007',
+  category: 'bouquet',
+  name: 'Букет "Романтическое чувство"',
+  price: 929,
+  src: 'img/bouquet/01-0007.jpg',
+  description: 'Оригинальный букет в теплых тонах для романтических и чувственных натур!',
+  composition: 'роза, лилия, ирис, ирис, зелень, флористический материал',
+  note: '',
+  rating: 2,
+  latest: 8,
+  city: 11
+}, {
+  id: '01-0008',
+  category: 'bouquet',
+  name: 'Букет "Зимняя полянка"',
+  price: 769,
+  src: 'img/bouquet/01-0008.jpg',
+  description: 'Прекрасное сочетание трех бесконечно роскошных и ярких цветов. Подарите этот изумительные букет он никого не оставит равнодушным!',
+  composition: '9 желтых тюльпанов, 9 синих ирисов, 3 ветки альстромерии, упаковка.',
+  note: '',
+  rating: 1,
+  latest: 2,
+  city: 11
+}, {
+  id: '02-0001-01',
+  category: 'tulips',
+  name: 'Букет из 25 разноцветных тюльпанов',
+  price: 1059,
+  src: 'img/tulips/02-0001.jpg',
+  description: 'Композия из ярких чарующих разноцветных тюльпанов передает искренние чувства дарит весенние тепло счатье и надежду. Подарите этот незабываемый букет!',
+  composition: '25 разноцветных тюльпанов, упаковка',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0001-02',
+  category: 'tulips',
+  name: 'Букет из 25 разноцветных тюльпанов',
+  price: 1149,
+  src: 'img/tulips/02-0001.jpg',
+  description: 'Композия из ярких чарующих разноцветных тюльпанов передает искренние чувства дарит весенние тепло счатье и надежду. Подарите этот незабываемый букет!',
+  composition: '25 разноцветных тюльпанов, упаковка',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 12
+}, {
+  id: '02-0002',
+  category: 'tulips',
+  name: '35 разноцветных тюльпанов',
+  price: 1309,
+  src: 'img/tulips/02-0002.jpg',
+  description: 'Большой охапок разноцветных  тюльпанов от которых невозможно отвести взгляд не оставит равнодушной ни одну женщину.',
+  composition: '35 разноцветных тюльпанов',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 12
+}, {
+  id: '02-0003',
+  category: 'tulips',
+  name: '11 разноцветных тюльпанов',
+  price: 539,
+  src: 'img/tulips/02-0003.jpg',
+  description: 'Проявите внимание и заботу преподнесите прекрасный, нежный, весенний букет в подарок дорогому вам человеку.',
+  composition: '11 разноцветных тюльпанов',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0004',
+  category: 'tulips',
+  name: 'Букет тюльпанов "Дыхание весны"',
+  price: 1469,
+  src: 'img/tulips/02-0004.jpg',
+  description: '',
+  composition: '30 белых и розовых тюльпанов, 9 ирисов, оформление.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0005',
+  category: 'tulips',
+  name: 'Корзина с тюльпанами!',
+  price: 1939,
+  src: 'img/tulips/02-0005.jpg',
+  description: 'Букет из разноцветных тюльпанов в корзине – это роскошный и оригинальный способ выразить Ваши чувства. Весенний букет наполнен оптимизмом, несет в себе жизнерадостность и прекрасное настроение. Понравиться любому получателю!',
+  composition: '51 разноцветный тюльпан, корзина, флористический материал.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0006',
+  category: 'tulips',
+  name: 'Корзина с тюльпанами!',
+  price: 1019,
+  src: 'img/tulips/02-0006.jpg',
+  description: '',
+  composition: '29 разноцветных тюльпанов, лента.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0007',
+  category: 'tulips',
+  name: 'Букет цветов "Весенние краски"',
+  price: 689,
+  src: 'img/tulips/02-0007.jpg',
+  description: '',
+  composition: '9 разноцветных тюльпанов, 6 синих ирисов, зелень, оформление.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0008',
+  category: 'tulips',
+  name: '33 разноцветных тюльпана',
+  price: 1139,
+  src: 'img/tulips/02-0008.jpg',
+  description: '',
+  composition: '33 разноцветных тюльпана',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0009',
+  category: 'tulips',
+  name: '35 разноцветных тюльпанов',
+  price: 1259,
+  src: 'img/tulips/02-0009.jpg',
+  description: '',
+  composition: '35 тюльпанов микс',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0010',
+  category: 'tulips',
+  name: 'Букет "Зимняя полянка"',
+  price: 769,
+  src: 'img/tulips/02-0010.jpg',
+  description: 'Прекрасное сочетание трех бесконечно роскошных и ярких цветов. Подарите этот изумительные букет он никого не оставит равнодушным!',
+  composition: '9 желтых тюльпанов, 9 синих ирисов, 3 ветки альстромерии, упаковка.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '02-0011',
+  category: 'tulips',
+  name: 'Букет "11 красных тюльпанов"',
+  price: 619,
+  src: 'img/tulips/02-0011.jpg',
+  description: 'Прекрасное сочетание трех бесконечно роскошных и ярких цветов. Подарите этот изумительные букет он никого не оставит равнодушным!',
+  composition: '11 красных тюльпанов, зелень, упаковка.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0001-01',
+  category: 'roses',
+  name: 'Букет к Дню Влюбленных "25 красных роз и мишка!"',
+  price: 1539,
+  src: 'img/roses/03-0001.jpg',
+  description: 'Подарите своей возлюбленной, в День всех влюбленных, двадцать пять красных роз! Двадцать пять роз, это лучший выбор, как по объему букета, так и по стоимости! И конечно наш подарок ко Дню всех влюбленных, мишка тедди со скидкой. Заказывайте 25 красных роз ко Дню влюбленных, доставте радость любимым и близким.',
+  composition: '25 красных роз, мишка Тедди.',
+  note: 'В случае отсутствия данной модели игрушки  на складе, она может быть заменена на подобную.',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0001-02',
+  category: 'roses',
+  name: 'Букет к Дню Влюбленных "25 красных роз и мишка!"',
+  price: 1649,
+  src: 'img/roses/03-0001.jpg',
+  description: 'Подарите своей возлюбленной, в День всех влюбленных, двадцать пять красных роз! Двадцать пять роз, это лучший выбор, как по объему букета, так и по стоимости! И конечно наш подарок ко Дню всех влюбленных, мишка тедди со скидкой. Заказывайте 25 красных роз ко Дню влюбленных, доставте радость любимым и близким.',
+  composition: '25 красных роз, мишка Тедди.',
+  note: 'В случае отсутствия данной модели игрушки  на складе, она может быть заменена на подобную.',
+  rating: 1,
+  latest: 1,
+  city: 12
+}, {
+  id: '03-0002',
+  category: 'roses',
+  name: '35 розовых роз',
+  price: 1849,
+  src: 'img/roses/03-0002.jpg',
+  description: 'Розовые розы – являются символом элегантности и изысканности. Выразить благодарность можно, преподнеся в дар букет из роз ярко-розового цвета. Розовый цвет бутонов роз и букетов из этих прекрасных и благородных цветов выражает благодарность и гордость, симпатию и сладкие мысли, нежные эмоции и чувство восхищения.',
+  composition: '35 розовых роз, упаковка.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0003',
+  category: 'roses',
+  name: 'Букет "Ты мое чудо!"',
+  price: 1139,
+  src: 'img/roses/03-0003.jpg',
+  description: 'Розовые розы – являются символом элегантности и изысканности. Выразить благодарность можно, преподнеся в дар букет из роз ярко-розового цвета. Розовый цвет бутонов роз и букетов из этих прекрасных и благородных цветов выражает благодарность и гордость, симпатию и сладкие мысли, нежные эмоции и чувство восхищения.',
+  composition: '21 желтая и розовая роза, флористический материал.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0004',
+  category: 'roses',
+  name: '51 розовая роза',
+  price: 2589,
+  src: 'img/roses/03-0004.jpg',
+  description: 'Самая нежная композиция - букет из 51 розовой розы. Розовый цвет никогда не выйдет из моды, поэтому смело покупайте этот букет! Таким букетом можно сразить абсолютно любого человека. Поистине незабываемый букет.',
+  composition: '51 розовая роза, флористический материал.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0005',
+  category: 'roses',
+  name: 'Букет "Тонкий намек"',
+  price: 1849,
+  src: 'img/roses/03-0005.jpg',
+  description: 'Розовые розы и белые розы - классика цветочных комплиментов! Преподнесите их в знак искренней признательности и самых теплых чувств.',
+  composition: '35 розовых и белых роз, флористический материал.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0006',
+  category: 'roses',
+  name: 'Букет «Сердце для королевы»',
+  price: 1849,
+  src: 'img/roses/03-0006.jpg',
+  description: 'Букет в виде сердца сам расскажет о ваших чувствах.',
+  composition: '35 красных и белых роз, флористический материал.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0007',
+  category: 'roses',
+  name: 'Букет роз "Карнавал"',
+  price: 1319,
+  src: 'img/roses/03-0007.jpg',
+  description: 'Будет особо приятным сюрпризом для девушек. В этом букете присутствуют многие цвета роз.',
+  composition: '25 разноцветных роз, оформление.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0008',
+  category: 'roses',
+  name: 'Букет "Коралловые бусы"',
+  price: 1789,
+  src: 'img/roses/03-0008.jpg',
+  description: 'Невероятно красивый и оригинальный букет из роскошных  роз - это самый лучший способ выразить то, что нельзя сказать словами. Главной же особенностью является расцветка бутона розы - нежно-коралловый. Такой подарок, без сомнений, станет прекрасным отражением самых искренних и светлых чувств!',
+  composition: '35 кораловых роз, лента.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '03-0009',
+  category: 'roses',
+  name: 'Люблю',
+  price: 1109,
+  src: 'img/roses/03-0009.jpg',
+  description: 'Букет из красных и белых роз без слов расскажет о Ваших чувствах. Эти классические цвета сочетают элегантность и стиль. Можете быть уверены - получить такой роскошный подарок поистине приятно. А дарить, как известно, приятно вдвойне.',
+  composition: '19 красных и белых роз, флористический материал.',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '06-0001-01',
+  category: 'indoor',
+  name: 'Орхидея розовая (Фаленопсис)',
+  price: 559,
+  src: 'img/indoor/06-0001.jpg',
+  description: '',
+  composition: '',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '06-0001-02',
+  category: 'indoor',
+  name: 'Орхидея розовая (Фаленопсис)',
+  price: 679,
+  src: 'img/indoor/06-0001.jpg',
+  description: '',
+  composition: '',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 12
+}, {
+  id: '06-0002',
+  category: 'indoor',
+  name: 'Орхидея желтая (Фаленопсис)',
+  price: 559,
+  src: 'img/indoor/06-0002.jpg',
+  description: '',
+  composition: '',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '06-0003',
+  category: 'indoor',
+  name: 'Орхидея пятнистая (Фаленопсис)',
+  price: 559,
+  src: 'img/indoor/06-0003.jpg',
+  description: '',
+  composition: '',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '06-0004',
+  category: 'indoor',
+  name: 'Орхидея розовая (Фаленопсис)',
+  price: 559,
+  src: 'img/indoor/06-0004.jpg',
+  description: '',
+  composition: '',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '06-0005',
+  category: 'indoor',
+  name: 'Орхидея розовая (Фаленопсис)',
+  price: 559,
+  src: 'img/indoor/06-0005.jpg',
+  description: '',
+  composition: '',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '06-0006',
+  category: 'indoor',
+  name: 'Орхидея розовая (Фаленопсис)',
+  price: 559,
+  src: 'img/indoor/06-0006.jpg',
+  description: '',
+  composition: '',
+  note: '',
+  rating: 1,
+  latest: 1,
+  city: 11
+}, {
+  id: '11-0001',
+  category: 'sweets',
+  name: 'Коробка конфет "Raffaello" 150g',
+  price: 159,
+  src: 'img/sweets/11-0001.jpg',
+  description: 'Благодаря неповторимому вкусу, изысканной белоснежной упаковке конфеты придадут Вашему подарку изюминку, внесут сладкую нотку в прекрасый момент поздравления!',
+  composition: 'Коробка конфет Raffaello.',
+  note: '',
+  rating: 3,
+  latest: 1,
+  city: 11
+}, {
+  id: '11-0002',
+  category: 'sweets',
+  name: 'Большая коробка конфет "Raffaello" 300g',
+  price: 359,
+  src: 'img/sweets/11-0002.jpg',
+  description: 'Благодаря неповторимому вкусу, изысканной белоснежной упаковке конфеты придадут Вашему подарку изюминку, внесут сладкую нотку в прекрасый момент поздравления!',
+  composition: 'Большая коробка конфет Raffaello, 300гр.',
+  note: '',
+  rating: 4,
+  latest: 1,
+  city: 11
+}, {
+  id: '11-0003',
+  category: 'sweets',
+  name: 'Коробка конфет "Ferrero Rocher" 200g',
+  price: 239,
+  src: 'img/sweets/11-0003.jpg',
+  description: 'Ferrero Rocher - отборный цельный лесной орех в окружении молочного шоколада и нежного орехового крема, заключенные в хрустящую вафельную оболочку, покрытую шоколадно-ореховой крошкой.',
+  composition: 'Конфеты Ferrero Rocher, 16 конфет.',
+  note: '',
+  rating: 3,
+  latest: 1,
+  city: 11
+}, {
+  id: '11-0004-1',
+  category: 'sweets',
+  name: 'Большая коробка конфет "Ferrero Rocher" 300g',
+  price: 399,
+  src: 'img/sweets/11-0004.jpg',
+  description: 'Ferrero Rocher - отборный цельный лесной орех в окружении молочного шоколада и нежного орехового крема, заключенные в хрустящую вафельную оболочку, покрытую шоколадно-ореховой крошкой.',
+  composition: 'Большая коробка конфет Ferrero Rocher, 300гр.',
+  note: '',
+  rating: 3,
+  latest: 1,
+  city: 11
+}, {
+  id: '11-0004-2',
+  category: 'sweets',
+  name: 'Большая коробка конфет "Ferrero Rocher" 300g',
+  price: 449,
+  src: 'img/sweets/11-0004.jpg',
+  description: 'Ferrero Rocher - отборный цельный лесной орех в окружении молочного шоколада и нежного орехового крема, заключенные в хрустящую вафельную оболочку, покрытую шоколадно-ореховой крошкой.',
+  composition: 'Большая коробка конфет Ferrero Rocher, 300гр.',
+  note: '',
+  rating: 3,
+  latest: 1,
+  city: 12
+}, {
+  id: '11-0005',
+  category: 'sweets',
+  name: 'Конфеты "Любимов" 100g',
+  price: 69,
+  src: 'img/sweets/11-0005.jpg',
+  description: 'Конфеты Любимов - это нежный молочный шоколад с ореховым пралине. Количество 12 штук.',
+  composition: 'Коробка конфет «Любимов», 100 гр.',
+  note: '',
+  rating: 2,
+  latest: 1,
+  city: 11
+}];
+
+/***/ }),
+/* 79 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 Object.defineProperty(exports, "__esModule", {
@@ -3369,11 +3909,11 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _events = __webpack_require__(79);
+var _events = __webpack_require__(80);
 
 var _events2 = _interopRequireDefault(_events);
 
-var _keycode = __webpack_require__(80);
+var _keycode = __webpack_require__(81);
 
 var _keycode2 = _interopRequireDefault(_keycode);
 
@@ -3723,7 +4263,7 @@ exports.default = EnhancedButton;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3768,7 +4308,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports) {
 
 // Source: http://jsfiddle.net/vWx8V/
@@ -3920,7 +4460,7 @@ for (var alias in aliases) {
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3934,546 +4474,6 @@ exports.default = {
     style[key] = value;
   }
 };
-
-/***/ }),
-/* 82 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var data = exports.data = [{
-  id: '01-0001-01',
-  category: 'bouquet',
-  name: 'Букет "Моей нежной"',
-  price: 1489,
-  src: 'img/bouquet/01-0001.jpg',
-  description: '',
-  composition: '7 кремовых роз, 6 веток белой и розовой эустомы, зелень, оформление.',
-  note: '',
-  rating: 4,
-  latest: 9,
-  city: 'Кременчуг'
-}, {
-  id: '01-0001-02',
-  category: 'bouquet',
-  name: 'Букет "Моей нежной"',
-  price: 1649,
-  src: 'img/bouquet/01-0001.jpg',
-  description: '',
-  composition: '7 кремовых роз, 6 веток белой и розовой эустомы, зелень, оформление.',
-  note: '',
-  rating: 4,
-  latest: 9,
-  city: 'Киев'
-}, {
-  id: '01-0002',
-  category: 'bouquet',
-  name: 'Букет цветов "Нежные мечты"',
-  price: 809,
-  src: 'img/bouquet/01-0002.jpg',
-  description: '',
-  composition: '9 веток кустовой хризантемы, солидаго, зелень, флористический материал.',
-  note: '',
-  rating: 2,
-  latest: 2,
-  city: 'Кременчуг'
-}, {
-  id: '01-0003',
-  category: 'bouquet',
-  name: 'Букет "Весенняя капель"',
-  price: 739,
-  src: 'img/bouquet/01-0003.jpg',
-  description: '',
-  composition: '7 белых тюльпанов, 5 синих (фиолетовых) ирисов, 3 ветки кустовой розы, зелень, оформление.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '01-0004',
-  category: 'bouquet',
-  name: 'Букет тюльпанов "Весенний микс"',
-  price: 1019,
-  src: 'img/bouquet/01-0004.jpg',
-  description: '',
-  composition: 'тюльпаны, ирисы, нарциссы, зелень.',
-  note: '',
-  rating: 3,
-  latest: 7,
-  city: 'Кременчуг'
-}, {
-  id: '01-0005',
-  category: 'bouquet',
-  name: 'Букет "Северное сияние"',
-  price: 1479,
-  src: 'img/bouquet/01-0005.jpg',
-  description: '',
-  composition: '9 белых роз, 7 орхидей, 11 ирисов, зелень, оформление.',
-  note: '',
-  rating: 4,
-  latest: 5,
-  city: 'Кременчуг'
-}, {
-  id: '01-0006',
-  category: 'bouquet',
-  name: 'Букет для девушки "Нежность"',
-  price: 1029,
-  src: 'img/bouquet/01-0006.jpg',
-  description: '',
-  composition: 'роза, лилия, ирис, ирис, зелень, флористический материал',
-  note: '',
-  rating: 3,
-  latest: 6,
-  city: 'Кременчуг'
-}, {
-  id: '01-0007',
-  category: 'bouquet',
-  name: 'Букет "Романтическое чувство"',
-  price: 929,
-  src: 'img/bouquet/01-0007.jpg',
-  description: 'Оригинальный букет в теплых тонах для романтических и чувственных натур!',
-  composition: 'роза, лилия, ирис, ирис, зелень, флористический материал',
-  note: '',
-  rating: 2,
-  latest: 8,
-  city: 'Кременчуг'
-}, {
-  id: '01-0008',
-  category: 'bouquet',
-  name: 'Букет "Зимняя полянка"',
-  price: 769,
-  src: 'img/bouquet/01-0008.jpg',
-  description: 'Прекрасное сочетание трех бесконечно роскошных и ярких цветов. Подарите этот изумительные букет он никого не оставит равнодушным!',
-  composition: '9 желтых тюльпанов, 9 синих ирисов, 3 ветки альстромерии, упаковка.',
-  note: '',
-  rating: 1,
-  latest: 2,
-  city: 'Кременчуг'
-}, {
-  id: '02-0001-01',
-  category: 'tulips',
-  name: 'Букет из 25 разноцветных тюльпанов',
-  price: 1059,
-  src: 'img/tulips/02-0001.jpg',
-  description: 'Композия из ярких чарующих разноцветных тюльпанов передает искренние чувства дарит весенние тепло счатье и надежду. Подарите этот незабываемый букет!',
-  composition: '25 разноцветных тюльпанов, упаковка',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0001-02',
-  category: 'tulips',
-  name: 'Букет из 25 разноцветных тюльпанов',
-  price: 1149,
-  src: 'img/tulips/02-0001.jpg',
-  description: 'Композия из ярких чарующих разноцветных тюльпанов передает искренние чувства дарит весенние тепло счатье и надежду. Подарите этот незабываемый букет!',
-  composition: '25 разноцветных тюльпанов, упаковка',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0002',
-  category: 'tulips',
-  name: '35 разноцветных тюльпанов',
-  price: 1309,
-  src: 'img/tulips/02-0002.jpg',
-  description: 'Большой охапок разноцветных  тюльпанов от которых невозможно отвести взгляд не оставит равнодушной ни одну женщину.',
-  composition: '35 разноцветных тюльпанов',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0003',
-  category: 'tulips',
-  name: '11 разноцветных тюльпанов',
-  price: 539,
-  src: 'img/tulips/02-0003.jpg',
-  description: 'Проявите внимание и заботу преподнесите прекрасный, нежный, весенний букет в подарок дорогому вам человеку.',
-  composition: '11 разноцветных тюльпанов',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0004',
-  category: 'tulips',
-  name: 'Букет тюльпанов "Дыхание весны"',
-  price: 1469,
-  src: 'img/tulips/02-0004.jpg',
-  description: '',
-  composition: '30 белых и розовых тюльпанов, 9 ирисов, оформление.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0005',
-  category: 'tulips',
-  name: 'Корзина с тюльпанами!',
-  price: 1939,
-  src: 'img/tulips/02-0005.jpg',
-  description: 'Букет из разноцветных тюльпанов в корзине – это роскошный и оригинальный способ выразить Ваши чувства. Весенний букет наполнен оптимизмом, несет в себе жизнерадостность и прекрасное настроение. Понравиться любому получателю!',
-  composition: '51 разноцветный тюльпан, корзина, флористический материал.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0006',
-  category: 'tulips',
-  name: 'Корзина с тюльпанами!',
-  price: 1019,
-  src: 'img/tulips/02-0006.jpg',
-  description: '',
-  composition: '29 разноцветных тюльпанов, лента.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0007',
-  category: 'tulips',
-  name: 'Букет цветов "Весенние краски"',
-  price: 689,
-  src: 'img/tulips/02-0007.jpg',
-  description: '',
-  composition: '9 разноцветных тюльпанов, 6 синих ирисов, зелень, оформление.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0008',
-  category: 'tulips',
-  name: '33 разноцветных тюльпана',
-  price: 1139,
-  src: 'img/tulips/02-0008.jpg',
-  description: '',
-  composition: '33 разноцветных тюльпана',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0009',
-  category: 'tulips',
-  name: '35 разноцветных тюльпанов',
-  price: 1259,
-  src: 'img/tulips/02-0009.jpg',
-  description: '',
-  composition: '35 тюльпанов микс',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0010',
-  category: 'tulips',
-  name: 'Букет "Зимняя полянка"',
-  price: 769,
-  src: 'img/tulips/02-0010.jpg',
-  description: 'Прекрасное сочетание трех бесконечно роскошных и ярких цветов. Подарите этот изумительные букет он никого не оставит равнодушным!',
-  composition: '9 желтых тюльпанов, 9 синих ирисов, 3 ветки альстромерии, упаковка.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '02-0011',
-  category: 'tulips',
-  name: 'Букет "11 красных тюльпанов"',
-  price: 619,
-  src: 'img/tulips/02-0011.jpg',
-  description: 'Прекрасное сочетание трех бесконечно роскошных и ярких цветов. Подарите этот изумительные букет он никого не оставит равнодушным!',
-  composition: '11 красных тюльпанов, зелень, упаковка.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0001-01',
-  category: 'roses',
-  name: 'Букет к Дню Влюбленных "25 красных роз и мишка!"',
-  price: 1539,
-  src: 'img/roses/03-0001.jpg',
-  description: 'Подарите своей возлюбленной, в День всех влюбленных, двадцать пять красных роз! Двадцать пять роз, это лучший выбор, как по объему букета, так и по стоимости! И конечно наш подарок ко Дню всех влюбленных, мишка тедди со скидкой. Заказывайте 25 красных роз ко Дню влюбленных, доставте радость любимым и близким.',
-  composition: '25 красных роз, мишка Тедди.',
-  note: 'В случае отсутствия данной модели игрушки  на складе, она может быть заменена на подобную.',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0001-02',
-  category: 'roses',
-  name: 'Букет к Дню Влюбленных "25 красных роз и мишка!"',
-  price: 1539,
-  src: 'img/roses/03-0001.jpg',
-  description: 'Подарите своей возлюбленной, в День всех влюбленных, двадцать пять красных роз! Двадцать пять роз, это лучший выбор, как по объему букета, так и по стоимости! И конечно наш подарок ко Дню всех влюбленных, мишка тедди со скидкой. Заказывайте 25 красных роз ко Дню влюбленных, доставте радость любимым и близким.',
-  composition: '25 красных роз, мишка Тедди.',
-  note: 'В случае отсутствия данной модели игрушки  на складе, она может быть заменена на подобную.',
-  rating: 1,
-  latest: 1,
-  city: 'Киев'
-}, {
-  id: '03-0002',
-  category: 'roses',
-  name: '35 розовых роз',
-  price: 1849,
-  src: 'img/roses/03-0002.jpg',
-  description: 'Розовые розы – являются символом элегантности и изысканности. Выразить благодарность можно, преподнеся в дар букет из роз ярко-розового цвета. Розовый цвет бутонов роз и букетов из этих прекрасных и благородных цветов выражает благодарность и гордость, симпатию и сладкие мысли, нежные эмоции и чувство восхищения.',
-  composition: '35 розовых роз, упаковка.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0003',
-  category: 'roses',
-  name: 'Букет "Ты мое чудо!"',
-  price: 1139,
-  src: 'img/roses/03-0003.jpg',
-  description: 'Розовые розы – являются символом элегантности и изысканности. Выразить благодарность можно, преподнеся в дар букет из роз ярко-розового цвета. Розовый цвет бутонов роз и букетов из этих прекрасных и благородных цветов выражает благодарность и гордость, симпатию и сладкие мысли, нежные эмоции и чувство восхищения.',
-  composition: '21 желтая и розовая роза, флористический материал.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0004',
-  category: 'roses',
-  name: '51 розовая роза',
-  price: 2589,
-  src: 'img/roses/03-0004.jpg',
-  description: 'Самая нежная композиция - букет из 51 розовой розы. Розовый цвет никогда не выйдет из моды, поэтому смело покупайте этот букет! Таким букетом можно сразить абсолютно любого человека. Поистине незабываемый букет.',
-  composition: '51 розовая роза, флористический материал.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0005',
-  category: 'roses',
-  name: 'Букет "Тонкий намек"',
-  price: 1849,
-  src: 'img/roses/03-0005.jpg',
-  description: 'Розовые розы и белые розы - классика цветочных комплиментов! Преподнесите их в знак искренней признательности и самых теплых чувств.',
-  composition: '35 розовых и белых роз, флористический материал.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0006',
-  category: 'roses',
-  name: 'Букет «Сердце для королевы»',
-  price: 1849,
-  src: 'img/roses/03-0006.jpg',
-  description: 'Букет в виде сердца сам расскажет о ваших чувствах.',
-  composition: '35 красных и белых роз, флористический материал.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0007',
-  category: 'roses',
-  name: 'Букет роз "Карнавал"',
-  price: 1319,
-  src: 'img/roses/03-0007.jpg',
-  description: 'Будет особо приятным сюрпризом для девушек. В этом букете присутствуют многие цвета роз.',
-  composition: '25 разноцветных роз, оформление.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0008',
-  category: 'roses',
-  name: 'Букет "Коралловые бусы"',
-  price: 1789,
-  src: 'img/roses/03-0008.jpg',
-  description: 'Невероятно красивый и оригинальный букет из роскошных  роз - это самый лучший способ выразить то, что нельзя сказать словами. Главной же особенностью является расцветка бутона розы - нежно-коралловый. Такой подарок, без сомнений, станет прекрасным отражением самых искренних и светлых чувств!',
-  composition: '35 кораловых роз, лента.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '03-0009',
-  category: 'roses',
-  name: 'Люблю',
-  price: 1109,
-  src: 'img/roses/03-0009.jpg',
-  description: 'Букет из красных и белых роз без слов расскажет о Ваших чувствах. Эти классические цвета сочетают элегантность и стиль. Можете быть уверены - получить такой роскошный подарок поистине приятно. А дарить, как известно, приятно вдвойне.',
-  composition: '19 красных и белых роз, флористический материал.',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '06-0001-01',
-  category: 'indoor',
-  name: 'Орхидея розовая (Фаленопсис)',
-  price: 559,
-  src: 'img/indoor/06-0001.jpg',
-  description: '',
-  composition: '',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '06-0001-02',
-  category: 'indoor',
-  name: 'Орхидея розовая (Фаленопсис)',
-  price: 659,
-  src: 'img/indoor/06-0001.jpg',
-  description: '',
-  composition: '',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Киев'
-}, {
-  id: '06-0002',
-  category: 'indoor',
-  name: 'Орхидея желтая (Фаленопсис)',
-  price: 559,
-  src: 'img/indoor/06-0002.jpg',
-  description: '',
-  composition: '',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '06-0003',
-  category: 'indoor',
-  name: 'Орхидея пятнистая (Фаленопсис)',
-  price: 559,
-  src: 'img/indoor/06-0003.jpg',
-  description: '',
-  composition: '',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '06-0004',
-  category: 'indoor',
-  name: 'Орхидея розовая (Фаленопсис)',
-  price: 559,
-  src: 'img/indoor/06-0004.jpg',
-  description: '',
-  composition: '',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '06-0005',
-  category: 'indoor',
-  name: 'Орхидея розовая (Фаленопсис)',
-  price: 559,
-  src: 'img/indoor/06-0005.jpg',
-  description: '',
-  composition: '',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '06-0006',
-  category: 'indoor',
-  name: 'Орхидея розовая (Фаленопсис)',
-  price: 559,
-  src: 'img/indoor/06-0006.jpg',
-  description: '',
-  composition: '',
-  note: '',
-  rating: 1,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '11-0001',
-  category: 'sweets',
-  name: 'Коробка конфет "Raffaello" 150g',
-  price: 159,
-  src: 'img/sweets/11-0001.jpg',
-  description: 'Благодаря неповторимому вкусу, изысканной белоснежной упаковке конфеты придадут Вашему подарку изюминку, внесут сладкую нотку в прекрасый момент поздравления!',
-  composition: 'Коробка конфет Raffaello.',
-  note: '',
-  rating: 3,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '11-0002',
-  category: 'sweets',
-  name: 'Большая коробка конфет "Raffaello" 300g',
-  price: 359,
-  src: 'img/sweets/11-0002.jpg',
-  description: 'Благодаря неповторимому вкусу, изысканной белоснежной упаковке конфеты придадут Вашему подарку изюминку, внесут сладкую нотку в прекрасый момент поздравления!',
-  composition: 'Большая коробка конфет Raffaello, 300гр.',
-  note: '',
-  rating: 4,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '11-0003',
-  category: 'sweets',
-  name: 'Коробка конфет "Ferrero Rocher" 200g',
-  price: 239,
-  src: 'img/sweets/11-0003.jpg',
-  description: 'Ferrero Rocher - отборный цельный лесной орех в окружении молочного шоколада и нежного орехового крема, заключенные в хрустящую вафельную оболочку, покрытую шоколадно-ореховой крошкой.',
-  composition: 'Конфеты Ferrero Rocher, 16 конфет.',
-  note: '',
-  rating: 3,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '11-0004-1',
-  category: 'sweets',
-  name: 'Большая коробка конфет "Ferrero Rocher" 300g',
-  price: 399,
-  src: 'img/sweets/11-0004.jpg',
-  description: 'Ferrero Rocher - отборный цельный лесной орех в окружении молочного шоколада и нежного орехового крема, заключенные в хрустящую вафельную оболочку, покрытую шоколадно-ореховой крошкой.',
-  composition: 'Большая коробка конфет Ferrero Rocher, 300гр.',
-  note: '',
-  rating: 3,
-  latest: 1,
-  city: 'Кременчуг'
-}, {
-  id: '11-0004-2',
-  category: 'sweets',
-  name: 'Большая коробка конфет "Ferrero Rocher" 300g',
-  price: 449,
-  src: 'img/sweets/11-0004.jpg',
-  description: 'Ferrero Rocher - отборный цельный лесной орех в окружении молочного шоколада и нежного орехового крема, заключенные в хрустящую вафельную оболочку, покрытую шоколадно-ореховой крошкой.',
-  composition: 'Большая коробка конфет Ferrero Rocher, 300гр.',
-  note: '',
-  rating: 3,
-  latest: 1,
-  city: 'Киев'
-}, {
-  id: '11-0005',
-  category: 'sweets',
-  name: 'Конфеты "Любимов" 100g',
-  price: 69,
-  src: 'img/sweets/11-0005.jpg',
-  description: 'Конфеты Любимов - это нежный молочный шоколад с ореховым пралине. Количество 12 штук.',
-  composition: 'Коробка конфет «Любимов», 100 гр.',
-  note: '',
-  rating: 2,
-  latest: 1,
-  city: 'Кременчуг'
-}];
 
 /***/ }),
 /* 83 */
@@ -7598,7 +7598,7 @@ var _ClickAwayListener = __webpack_require__(289);
 
 var _ClickAwayListener2 = _interopRequireDefault(_ClickAwayListener);
 
-var _keycode = __webpack_require__(80);
+var _keycode = __webpack_require__(81);
 
 var _keycode2 = _interopRequireDefault(_keycode);
 
@@ -35047,7 +35047,7 @@ var _propTypes = __webpack_require__(2);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _data = __webpack_require__(82);
+var _data = __webpack_require__(78);
 
 var _Header = __webpack_require__(17);
 
@@ -35081,7 +35081,7 @@ var Shop = function (_Component) {
 
     _this.state = {
       sortValue: '1',
-      currentCity: 'Кременчуг', //'Киев',
+      currentCity: 11,
       data: _data.data
     };
     _this.getData = _this.getData.bind(_this);
@@ -35180,8 +35180,8 @@ var Shop = function (_Component) {
         _react2.default.createElement(_Content2.default, { data: this.getOptions.call(this),
           city: this.city.bind(this),
           sorter: this.sorter.bind(this),
-          cityValue: this.state.currentCity,
-          sortValue: this.state.sortValue }),
+          sortValue: this.state.sortValue,
+          currentCity: this.state.currentCity }),
         _react2.default.createElement(_Footer2.default, null)
       );
     }
@@ -35243,13 +35243,13 @@ var sort = [{
   primaryText: 'новинки'
 }];
 var citys = [{
-  value: '11',
+  value: 11,
   primaryText: 'Кременчуг'
 }, {
-  value: '12',
+  value: 12,
   primaryText: 'Киев'
 }, {
-  value: '13',
+  value: 13,
   primaryText: 'Харьков'
 }];
 
@@ -35269,12 +35269,13 @@ var Content = function (_Component) {
     }
   }, {
     key: 'cityChange',
-    value: function cityChange(event, index) {
-      this.props.city(citys[index].primaryText);
+    value: function cityChange(event, index, value) {
+      this.props.city(value);
     }
   }, {
     key: 'render',
     value: function render() {
+      console.log("props content", this.props.currentCity);
       return _react2.default.createElement(
         'div',
         { className: 'page-main' },
@@ -35282,7 +35283,7 @@ var Content = function (_Component) {
           'div',
           { className: 'filter' },
           _react2.default.createElement(_Select2.default, { options: citys,
-            selected: this.props.сurrentCity,
+            selected: this.props.currentCity,
             name: '\u0413\u043E\u0440\u043E\u0434',
             handleChange: this.cityChange.bind(this) }),
           _react2.default.createElement(_Select2.default, { options: sort,
@@ -35314,7 +35315,7 @@ exports.default = Content;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _react = __webpack_require__(0);
@@ -35332,23 +35333,24 @@ var _SelectField2 = _interopRequireDefault(_SelectField);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Select = function Select(_ref) {
-    var options = _ref.options,
-        handleChange = _ref.handleChange,
-        selected = _ref.selected,
-        name = _ref.name;
-    return _react2.default.createElement(
-        _SelectField2.default,
-        { className: 'Select',
-            value: selected,
-            floatingLabelText: name,
-            onChange: handleChange
-        },
-        options.map(function (item, index) {
-            return _react2.default.createElement(_MenuItem2.default, { key: index,
-                value: item.value,
-                primaryText: item.primaryText });
-        })
-    );
+  var options = _ref.options,
+      handleChange = _ref.handleChange,
+      selected = _ref.selected,
+      name = _ref.name;
+  return _react2.default.createElement(
+    _SelectField2.default,
+    { className: 'Select',
+      value: selected,
+      floatingLabelText: name,
+      onChange: handleChange
+    },
+    options.map(function (item, index) {
+      return _react2.default.createElement(_MenuItem2.default, { key: index,
+        value: item.value,
+        primaryText: item.primaryText
+      });
+    })
+  );
 };
 
 exports.default = Select;
@@ -36830,7 +36832,7 @@ var _transitions = __webpack_require__(12);
 
 var _transitions2 = _interopRequireDefault(_transitions);
 
-var _EnhancedButton = __webpack_require__(78);
+var _EnhancedButton = __webpack_require__(79);
 
 var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
@@ -37579,7 +37581,7 @@ var _shallowEqual = __webpack_require__(27);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _autoPrefix = __webpack_require__(81);
+var _autoPrefix = __webpack_require__(82);
 
 var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
 
@@ -38047,7 +38049,7 @@ var _reactDom = __webpack_require__(13);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _autoPrefix = __webpack_require__(81);
+var _autoPrefix = __webpack_require__(82);
 
 var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
 
@@ -38546,7 +38548,7 @@ var _shallowEqual = __webpack_require__(27);
 
 var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 
-var _autoPrefix = __webpack_require__(81);
+var _autoPrefix = __webpack_require__(82);
 
 var _autoPrefix2 = _interopRequireDefault(_autoPrefix);
 
@@ -38725,7 +38727,7 @@ var _propTypes3 = __webpack_require__(23);
 
 var _propTypes4 = _interopRequireDefault(_propTypes3);
 
-var _EnhancedButton = __webpack_require__(78);
+var _EnhancedButton = __webpack_require__(79);
 
 var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
@@ -39796,7 +39798,7 @@ var _reactDom = __webpack_require__(13);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _events = __webpack_require__(79);
+var _events = __webpack_require__(80);
 
 var _events2 = _interopRequireDefault(_events);
 
@@ -41628,11 +41630,11 @@ var _PopoverAnimationVertical = __webpack_require__(304);
 
 var _PopoverAnimationVertical2 = _interopRequireDefault(_PopoverAnimationVertical);
 
-var _keycode = __webpack_require__(80);
+var _keycode = __webpack_require__(81);
 
 var _keycode2 = _interopRequireDefault(_keycode);
 
-var _events = __webpack_require__(79);
+var _events = __webpack_require__(80);
 
 var _events2 = _interopRequireDefault(_events);
 
@@ -42711,7 +42713,7 @@ var _transitions2 = _interopRequireDefault(_transitions);
 
 var _colorManipulator = __webpack_require__(48);
 
-var _EnhancedButton = __webpack_require__(78);
+var _EnhancedButton = __webpack_require__(79);
 
 var _EnhancedButton2 = _interopRequireDefault(_EnhancedButton);
 
@@ -43278,7 +43280,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var database = __webpack_require__(82);
+var database = __webpack_require__(78);
 
 var Description = function (_Component) {
   _inherits(Description, _Component);
@@ -43471,7 +43473,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var database = __webpack_require__(82);
+var database = __webpack_require__(78);
 
 var Order = function (_Component) {
   _inherits(Order, _Component);
