@@ -11,7 +11,8 @@ class Shop extends Component {
     this.state = {
       sortValue: '1',
       currentCity: 11,
-      data
+      datacity: [],
+      data1: []
     };
     this.getData = this.getData.bind(this);
   }
@@ -22,13 +23,13 @@ class Shop extends Component {
 
   componentWillReceiveProps(props) {
     this.setState({
-      data: this.getData(data, props.match.params.category)
+      data1: this.getData(this.state.datacity, props.match.params.category)
     });
   }
 
-  getData(d, category) {
+  getData(d, category) {    
     if (category) {
-      return d.filter(item => item.category === category);
+      return d.filter(item => item.category.some((itm) => itm === category));  //return d.filter(item => item.category === category);
     }
     return d;
   }
@@ -40,7 +41,7 @@ class Shop extends Component {
   }
 
   mysort(field) {
-    let list = [...this.state.data];
+    let list = [...this.state.data1];
     list.sort((a, b) => {
       if (a[field] > b[field]) return -1;
       if (a[field] < b[field]) return 1;
@@ -55,16 +56,17 @@ class Shop extends Component {
       case '2': return this.mysort.call(this, "price");
       case '3': return this.mysort.call(this, "price").reverse();
       case '4': return this.mysort.call(this, "latest");
-      default : return this.state.data;
+      default : return this.state.data1;
     }
   }
 
   getCity() {
     let {router: {route: {match: {params}}}} = this.context;
-    let temp = data.filter(item => item.city === this.state.currentCity);
-    temp = this.getData(temp, params.category);
+    let datacity = data.filter(item => item.city === this.state.currentCity);
+    let data1 = this.getData(datacity, params.category);
     this.setState({
-      data: temp
+      datacity,
+      data1
     });
   }
 

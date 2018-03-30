@@ -14,7 +14,7 @@ import Franchise from './pages/franchise';
 
 class App extends Component {
 
-  render() {
+  render() {    
     return (
       <div className="app">
         <Switch>

@@ -44,8 +44,7 @@ class Content extends Component {
     this.props.city(value);
   }
 
-  render() {
-      console.log("props content",this.props.currentCity);
+  render() {    
     return (
       <div className="page-main">
         <div className="filter">

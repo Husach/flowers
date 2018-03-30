@@ -26,7 +26,7 @@ class Description extends Component {
   }
 
   render() {
-    let item = this.getItem.call(this);
+    let item = this.getItem.call(this);  
 
     return (
       <div className="description">

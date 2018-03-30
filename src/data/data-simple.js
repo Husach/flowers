@@ -1,7 +1,7 @@
 export const data = [
   {
     id: '01-0001-01',
-    category: ['bouquet', 'roses'],
+    category: 'bouquet',
     name: 'Букет "Моей нежной"',
     price: 1489,
     src: 'img/bouquet/01-0001.jpg',
@@ -14,7 +14,7 @@ export const data = [
   },
   {
     id: '01-0001-02',
-    category: ['bouquet', 'roses'],
+    category: 'bouquet',
     name: 'Букет "Моей нежной"',
     price: 1649,
     src: 'img/bouquet/01-0001.jpg',
@@ -27,7 +27,7 @@ export const data = [
   },
   {
     id: '01-0002',
-    category: ['bouquet'],
+    category: 'bouquet',
     name: 'Букет цветов "Нежные мечты"',
     price: 809,
     src: 'img/bouquet/01-0002.jpg',
@@ -40,7 +40,7 @@ export const data = [
   },
   {
     id: '01-0003',
-    category: ['bouquet'],
+    category: 'bouquet',
     name: 'Букет "Весенняя капель"',
     price: 739,
     src: 'img/bouquet/01-0003.jpg',
@@ -53,7 +53,7 @@ export const data = [
   },
   {
     id: '01-0004',
-    category: ['bouquet', 'tulips'],
+    category: 'bouquet',
     name: 'Букет тюльпанов "Весенний микс"',
     price: 1019,
     src: 'img/bouquet/01-0004.jpg',
@@ -66,7 +66,7 @@ export const data = [
   },
   {
     id: '01-0005',
-    category: ['bouquet', 'roses'],
+    category: 'bouquet',
     name: 'Букет "Северное сияние"',
     price: 1479,
     src: 'img/bouquet/01-0005.jpg',
@@ -79,7 +79,7 @@ export const data = [
   },
   {
     id: '01-0006',
-    category: ['bouquet', 'roses'],
+    category: 'bouquet',
     name: 'Букет для девушки "Нежность"',
     price: 1029,
     src: 'img/bouquet/01-0006.jpg',
@@ -92,7 +92,7 @@ export const data = [
   },
   {
     id: '01-0007',
-    category: ['bouquet'],
+    category: 'bouquet',
     name: 'Букет "Романтическое чувство"',
     price: 929,
     src: 'img/bouquet/01-0007.jpg',
@@ -105,7 +105,7 @@ export const data = [
   },
   {
     id: '01-0008',
-    category: ['bouquet'],
+    category: 'bouquet',
     name: 'Букет "Зимняя полянка"',
     price: 769,
     src: 'img/bouquet/01-0008.jpg',
@@ -118,7 +118,7 @@ export const data = [
   },
   {
     id: '02-0001-01',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Букет из 25 разноцветных тюльпанов',
     price: 1059,
     src: 'img/tulips/02-0001.jpg',
@@ -131,7 +131,7 @@ export const data = [
   },
   {
     id: '02-0001-02',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Букет из 25 разноцветных тюльпанов',
     price: 1149,
     src: 'img/tulips/02-0001.jpg',
@@ -144,7 +144,7 @@ export const data = [
   },
   {
     id: '02-0002',
-    category: ['tulips'],
+    category: 'tulips',
     name: '35 разноцветных тюльпанов',
     price: 1309,
     src: 'img/tulips/02-0002.jpg',
@@ -157,7 +157,7 @@ export const data = [
   },
   {
     id: '02-0003',
-    category: ['tulips'],
+    category: 'tulips',
     name: '11 разноцветных тюльпанов',
     price: 539,
     src: 'img/tulips/02-0003.jpg',
@@ -170,7 +170,7 @@ export const data = [
   },
   {
     id: '02-0004',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Букет тюльпанов "Дыхание весны"',
     price: 1469,
     src: 'img/tulips/02-0004.jpg',
@@ -183,7 +183,7 @@ export const data = [
   },
   {
     id: '02-0005',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Корзина с тюльпанами!',
     price: 1939,
     src: 'img/tulips/02-0005.jpg',
@@ -196,7 +196,7 @@ export const data = [
   },
   {
     id: '02-0006',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Корзина с тюльпанами!',
     price: 1019,
     src: 'img/tulips/02-0006.jpg',
@@ -209,7 +209,7 @@ export const data = [
   },
   {
     id: '02-0007',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Букет цветов "Весенние краски"',
     price: 689,
     src: 'img/tulips/02-0007.jpg',
@@ -222,7 +222,7 @@ export const data = [
   },
   {
     id: '02-0008',
-    category: ['tulips'],
+    category: 'tulips',
     name: '33 разноцветных тюльпана',
     price: 1139,
     src: 'img/tulips/02-0008.jpg',
@@ -235,7 +235,7 @@ export const data = [
   },
   {
     id: '02-0009',
-    category: ['tulips'],
+    category: 'tulips',
     name: '35 разноцветных тюльпанов',
     price: 1259,
     src: 'img/tulips/02-0009.jpg',
@@ -248,7 +248,7 @@ export const data = [
   },
   {
     id: '02-0010',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Букет "Зимняя полянка"',
     price: 769,
     src: 'img/tulips/02-0010.jpg',
@@ -261,7 +261,7 @@ export const data = [
   },
   {
     id: '02-0011',
-    category: ['tulips'],
+    category: 'tulips',
     name: 'Букет "11 красных тюльпанов"',
     price: 619,
     src: 'img/tulips/02-0011.jpg',
@@ -274,7 +274,7 @@ export const data = [
   },
   {
     id: '03-0001-01',
-    category: ['roses'],
+    category: 'roses',
     name: 'Букет к Дню Влюбленных "25 красных роз и мишка!"',
     price: 1539,
     src: 'img/roses/03-0001.jpg',
@@ -287,7 +287,7 @@ export const data = [
   },
   {
     id: '03-0001-02',
-    category: ['roses'],
+    category: 'roses',
     name: 'Букет к Дню Влюбленных "25 красных роз и мишка!"',
     price: 1649,
     src: 'img/roses/03-0001.jpg',
@@ -300,7 +300,7 @@ export const data = [
   },
   {
     id: '03-0002',
-    category: ['roses'],
+    category: 'roses',
     name: '35 розовых роз',
     price: 1849,
     src: 'img/roses/03-0002.jpg',
@@ -313,7 +313,7 @@ export const data = [
   },
   {
     id: '03-0003',
-    category: ['roses'],
+    category: 'roses',
     name: 'Букет "Ты мое чудо!"',
     price: 1139,
     src: 'img/roses/03-0003.jpg',
@@ -326,7 +326,7 @@ export const data = [
   },
   {
     id: '03-0004',
-    category: ['roses'],
+    category: 'roses',
     name: '51 розовая роза',
     price: 2589,
     src: 'img/roses/03-0004.jpg',
@@ -339,7 +339,7 @@ export const data = [
   },
   {
     id: '03-0005',
-    category: ['roses'],
+    category: 'roses',
     name: 'Букет "Тонкий намек"',
     price: 1849,
     src: 'img/roses/03-0005.jpg',
@@ -352,7 +352,7 @@ export const data = [
   },
   {
     id: '03-0006',
-    category: ['roses'],
+    category: 'roses',
     name: 'Букет «Сердце для королевы»',
     price: 1849,
     src: 'img/roses/03-0006.jpg',
@@ -365,7 +365,7 @@ export const data = [
   },
   {
     id: '03-0007',
-    category: ['roses'],
+    category: 'roses',
     name: 'Букет роз "Карнавал"',
     price: 1319,
     src: 'img/roses/03-0007.jpg',
@@ -378,7 +378,7 @@ export const data = [
   },
   {
     id: '03-0008',
-    category: ['roses'],
+    category: 'roses',
     name: 'Букет "Коралловые бусы"',
     price: 1789,
     src: 'img/roses/03-0008.jpg',
@@ -391,7 +391,7 @@ export const data = [
   },
   {
     id: '03-0009',
-    category: ['roses'],
+    category: 'roses',
     name: 'Люблю',
     price: 1109,
     src: 'img/roses/03-0009.jpg',
@@ -404,7 +404,7 @@ export const data = [
   },
   {
     id: '06-0001-01',
-    category: ['indoor'],
+    category: 'indoor',
     name: 'Орхидея розовая (Фаленопсис)',
     price: 559,
     src: 'img/indoor/06-0001.jpg',
@@ -417,7 +417,7 @@ export const data = [
   },
   {
     id: '06-0001-02',
-    category: ['indoor'],
+    category: 'indoor',
     name: 'Орхидея розовая (Фаленопсис)',
     price: 679,
     src: 'img/indoor/06-0001.jpg',
@@ -430,7 +430,7 @@ export const data = [
   },
   {
     id: '06-0002',
-    category: ['indoor'],
+    category: 'indoor',
     name: 'Орхидея желтая (Фаленопсис)',
     price: 559,
     src: 'img/indoor/06-0002.jpg',
@@ -443,7 +443,7 @@ export const data = [
   },
   {
     id: '06-0003',
-    category: ['indoor'],
+    category: 'indoor',
     name: 'Орхидея пятнистая (Фаленопсис)',
     price: 559,
     src: 'img/indoor/06-0003.jpg',
@@ -456,7 +456,7 @@ export const data = [
   },
   {
     id: '06-0004',
-    category: ['indoor'],
+    category: 'indoor',
     name: 'Орхидея розовая (Фаленопсис)',
     price: 559,
     src: 'img/indoor/06-0004.jpg',
@@ -469,7 +469,7 @@ export const data = [
   },
   {
     id: '06-0005',
-    category: ['indoor'],
+    category: 'indoor',
     name: 'Орхидея розовая (Фаленопсис)',
     price: 559,
     src: 'img/indoor/06-0005.jpg',
@@ -482,7 +482,7 @@ export const data = [
   },
   {
     id: '06-0006',
-    category: ['indoor'],
+    category: 'indoor',
     name: 'Орхидея розовая (Фаленопсис)',
     price: 559,
     src: 'img/indoor/06-0006.jpg',
@@ -495,7 +495,7 @@ export const data = [
   },
   {
     id: '07-0001',
-    category: ['wedding'],
+    category: 'wedding',
     name: 'Букет «Шарлотта»',
     price: 3277,
     src: 'img/wedding/07-0001.jpg',
@@ -508,7 +508,7 @@ export const data = [
   },
   {
     id: '07-0002',
-    category: ['wedding'],
+    category: 'wedding',
     name: 'Бутоньерка «Карибы»',
     price: 211,
     src: 'img/wedding/07-0002.jpg',
@@ -521,7 +521,7 @@ export const data = [
   },
   {
     id: '07-0003',
-    category: ['wedding'],
+    category: 'wedding',
     name: 'Букет «Поцелуй лотоса»',
     price: 506,
     src: 'img/wedding/07-0003.jpg',
@@ -534,7 +534,7 @@ export const data = [
   },
   {
     id: '07-0004',
-    category: ['wedding'],
+    category: 'wedding',
     name: 'Браслет №1',
     price: 492,
     src: 'img/wedding/07-0004.jpg',
@@ -547,7 +547,7 @@ export const data = [
   },
   {
     id: '07-0005',
-    category: ['wedding'],
+    category: 'wedding',
     name: 'Букет «Патриотический»',
     price: 640,
     src: 'img/wedding/07-0005.jpg',
@@ -560,7 +560,7 @@ export const data = [
   },
   {
     id: '07-0006',
-    category: ['wedding'],
+    category: 'wedding',
     name: 'Букет Верность',
     price: 768,
     src: 'img/wedding/07-0006.jpg',
@@ -573,7 +573,7 @@ export const data = [
   },
   {
     id: '07-0007',
-    category: ['wedding'],
+    category: 'wedding',
     name: 'Букет «Фатум невесты»',
     price: 1033,
     src: 'img/wedding/07-0007.jpg',
@@ -586,7 +586,7 @@ export const data = [
   },
   {
     id: '08-0001',
-    category: ['compositions', 'roses'],
+    category: 'compositions',
     name: 'Композиция Восторг',
     price: 2230,
     src: 'img/compositions/08-0001.jpg',
@@ -599,7 +599,7 @@ export const data = [
   },
   {
     id: '08-0002',
-    category: ['compositions'],
+    category: 'compositions',
     name: 'Композиция Наслаждение',
     price: 1800,
     src: 'img/compositions/08-0002.jpg',
@@ -612,7 +612,7 @@ export const data = [
   },
   {
     id: '08-0003',
-    category: ['compositions'],
+    category: 'compositions',
     name: 'Композиция Сладкая жизнь',
     price: 1370,
     src: 'img/compositions/08-0003.jpg',
@@ -625,7 +625,7 @@ export const data = [
   },
   {
     id: '08-0004',
-    category: ['compositions', 'roses'],
+    category: 'compositions',
     name: 'Композиция Непревзойденной',
     price: 2850,
     src: 'img/compositions/08-0004.jpg',
@@ -638,7 +638,7 @@ export const data = [
   },
   {
     id: '08-0005',
-    category: ['compositions', 'roses'],
+    category: 'compositions',
     name: 'Композиция Модница',
     price: 2050,
     src: 'img/compositions/08-0005.jpg',
@@ -651,7 +651,7 @@ export const data = [
   },
   {
     id: '08-0006',
-    category: ['compositions'],
+    category: 'compositions',
     name: 'Композиция Детский праздник',
     price: 1140,
     src: 'img/compositions/08-0006.jpg',
@@ -664,7 +664,7 @@ export const data = [
   },
   {
     id: '08-0007',
-    category: ['compositions', 'roses'],
+    category: 'compositions',
     name: 'Композиция Версаль',
     price: 3500,
     src: 'img/compositions/08-0007.jpg',
@@ -677,7 +677,7 @@ export const data = [
   },
   {
     id: '08-0008',
-    category: ['compositions', 'roses'],
+    category: 'compositions',
     name: 'Композиция Богема',
     price: 2730,
     src: 'img/compositions/08-0008.jpg',
@@ -690,7 +690,7 @@ export const data = [
   },
   {
     id: '08-0009',
-    category: ['compositions'],
+    category: 'compositions',
     name: 'Композиция Лакомый кусочек',
     price: 1140,
     src: 'img/compositions/08-0009.jpg',
@@ -703,7 +703,7 @@ export const data = [
   },
   {
     id: '11-0001',
-    category: ['sweets'],
+    category: 'sweets',
     name: 'Коробка конфет "Raffaello" 150g',
     price: 159,
     src: 'img/sweets/11-0001.jpg',
@@ -716,7 +716,7 @@ export const data = [
   },
   {
     id: '11-0002',
-    category: ['sweets'],
+    category: 'sweets',
     name: 'Большая коробка конфет "Raffaello" 300g',
     price: 359,
     src: 'img/sweets/11-0002.jpg',
@@ -729,7 +729,7 @@ export const data = [
   },
   {
     id: '11-0003',
-    category: ['sweets'],
+    category: 'sweets',
     name: 'Коробка конфет "Ferrero Rocher" 200g',
     price: 239,
     src: 'img/sweets/11-0003.jpg',
@@ -742,7 +742,7 @@ export const data = [
   },
   {
     id: '11-0004-1',
-    category: ['sweets'],
+    category: 'sweets',
     name: 'Большая коробка конфет "Ferrero Rocher" 300g',
     price: 399,
     src: 'img/sweets/11-0004.jpg',
@@ -755,7 +755,7 @@ export const data = [
   },
   {
     id: '11-0004-2',
-    category: ['sweets'],
+    category: 'sweets',
     name: 'Большая коробка конфет "Ferrero Rocher" 300g',
     price: 449,
     src: 'img/sweets/11-0004.jpg',
@@ -768,7 +768,7 @@ export const data = [
   },
   {
     id: '11-0005',
-    category: ['sweets'],
+    category: 'sweets',
     name: 'Конфеты "Любимов" 100g',
     price: 69,
     src: 'img/sweets/11-0005.jpg',
