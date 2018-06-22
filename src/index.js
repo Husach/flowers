@@ -1,12 +1,12 @@
 import React from 'react';
-import {render} from 'react-dom';
+import { render } from 'react-dom';
 import { HashRouter } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import App from './App';
 import './scss/base.scss';
 
-render(
+render (
   <MuiThemeProvider>
     <HashRouter>
       <App />

@@ -18,19 +18,25 @@ class Description extends Component {
     return item;
   }
 
+  note(item) {
+    if (item.note) {
+      return <div className="description__note">{item.note}</div>;
+    }
+  }
+
   render() {
-    let item = this.getItem.call(this);
+    let item = this.getItem.call(this);  
 
     return (
       <div className="description">
         <img className="description__img" src={item.src} alt={item.name} />
         <div className="description__info">
           <div className="description__name">{item.name}</div>
-          <div className="description__price">{item.price}</div>
+          <div className="description__price">{item.price} грн.</div>
           <BtnOrder item={item} />
           <div className="description__text">{item.description}</div>
           <div className="description__text"><b>Состав:</b> {item.composition}</div>
-          <div className="description__note">{item.note}</div>
+          {this.note.call(this, item)}
         </div>
       </div>
     );

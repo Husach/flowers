@@ -1,0 +1,38 @@
+.preview {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: hidden;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    margin-bottom: 20px;
+  }
+
+  &__img {
+    width: 120px;
+    height: 120px;
+  }
+
+  &__name {
+    font-size: 14px;
+    text-align: center;
+    min-height: 38px;
+  }
+
+  &:hover {
+    &:after {
+      content: '';
+      position: absolute;
+    }
+
+
+  }
+
+
+}

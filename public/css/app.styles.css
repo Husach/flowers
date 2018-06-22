@@ -16,16 +16,16 @@ body {
 .content {
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 60px; }
+  padding-bottom: 70px; }
 
 .footer__wrapper {
   display: flex;
-  width: 1200px;
+  width: 1280px;
   height: calc(180px - 30px);
   margin: 0 auto; }
 
 .footer__item {
-  width: calc(1200px / 3); }
+  width: calc(1280px / 3); }
   .footer__item .menu {
     flex-direction: column;
     align-items: center;
@@ -80,7 +80,7 @@ body {
 .header {
   position: relative;
   display: flex;
-  max-width: 1200px;
+  max-width: 1280px;
   height: calc(170px - 50px);
   margin: 0 auto; }
   .header:after {
@@ -122,12 +122,13 @@ body {
     margin: 10px; }
 
 .btn__back {
-  margin: 20px 0; }
+  text-align: right;
+  margin-bottom: 20px; }
 
 .card {
   position: relative;
-  height: calc((1200px / 4) + 50px);
-  width: calc(1200px / 4);
+  height: calc((1280px / 4) + 45px);
+  width: calc(1280px / 4);
   border: 1px solid transparent;
   border-radius: 4px;
   text-decoration: none;
@@ -138,24 +139,23 @@ body {
     z-index: 2;
     overflow: visible; }
   .card__wrapper {
-    display: -webkit-flex;
-    display: -ms-flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 100%;
     padding: 15px; }
     .card__wrapper:hover {
       position: absolute;
       top: 0;
       left: -6px;
-      height: calc((1200px / 4) + 125px);
-      width: calc(1200px / 4 + 10px);
+      height: calc((1280px / 4) + 125px);
+      width: calc(1280px / 4 + 10px);
       box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
       background: #fff;
       transition: box-shadow 0.2s ease; }
-      .card__wrapper:hover .card__btn {
-        opacity: 1; }
+  .card__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000; }
   .card__img {
     width: 250px;
     height: 250px;
@@ -165,23 +165,25 @@ body {
     text-align: center;
     max-width: 250px;
     font-size: 14px;
-    height: 40px; }
+    text-transform: uppercase;
+    height: 45px; }
   .card__price {
     font-size: 24px;
     margin-bottom: 20px; }
   .card__btn {
-    opacity: 0; }
+    display: flex;
+    justify-content: center; }
 
 .description {
-  max-width: 1200px;
+  max-width: 1280px;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   flex-direction: row;
   margin: 0 auto;
-  margin-top: 50px; }
+  margin-top: 40px; }
   .description__img {
-    width: 70%;
+    width: 68%;
     padding: 0 200px;
     height: 100%; }
   .description__info {
@@ -194,15 +196,40 @@ body {
     font-size: 48px;
     margin-bottom: 30px; }
   .description__text {
-    margin-top: 30px; }
+    margin-top: 25px; }
   .description__note {
     font-style: italic;
     text-decoration: underline;
     margin: 20px 0; }
 
+.preview {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  overflow: hidden; }
+  .preview__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    height: 250px;
+    margin-bottom: 20px; }
+  .preview__img {
+    width: 120px;
+    height: 120px; }
+  .preview__name {
+    font-size: 14px;
+    text-align: center;
+    min-height: 38px; }
+  .preview:hover:after {
+    content: '';
+    position: absolute; }
+
 .filter {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 0 40px; }
 
 .menu {
   display: -webkit-flex;
@@ -225,6 +252,27 @@ body {
     .menu__link:hover {
       text-decoration: underline; }
 
+.order__top {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 100px; }
+
+.order__img {
+  width: 250px;
+  height: 250px; }
+
+.order__extra-title {
+  text-align: center;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  margin-bottom: 10px; }
+
+.order__extra-preview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; }
+
 .range {
   min-height: 50px;
   background: #b4e391;
@@ -243,11 +291,11 @@ body {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    max-width: 1200px;
+    max-width: 1280px;
     margin: 0 auto; }
   .range__item {
     display: flex;
-    width: calc(1200px / 7);
+    width: calc(1280px / 7);
     border: 1px solid transparent;
     border-radius: 4px; }
     .range__item:hover {
@@ -280,7 +328,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 170px - 180px);
-  width: 1200px;
+  width: 1280px;
   margin: 0 auto; }
 
 .page-footer {

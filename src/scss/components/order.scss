@@ -1,0 +1,27 @@
+.order {
+  &__top {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 100px;
+  }
+
+  &__img {
+    width: 250px;
+    height: 250px;
+  }
+
+  &__extra {
+    &-title {
+      text-align: center;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.5em;
+      margin-bottom: 10px;
+    }
+    &-preview {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+  }
+}
