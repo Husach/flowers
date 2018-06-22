@@ -22,7 +22,9 @@
   },
   "scripts": {
     "build": "node_modules/webpack/bin/webpack.js --config webpack.config.js",
-    "watch": "node_modules/webpack/bin/webpack.js --config webpack.config.js --watch --progress"
+    "watch": "node_modules/webpack/bin/webpack.js --config webpack.config.js --watch --progress",
+    "build-w": "webpack --config webpack.config.js",
+    "watch-w": "webpack --config webpack.config.js --watch --progress"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
