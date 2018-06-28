@@ -12,6 +12,7 @@ class Btn extends Component {
                 <RaisedButton
                     label={this.props.label}
                     backgroundColor={this.props.bgColor}
+                    onClick={this.props.onClick}
                 />
             </div>
         );

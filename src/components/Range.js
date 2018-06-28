@@ -40,7 +40,11 @@ class Range extends Component {
         <div className="range__wrapper">
           {menu.map((item, index) =>
             <div className="range__item" key={index}>
-              <Link to={item.link} className="range__link">{item.label}</Link>
+              <Link to={item.link}
+                    className="range__link"
+              >
+                {item.label}
+              </Link>
             </div>
           )}
         </div>

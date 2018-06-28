@@ -34,8 +34,12 @@ class Menu extends Component {
     return (
       <div className="menu">
           {menu.map((item, index) =>
-            <div className="menu__item" key={index}>
-              <Link to={item.link} className="menu__link">{item.label}</Link>
+            <div className="menu__item" key={index} >
+              <Link to={item.link}
+                    className="menu__link"
+              >
+                {item.label}
+              </Link>
             </div>
           )}
       </div>

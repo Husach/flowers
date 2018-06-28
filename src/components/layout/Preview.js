@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import BtnAdd from './button/BtnAdd';
+import BtnAdd from '../button/BtnAdd';
 
 class Preview extends Component {
 

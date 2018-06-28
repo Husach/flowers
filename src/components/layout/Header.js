@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
-import Menu from './../Menu';
-import Range from './../Range';
-import Social from './../Social';
+import Menu from './Menu';
+import Social from './Social';
+import Range from '../Range';
 
 class Header extends Component {
 

@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import Base from "../components/layout/Base";
+import Content from '../components/layout/Content';
 import { data } from './../data/data';
-import Header from './../components/layout/Header';
-import Content from './../components/layout/Content';
-import Footer from './../components/layout/Footer';
 
-class Shop extends Component {
+class Shop extends Base {
   constructor() {
     super();
     this.state = {
@@ -78,17 +77,14 @@ class Shop extends Component {
     });
   }
 
-  render() {
+  renderContainer() {
     return (
-      <div className="page">
-        <Header />
-        <Content data={this.getOptions.call(this)}
-                 city={this.city.bind(this)}
-                 sorter={this.sorter.bind(this)}
-                 sortValue={this.state.sortValue}
-                 currentCity={this.state.currentCity} />
-        <Footer />
-      </div>
+      <Content data={this.getOptions.call(this)}
+               city={::this.city}
+               sorter={::this.sorter}
+               sortValue={this.state.sortValue}
+               currentCity={this.state.currentCity}
+      />
     );
   }
 }

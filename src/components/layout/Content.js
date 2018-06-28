@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Select from './../Select';
-import Card from './../Card';
+import Select from '../Select';
+import Card from './Card';
 
 const sort = [
   {
@@ -20,6 +20,7 @@ const sort = [
     primaryText: 'новинки'
   }
 ];
+
 const citys = [
   {
     value: 11,
@@ -51,11 +52,13 @@ class Content extends Component {
           <Select options={citys}
                   selected={this.props.currentCity}
                   name="Город"
-                  handleChange={this.cityChange.bind(this)} />
+                  handleChange={::this.cityChange}
+          />
           <Select options={sort}
                   selected={this.props.sortValue}
                   name="Сортировка"
-                  handleChange={this.handleChange.bind(this)} />
+                  handleChange={::this.handleChange}
+          />
         </div>
         <div className="content">
           {this.props.data.map((item, index) =>

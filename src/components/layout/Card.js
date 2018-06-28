@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import BtnOrder from './button/BtnOrder';
+import BtnOrder from '../button/BtnOrder';
 
 class Card extends Component {
 

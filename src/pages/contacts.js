@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import Header from './../components/layout/Header';
-import Footer from './../components/layout/Footer';
+import React from 'react';
+import Base from "../components/layout/Base";
 
-class Contacts extends Component {
-  render() {
+class Contacts extends Base {
+  renderContainer() {
     return (
-      <div className="page">
-        <Header />
-        <div className="page-main">contacts</div>
-        <Footer />
-      </div>
+      <div className="page-main">contacts</div>
     );
   }
 }
