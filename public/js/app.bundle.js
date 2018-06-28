@@ -45803,7 +45803,7 @@ var Content = function (_Component) {
         })
       ), _react2.default.createElement(_reactPaginate2.default, { previousLabel: "previous",
         nextLabel: "next",
-        pageCount: page,
+        pageCount: this.state.page,
         pageRangeDisplayed: 2,
         marginPagesDisplayed: 1,
         breakClassName: "break-me",
