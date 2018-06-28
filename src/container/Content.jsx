@@ -97,7 +97,7 @@ class Content extends Component {
       </div>,
       <ReactPaginate previousLabel={"previous"}
                      nextLabel={"next"}
-                     pageCount={page}
+                     pageCount={this.state.page}
                      pageRangeDisplayed={2}
                      marginPagesDisplayed={1}
                      breakClassName={"break-me"}
