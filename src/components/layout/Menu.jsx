@@ -1,30 +1,30 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 const menu = [
   {
-    link: '/',
-    label: 'Главная'
+    link: "/",
+    label: "Главная"
   },
   {
-    link: '/delivery',
-    label: 'Доставка и оплата'
+    link: "/delivery",
+    label: "Доставка и оплата"
   },
   {
-    link: '/ourworks',
-    label: 'Наши работы'
+    link: "/ourworks",
+    label: "Наши работы"
   },
   {
-    link: '/franchise',
-    label: 'Франшиза'
+    link: "/franchise",
+    label: "Франшиза"
   },
   {
-    link: '/contacts',
-    label: 'Контакты'
+    link: "/contacts",
+    label: "Контакты"
   },
   {
-    link: '/about',
-    label: 'О нас'
+    link: "/about",
+    label: "О нас"
   }
 ];
 

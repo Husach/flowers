@@ -1,9 +1,9 @@
-import React from 'react';
-import Preview from './../components/layout/Preview';
-import Base from "../components/layout/Base";
-import { data } from './../data/data';
+import React from "react";
+import Preview from "../components/layout/Preview.jsx";
+import Base from "../components/layout/Base.jsx";
+import { data } from "./../data/data";
 
-const category = ['tulips', 'roses', 'bouquet'];
+const category = ["tulips", "roses", "bouquet"];
 
 class Home extends Base {
 

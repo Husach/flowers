@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Menu from './Menu';
-import Social from './Social';
-import Range from '../Range';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Social from "./Social.jsx";
+import Range from "../Range.jsx";
+import Menu from "./Menu.jsx";
 
 class Header extends Component {
 

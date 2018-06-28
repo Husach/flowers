@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import BtnAdd from '../button/BtnAdd';
+import React, { Component } from "react";
+import BtnAdd from "../button/BtnAdd.jsx";
 
 class Preview extends Component {
 

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Header from '../components/layout/Header';
-import Content from '../components/layout/Content';
+import React, { Component } from "react";
+import Header from "../components/layout/Header.jsx";
+import Content from "../components/layout/Content.jsx";
 
-import { data } from '../data/data';
+import { data } from "../data/data";
 
 class Toys extends Component {
   render() {

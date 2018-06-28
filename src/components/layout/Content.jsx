@@ -1,38 +1,38 @@
-import React, { Component } from 'react';
-import Select from '../Select';
-import Card from './Card';
+import React, { Component } from "react";
+import Select from "../Select.jsx";
+import Card from "./Card.jsx";
 
 const sort = [
   {
-    value: '1',
-    primaryText: 'по рейтингу'
+    value: "1",
+    primaryText: "по рейтингу"
   },
   {
-    value: '2',
-    primaryText: 'цена: по убыванию'
+    value: "2",
+    primaryText: "цена: по убыванию"
   },
   {
-    value: '3',
-    primaryText: 'цена: по возрастанию'
+    value: "3",
+    primaryText: "цена: по возрастанию"
   },
   {
-    value: '4',
-    primaryText: 'новинки'
+    value: "4",
+    primaryText: "новинки"
   }
 ];
 
 const citys = [
   {
     value: 11,
-    primaryText: 'Кременчуг'
+    primaryText: "Кременчуг"
   },
   {
     value: 12,
-    primaryText: 'Киев'
+    primaryText: "Киев"
   },
   {
     value: 13,
-    primaryText: 'Харьков'
+    primaryText: "Харьков"
   }
 ];
 

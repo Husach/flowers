@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import MenuItem from 'material-ui/MenuItem';
-import SelectField from 'material-ui/SelectField';
+import React from "react";
+import MenuItem from "material-ui/MenuItem";
+import SelectField from "material-ui/SelectField";
 
 const Select = ({options, handleChange, selected, name}) => (
   <SelectField className="Select"

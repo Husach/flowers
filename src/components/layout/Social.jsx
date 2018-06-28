@@ -1,20 +1,20 @@
-import React from 'react';
+import React from "react";
 
 const social = [
   {
-    link: 'https://www.instagram.com/flowet.com.ua/',
-    label: 'instagram',
-    logo: 'img/social/insta.png'
+    link: "https://www.instagram.com/flowet.com.ua/",
+    label: "instagram",
+    logo: "img/social/insta.png"
   },
   {
-    link: 'https://www.facebook.com/flowet.com.ua',
-    label: 'facebook',
-    logo: 'img/social/fb.png'
+    link: "https://www.facebook.com/flowet.com.ua",
+    label: "facebook",
+    logo: "img/social/fb.png"
   },
   {
-    link: 'https://www.vk',
-    label: 'vk',
-    logo: 'img/social/vk.png'
+    link: "https://www.vk",
+    label: "vk",
+    logo: "img/social/vk.png"
   }
 ];
 

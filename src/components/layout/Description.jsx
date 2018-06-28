@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import BtnOrder from '../button/BtnOrder';
+import React, { Component } from "react";
+import BtnOrder from "../button/BtnOrder.jsx";
 
-const database = require('../../data/data');
+const database = require("../../data/data");
 
 class Description extends Component {
   state = {

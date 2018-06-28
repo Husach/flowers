@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Base from "../components/layout/Base";
-import Content from '../components/layout/Content';
-import { data } from './../data/data';
+import React from "react";
+import PropTypes from "prop-types";
+import Base from "../components/layout/Base.jsx";
+import Content from "../components/layout/Content.jsx";
+import { data } from "./../data/data";
 
 class Shop extends Base {
   constructor() {
     super();
     this.state = {
-      sortValue: '1',
+      sortValue: "1",
       currentCity: 11,
       datacity: [],
       data1: []
@@ -51,10 +51,10 @@ class Shop extends Base {
 
   getOptions() {
     switch (this.state.sortValue) {
-      case '1': return this.mysort.call(this, "rating");
-      case '2': return this.mysort.call(this, "price");
-      case '3': return this.mysort.call(this, "price").reverse();
-      case '4': return this.mysort.call(this, "latest");
+      case "1": return this.mysort.call(this, "rating");
+      case "2": return this.mysort.call(this, "price");
+      case "3": return this.mysort.call(this, "price").reverse();
+      case "4": return this.mysort.call(this, "latest");
       default : return this.state.data1;
     }
   }

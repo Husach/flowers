@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import Menu from './Menu';
-import Social from './Social';
-import Range from '../Range';
+import React, { Component } from "react";
+import Social from "./Social.jsx";
+import Range from "../Range.jsx";
+import Menu from "./Menu.jsx";
 
 class Footer extends Component {
 

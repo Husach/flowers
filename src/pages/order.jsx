@@ -1,8 +1,8 @@
-import React from 'react';
-import Btn from "../components/button/Btn";
-import Base from "../components/layout/Base";
-import Preview from '../components/layout/Preview';
-import { data } from './../data/data';
+import React from "react";
+import Btn from "../components/button/Btn.jsx";
+import Base from "../components/layout/Base.jsx";
+import Preview from "../components/layout/Preview.jsx";
+import { data } from "./../data/data";
 
 class Order extends Base {
   constructor(props) {
@@ -24,7 +24,7 @@ class Order extends Base {
   }
 
   getExtra(city) {
-    return data.filter(item => item.category.some((itm) => itm === 'sweets') && item.city === city);
+    return data.filter(item => item.category.some((itm) => itm === "sweets") && item.city === city);
   }
 
   calc(value) {

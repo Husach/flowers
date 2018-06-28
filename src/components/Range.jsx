@@ -1,34 +1,34 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 const menu = [
   {
-    link: '/shop/tulips',
-    label: 'Тюльпаны'
+    link: "/shop/tulips",
+    label: "Тюльпаны"
   },
   {
-    link: '/shop/roses',
-    label: 'Розы'
+    link: "/shop/roses",
+    label: "Розы"
   },
   {
-    link: '/shop/bouquet',
-    label: 'Букеты'
+    link: "/shop/bouquet",
+    label: "Букеты"
   },  
   {
-    link: '/shop/compositions',
-    label: 'Композиции'
+    link: "/shop/compositions",
+    label: "Композиции"
   },
   {
-    link: '/shop/wedding',
-    label: 'Свадебные'
+    link: "/shop/wedding",
+    label: "Свадебные"
   },
   {
-    link: '/shop/indoor',
-    label: 'Комнатные'
+    link: "/shop/indoor",
+    label: "Комнатные"
   },
   {
-    link: '/shop/sweets',
-    label: 'Сладости'
+    link: "/shop/sweets",
+    label: "Сладости"
   }
 ];
 
