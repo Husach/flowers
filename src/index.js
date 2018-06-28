@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { HashRouter } from "react-router-dom";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
-import App from "./App";
+import App from "./App.jsx";
 import "./scss/base.scss";
 
 render (

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import RaisedButton from 'material-ui/RaisedButton';
-import { LightGreenA400 } from 'material-ui/styles/colors';
 
 const btnStyle = {
   width: 230

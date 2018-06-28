@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./pages/index";
+import Home from "./pages/index.jsx";
 import Shop from "./pages/shop.jsx";
 import About from "./pages/about.jsx";
 import Order from "./pages/order.jsx";

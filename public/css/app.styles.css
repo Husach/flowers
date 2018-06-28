@@ -305,6 +305,33 @@ body {
   flex-wrap: wrap;
   justify-content: space-around; }
 
+.pagination {
+  display: flex;
+  justify-content: center; }
+  .pagination li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
+    min-width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    list-style: none;
+    cursor: pointer; }
+    .pagination li:hover {
+      background: yellowgreen; }
+  .pagination a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 10px;
+    outline: none; }
+  .pagination .active {
+    font-weight: 700;
+    background: lightblue; }
+
 .range {
   min-height: 50px;
   background: #b4e391;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Social from "./Social.jsx";
-import Range from "../Range.jsx";
+import Range from "../components/Range.jsx";
 import Menu from "./Menu.jsx";
 
 class Footer extends Component {

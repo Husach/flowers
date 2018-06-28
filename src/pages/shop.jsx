@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Base from "../components/layout/Base.jsx";
-import Content from "../components/layout/Content.jsx";
+import Base from "../container/Base.jsx";
+import Content from "../container/Content.jsx";
 import { data } from "./../data/data";
 
 class Shop extends Base {
@@ -28,7 +28,7 @@ class Shop extends Base {
 
   getData(d, category) {    
     if (category) {
-      return d.filter(item => item.category.some((itm) => itm === category));  //return d.filter(item => item.category === category);
+      return d.filter(item => item.category.some((itm) => itm === category));
     }
     return d;
   }

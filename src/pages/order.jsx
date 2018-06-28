@@ -1,7 +1,7 @@
 import React from "react";
 import Btn from "../components/button/Btn.jsx";
-import Base from "../components/layout/Base.jsx";
-import Preview from "../components/layout/Preview.jsx";
+import Base from "../container/Base.jsx";
+import Preview from "../container/Preview.jsx";
 import { data } from "./../data/data";
 
 class Order extends Base {

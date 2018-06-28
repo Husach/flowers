@@ -1,5 +1,5 @@
 import React from "react";
-import Base from "../components/layout/Base.jsx";
+import Base from "../container/Base.jsx";
 
 class About extends Base {
 

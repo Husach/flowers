@@ -8,9 +8,7 @@ class Base extends Component {
     return (
       <div className="page">
         <Header />
-        <div className="page-main">
-          {this.renderContainer.call(this)}
-        </div>
+        {this.renderContainer.call(this)}
         <Footer />
       </div>
     );

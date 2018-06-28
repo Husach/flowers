@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Social from "./Social.jsx";
-import Range from "../Range.jsx";
+import Range from "../components/Range.jsx";
 import Menu from "./Menu.jsx";
 
 class Header extends Component {
