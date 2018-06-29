@@ -234,6 +234,12 @@ body {
     text-decoration: underline;
     margin: 20px 0; }
 
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+
 .preview {
   display: flex;
   justify-content: space-around;

@@ -5,6 +5,7 @@ import Home from "./pages/index.jsx";
 import Shop from "./pages/shop.jsx";
 import About from "./pages/about.jsx";
 import Order from "./pages/order.jsx";
+import Error from "./pages/error.jsx";
 import Details from "./pages/details.jsx";
 import Delivery from "./pages/delivery.jsx";
 import OurWorks from "./pages/ourworks.jsx";
@@ -26,6 +27,7 @@ class App extends Component {
           <Route exact path="/contacts" component={Contacts} />
           <Route exact path="/about" component={About} />
           <Route exact path="/order/:id" component={Order} />
+          <Route exact path="/error" component={Error} />
         </Switch>
       </div>
     );

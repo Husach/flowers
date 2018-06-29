@@ -39,52 +39,52 @@ const citys = [
 
 class Content extends Component {
   state = {
-    page: 1
+    currentPage: 1,
+    limiter: 8,
+    pages: 0
   }
 
   sortChange(event, index, value) {
     this.props.sorter(value);
   }
-
   cityChange(event, index, value) {
     this.props.city(value);
   }
 
   pageChange(data) {
-    //debugger
     this.setState({
-      page: data.selected + 1
-    }, () => this.newData.call(this)
-      /*console.log("page data selected", data.selected, "new page", this.state.page)*/
-    );
+      currentPage: data.selected + 1
+    }, () => this.newData.call(this));
+  }
+
+  getNumberPages() {
+    let pages = Math.ceil(this.props.data.length / this.state.limiter);
+
+    if (pages !== this.state.pages) {
+      this.setState({
+        pages: Math.ceil(this.props.data.length / this.state.limiter)
+      });
+    }
   }
 
   newData() {
-    let limiter = 8;
-    let length = this.props.data.length;
-    console.log("length:", {length});
-
-    let page = Math.ceil(length / limiter);
-    console.log("page:", {page});
-
     let array = [];
-
-    console.log(this.props.data);
-
+    console.log("length:", this.props.data.length, "pages:", this.state.pages, "data:", this.props.data);
     //debugger
-
-    for (let i = 0; i < limiter; i++) {
-      if (this.state.page === 1) {
+    for (let i = 0; i < this.state.limiter; i++) {
+      if (this.state.currentPage === 1) {
         array[i] = this.props.data[i];
       } else {
-        array[i] = this.props.data[((this.state.page - 1) * limiter) + i];
+        array[i] = this.props.data[((this.state.currentPage - 1) * this.state.limiter) + i];
       }
     }
 
-    console.log(array);
+    console.log("new array:", array);
   }
 
   renderContent() {
+    {this.newData.call(this)}
+
     return [
       <div className="content">
         {/*{array.map((item, index) =>
@@ -97,7 +97,7 @@ class Content extends Component {
       </div>,
       <ReactPaginate previousLabel={"previous"}
                      nextLabel={"next"}
-                     pageCount={this.state.page}
+                     pageCount={::this.getNumberPages}
                      pageRangeDisplayed={2}
                      marginPagesDisplayed={1}
                      breakClassName={"break-me"}
