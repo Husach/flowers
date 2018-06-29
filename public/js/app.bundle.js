@@ -8580,7 +8580,7 @@ var _MuiThemeProvider = __webpack_require__(172);
 
 var _MuiThemeProvider2 = _interopRequireDefault(_MuiThemeProvider);
 
-var _App = __webpack_require__(328);
+var _App = __webpack_require__(252);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -36444,7 +36444,111 @@ var Typography = function Typography() {
 exports.default = new Typography();
 
 /***/ }),
-/* 252 */,
+/* 252 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(18);
+
+var _index = __webpack_require__(253);
+
+var _index2 = _interopRequireDefault(_index);
+
+var _shop = __webpack_require__(267);
+
+var _shop2 = _interopRequireDefault(_shop);
+
+var _about = __webpack_require__(312);
+
+var _about2 = _interopRequireDefault(_about);
+
+var _order = __webpack_require__(313);
+
+var _order2 = _interopRequireDefault(_order);
+
+var _error = __webpack_require__(315);
+
+var _error2 = _interopRequireDefault(_error);
+
+var _details = __webpack_require__(316);
+
+var _details2 = _interopRequireDefault(_details);
+
+var _delivery = __webpack_require__(319);
+
+var _delivery2 = _interopRequireDefault(_delivery);
+
+var _ourworks = __webpack_require__(320);
+
+var _ourworks2 = _interopRequireDefault(_ourworks);
+
+var _contacts = __webpack_require__(321);
+
+var _contacts2 = _interopRequireDefault(_contacts);
+
+var _franchise = __webpack_require__(322);
+
+var _franchise2 = _interopRequireDefault(_franchise);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_Component) {
+  _inherits(App, _Component);
+
+  function App() {
+    _classCallCheck(this, App);
+
+    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+  }
+
+  _createClass(App, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "app" },
+        _react2.default.createElement(
+          _reactRouterDom.Switch,
+          null,
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _index2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/shop/:category", component: _shop2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/shop/details/:id", component: _details2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/franchise", component: _franchise2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/delivery", component: _delivery2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/ourworks", component: _ourworks2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/contacts", component: _contacts2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/about", component: _about2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/order/:id", component: _order2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/error", component: _error2.default })
+        )
+      );
+    }
+  }]);
+
+  return App;
+}(_react.Component);
+
+exports.default = App;
+
+/***/ }),
 /* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -45986,115 +46090,6 @@ exports.default = Franchise;
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 324 */,
-/* 325 */,
-/* 326 */,
-/* 327 */,
-/* 328 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(18);
-
-var _index = __webpack_require__(253);
-
-var _index2 = _interopRequireDefault(_index);
-
-var _shop = __webpack_require__(267);
-
-var _shop2 = _interopRequireDefault(_shop);
-
-var _about = __webpack_require__(312);
-
-var _about2 = _interopRequireDefault(_about);
-
-var _order = __webpack_require__(313);
-
-var _order2 = _interopRequireDefault(_order);
-
-var _error = __webpack_require__(315);
-
-var _error2 = _interopRequireDefault(_error);
-
-var _details = __webpack_require__(316);
-
-var _details2 = _interopRequireDefault(_details);
-
-var _delivery = __webpack_require__(319);
-
-var _delivery2 = _interopRequireDefault(_delivery);
-
-var _ourworks = __webpack_require__(320);
-
-var _ourworks2 = _interopRequireDefault(_ourworks);
-
-var _contacts = __webpack_require__(321);
-
-var _contacts2 = _interopRequireDefault(_contacts);
-
-var _franchise = __webpack_require__(322);
-
-var _franchise2 = _interopRequireDefault(_franchise);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var App = function (_Component) {
-  _inherits(App, _Component);
-
-  function App() {
-    _classCallCheck(this, App);
-
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-  }
-
-  _createClass(App, [{
-    key: "render",
-    value: function render() {
-      return _react2.default.createElement(
-        "div",
-        { className: "app" },
-        _react2.default.createElement(
-          _reactRouterDom.Switch,
-          null,
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/", component: _index2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/shop/:category", component: _shop2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/shop/details/:id", component: _details2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/franchise", component: _franchise2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/delivery", component: _delivery2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/ourworks", component: _ourworks2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/contacts", component: _contacts2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/about", component: _about2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/order/:id", component: _order2.default }),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: "/error", component: _error2.default })
-        )
-      );
-    }
-  }]);
-
-  return App;
-}(_react.Component);
-
-exports.default = App;
 
 /***/ })
 /******/ ]);
