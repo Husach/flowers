@@ -44,6 +44,10 @@ class Content extends Component {
     pages: 0
   }
 
+  componentDidMount() {
+    this.getNumberPages.call(this);
+  }
+
   sortChange(event, index, value) {
     this.props.sorter(value);
   }
@@ -61,16 +65,15 @@ class Content extends Component {
     let pages = Math.ceil(this.props.data.length / this.state.limiter);
 
     if (pages !== this.state.pages) {
-      this.setState({
-        pages: Math.ceil(this.props.data.length / this.state.limiter)
-      });
+      this.setState({pages});
     }
   }
 
   newData() {
     let array = [];
+    if(!this.props.data.length) return array;
+
     console.log("length:", this.props.data.length, "pages:", this.state.pages, "data:", this.props.data);
-    //debugger
     for (let i = 0; i < this.state.limiter; i++) {
       if (this.state.currentPage === 1) {
         array[i] = this.props.data[i];
@@ -80,24 +83,25 @@ class Content extends Component {
     }
 
     console.log("new array:", array);
+    return array;
   }
 
   renderContent() {
-    {this.newData.call(this)}
-
+    let array = this.newData.call(this);
     return [
-      <div className="content">
-        {/*{array.map((item, index) =>
-          <Card item={item} key={index} />
-        )}*/}
-
-        {this.props.data.map((item, index) =>
+      <div className="content"
+            key="content-key-block">
+        {array.map((item, index) =>
           <Card item={item} key={index} />
         )}
+
+        {/*{this.props.data.map((item, index) =>
+          <Card item={item} key={index} />
+        )}*/}
       </div>,
       <ReactPaginate previousLabel={"previous"}
                      nextLabel={"next"}
-                     pageCount={::this.getNumberPages}
+                     pageCount={this.state.pages}
                      pageRangeDisplayed={2}
                      marginPagesDisplayed={1}
                      breakClassName={"break-me"}
@@ -105,11 +109,12 @@ class Content extends Component {
                      subContainerClassName={"pages pagination"}
                      activeClassName={"active"}
                      onPageChange={::this.pageChange}
+                     key="content-key-pagination"
       />
     ];
   }
 
-  render() {    
+  render() {
     return (
       <div className="page-main">
         <div className="filter">
