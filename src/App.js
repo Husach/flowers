@@ -14,23 +14,24 @@ import Franchise from "./pages/franchise.jsx";
 
 class App extends Component {
 
-  render() {    
-    return (
-      <div className="app">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/shop/:category" component={Shop} />
-          <Route exact path="/shop/details/:id" component={Details} />
-          <Route exact path="/franchise" component={Franchise} />
-          <Route exact path="/delivery" component={Delivery} />
-          <Route exact path="/ourworks" component={OurWorks} />
-          <Route exact path="/contacts" component={Contacts} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/order/:id" component={Order} />
-          <Route exact path="/error" component={Error} />
-        </Switch>
-      </div>
-    );
+  render() {
+      return (
+          <div className="app">
+              <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route exact path="/shop/:category" component={Shop} />
+                  <Route exact path="/shop/details/:id" component={Details} />
+                  <Route exact path="/franchise" component={Franchise} />
+                  <Route exact path="/delivery" component={Delivery} />
+                  <Route exact path="/ourworks" component={OurWorks} />
+                  <Route exact path="/contacts" component={Contacts} />
+                  <Route exact path="/about" component={About} />
+                  <Route exact path="/order/:id" component={Order} />
+                  <Route exact path="/error" component={Error} />
+                  <Route path="*" component={Error} />
+              </Switch>
+          </div>
+      );
   }
 }
 

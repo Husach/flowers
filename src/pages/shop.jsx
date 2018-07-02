@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Base from "../container/Base.jsx";
 import Content from "../container/Content.jsx";
-import { data } from "./../data/data";
+import { data } from "../data/data";
 
 class Shop extends Base {
   constructor() {
