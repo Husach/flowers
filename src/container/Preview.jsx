@@ -13,7 +13,7 @@ class Preview extends Component {
       <div className="preview__card">
           <img className="preview__img" src={this.props.item.src} alt={this.props.item.name} />
           <div className="preview__name">{this.props.item.name}</div>
-          <div className="preview__price">{this.props.item.price} грн. ---</div>
+          <div className="preview__price">{this.props.item.price} грн. ---  --</div>
           <div className="preview__btn">
 
             <Link to={`/order/${this.props.item.id}`}>
