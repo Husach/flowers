@@ -48,6 +48,10 @@ class Content extends Component {
         this.getNumberPages.call(this);
     }*/
 
+    componentWillReceiveProps() {
+      this.setState({currentPage: 1})
+    }
+
     sortChange(event, index, value) {
         this.props.sorter(value);
     }
