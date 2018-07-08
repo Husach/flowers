@@ -38,3 +38,23 @@
     margin: 20px 0;
   }
 }
+
+@media only screen and (max-width: 1500px) {
+  .description {
+    margin-top: 20px;
+
+    &__img {
+      width: 57%;
+    }
+
+    &__name {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    &__price {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+  }
+}

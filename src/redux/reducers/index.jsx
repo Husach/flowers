@@ -1,9 +1,7 @@
-import {combineReducers} from "redux";
-
-import cards from "./cards";
-import cardsPage from "./cardsPage";
+/*
+import { combineReducers } from "redux";
+import cards from "./cards"
 
 export default combineReducers({
-  cards,
-  cardsPage
-})
+    cards
+});*/

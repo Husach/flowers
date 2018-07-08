@@ -3,6 +3,10 @@ import ReactPaginate from 'react-paginate';
 import Select from "../components/Select.jsx";
 import Card from "./Card.jsx";
 
+import { connect } from "react-redux";
+import { compose } from "recompose";
+import { sortCard } from "../redux/reducers/cards";
+
 const sort = [
   {
     value: "1",
@@ -43,10 +47,6 @@ class Content extends Component {
         limiter: 8,
         pages: 0
     }
-
-/*    componentDidMount() {
-        this.getNumberPages.call(this);
-    }*/
 
     componentWillReceiveProps() {
       this.setState({currentPage: 1})
@@ -103,8 +103,6 @@ class Content extends Component {
                 {array.map((item, index) =>
                     <Card item={item} key={index} />
                 )}
-
-            {/*{this.props.data.map((item, index) =>          <Card item={item} key={index} />        )}*/}
             </div>,
             <ReactPaginate previousLabel={"previous"}
                            nextLabel={"next"}
@@ -143,3 +141,12 @@ class Content extends Component {
 }
 
 export default Content;
+
+/*export default compose(
+    connect(( { card }) => ({
+        card,
+    })),
+    {
+        sortCard
+    }
+)(Content);*/

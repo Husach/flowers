@@ -6,11 +6,20 @@ import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import App from "./App";
 import "./scss/base.scss";
 
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import reducers from "./redux/reducers";
+
+//const store = createStore(reducers);
+
 render (
-  <MuiThemeProvider>
-    <HashRouter>
-      <App />
-    </HashRouter>
-  </MuiThemeProvider>,
-  document.getElementById("root")
+    <MuiThemeProvider>
+        <HashRouter>
+            {/*<Provider store={store}>*/}
+                <App />
+            {/*</Provider>*/}
+        </HashRouter>
+    </MuiThemeProvider>,
+    document.getElementById("root")
 );

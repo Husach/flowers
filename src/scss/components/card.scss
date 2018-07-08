@@ -59,3 +59,22 @@
     justify-content: center;
   }
 }
+
+
+@media only screen and (max-width: 1500px) {
+  .card {
+    height: calc(#{$width-laptop} / #{$card});
+    width: calc(#{$width-laptop} / #{$card});
+
+    &__wrapper:hover {
+      height: calc((#{$width-laptop} / #{$card}) + 100px);
+      width: calc(#{$width-laptop} / #{$card} + 10px);
+    }
+
+    &__img {
+      width: $img-size-laptop;
+      height: $img-size-laptop;
+      margin-bottom: 10px;
+    }
+  }
+}
