@@ -1,8 +1,14 @@
 $width: 1280px;
+$width-laptop: 1080px;
 
 $height-header: 170px;
+
 $height-menu: 50px;
+$height-menu-laptop: 40px;
+
 $height-range: 50px;
+$height-range-laptop: 40px;
+
 $height-footer: 180px;
 
 $logo: calc(#{$height-header} - #{$height-menu});
@@ -11,4 +17,7 @@ $menu-items: 5;
 $range-items: 7;
 
 $card: 4;
+$card-laptop: 3;
+
 $img-size: 250px;
+$img-size-laptop: 200px;

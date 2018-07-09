@@ -3,6 +3,10 @@ import ReactPaginate from 'react-paginate';
 import Select from "../components/Select.jsx";
 import Card from "./Card.jsx";
 
+
+//import { compose } from "recompose";
+import { sortCard } from "../redux/reducers/Items";
+
 const sort = [
   {
     value: "1",
@@ -44,12 +48,11 @@ class Content extends Component {
         pages: 0
     }
 
-/*    componentDidMount() {
-        this.getNumberPages.call(this);
-    }*/
-
     componentWillReceiveProps() {
-      this.setState({currentPage: 1})
+        debugger
+      this.setState({currentPage: 1},
+          () => this.getNumberPages.bind(this, this.props.items)
+      )
     }
 
     sortChange(event, index, value) {
@@ -66,17 +69,16 @@ class Content extends Component {
         });
     }
 
-    getNumberPages() {
-        let pages = Math.ceil(this.props.data.length / this.state.limiter);
-
-        if (pages !== this.state.pages) {
-            this.setState({pages});
-        }
+    getNumberPages(items) {
+        let pages = Math.ceil(items.size / this.state.limiter);
+        this.setState({pages});
     }
 
     newData() {
-        this.getNumberPages.call(this);
-        let array = [];
+        let items = this.props.items;
+        debugger
+
+        /*let array = [];
         if(!this.props.data.length) return array;
 
         console.log("1 length:", this.props.data.length, "pages:", this.state.pages, "data:", this.props.data);
@@ -91,7 +93,8 @@ class Content extends Component {
         }
 
         console.log("2 new array:", array);
-        return array;
+        return array;*/
+        return [];
     }
 
     renderContent() {
@@ -103,8 +106,6 @@ class Content extends Component {
                 {array.map((item, index) =>
                     <Card item={item} key={index} />
                 )}
-
-            {/*{this.props.data.map((item, index) =>          <Card item={item} key={index} />        )}*/}
             </div>,
             <ReactPaginate previousLabel={"previous"}
                            nextLabel={"next"}

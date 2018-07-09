@@ -11,8 +11,17 @@ import Delivery from "./pages/delivery.jsx";
 import OurWorks from "./pages/ourworks.jsx";
 import Contacts from "./pages/contacts.jsx";
 import Franchise from "./pages/franchise.jsx";
+import { data } from "./data/data";
+import { setItems } from "./redux/actions/Items";
+import { connect } from "react-redux";
 
 class App extends Component {
+
+    componentDidMount() {
+        this.props.dispatch(setItems({
+            items: data
+        }))
+    }
 
   render() {
       return (
@@ -35,4 +44,8 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(state => {
+    return {
+        items: state.items
+    }
+})(App);

@@ -4,14 +4,16 @@ import Base from "../container/Base.jsx";
 import Content from "../container/Content.jsx";
 import { data } from "../data/data";
 
+import { connect } from "react-redux";
+
 class Shop extends Base {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       sortValue: "1",
       currentCity: 11,
       datacity: [],
-      data1: []
+      items: []
     };
     this.getData = this.getData.bind(this);
   }
@@ -21,8 +23,9 @@ class Shop extends Base {
   }
 
   componentWillReceiveProps(props) {
+    debugger
     this.setState({
-      data1: this.getData(this.state.datacity, props.match.params.category)
+      items: this.getData(this.state.datacity, props.match.params.category)
     });
   }
 
@@ -39,8 +42,8 @@ class Shop extends Base {
     });
   }
 
-  mysort(field) {
-    let list = [...this.state.data1];
+  mySort(field) {
+    let list = [...this.state.items];
     list.sort((a, b) => {
       if (a[field] > b[field]) return -1;
       if (a[field] < b[field]) return 1;
@@ -51,21 +54,28 @@ class Shop extends Base {
 
   getOptions() {
     switch (this.state.sortValue) {
-      case "1": return this.mysort.call(this, "rating");
-      case "2": return this.mysort.call(this, "price");
-      case "3": return this.mysort.call(this, "price").reverse();
-      case "4": return this.mysort.call(this, "latest");
-      default : return this.state.data1;
+      case "1": return this.mySort.call(this, "rating");
+      case "2": return this.mySort.call(this, "price");
+      case "3": return this.mySort.call(this, "price").reverse();
+      case "4": return this.mySort.call(this, "latest");
+      default : return this.state.items;
     }
   }
 
   getCity() {
     let {router: {route: {match: {params}}}} = this.context;
-    let datacity = data.filter(item => item.city === this.state.currentCity);
-    let data1 = this.getData(datacity, params.category);
+    let datacity = [];
+    this.props.items.forEach(item => {
+      if(item.city === this.state.currentCity) {
+          datacity.push(item);
+      }
+    });
+    debugger
+    let items = this.getData(datacity, params.category);
+    debugger
     this.setState({
       datacity,
-      data1
+      items
     });
   }
 
@@ -78,8 +88,9 @@ class Shop extends Base {
   }
 
   renderContainer() {
+    debugger
     return (
-      <Content data={this.getOptions.call(this)}
+      <Content items={this.getOptions.call(this)}
                city={::this.city}
                sorter={::this.sorter}
                sortValue={this.state.sortValue}
@@ -93,4 +104,7 @@ Shop.contextTypes = {
   router: PropTypes.object
 };
 
-export default Shop;
+export default connect(({ items }) => ({
+        items
+    })
+)(Shop);
