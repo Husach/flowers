@@ -65,7 +65,7 @@ class Shop extends Base {
   getCity() {
     let {router: {route: {match: {params}}}} = this.context;
     let datacity = [];
-    this.props.items.forEach(item => {
+    this.props.sortedItems.forEach(item => {
       if(item.city === this.state.currentCity) {
           datacity.push(item);
       }
@@ -104,7 +104,7 @@ Shop.contextTypes = {
   router: PropTypes.object
 };
 
-export default connect(({ items }) => ({
-        items
+export default connect(({ shop: {sortedItems} }) => ({
+      sortedItems
     })
 )(Shop);

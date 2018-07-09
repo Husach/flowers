@@ -5,7 +5,7 @@ import Card from "./Card.jsx";
 
 
 //import { compose } from "recompose";
-import { sortCard } from "../redux/reducers/Items";
+import { sortCard } from "../redux/reducers/Shop";
 
 const sort = [
   {

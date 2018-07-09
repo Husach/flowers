@@ -44,8 +44,4 @@ class App extends Component {
   }
 }
 
-export default connect(state => {
-    return {
-        items: state.items
-    }
-})(App);
+export default connect(null, null)(App);

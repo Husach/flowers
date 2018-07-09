@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import items from "./Items"
+import shop from "./Shop"
 
 export default combineReducers({
-    items
+    shop
 });

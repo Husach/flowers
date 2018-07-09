@@ -1,8 +1,8 @@
-import ITEMS_TYPES from "./../types/Items";
+import SHOP_TYPES from "../types/Shop";
 
 export const setItems = (payload) => {
     return {
-        type: ITEMS_TYPES.SET_ITEMS,
+        type: SHOP_TYPES.SET_ITEMS,
         payload
     }
 };
