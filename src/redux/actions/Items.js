@@ -6,14 +6,3 @@ export const setItems = (payload) => {
         payload
     }
 };
-
-
-
-
-/*
-export function sortCard(payload) {
-    return {
-        type: 'SORT_CARD',
-        payload
-    };
-}*/

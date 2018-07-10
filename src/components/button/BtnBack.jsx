@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 
-const Back = ({history}) => (
+const BtnBack = ({history}) => (
   <div className="btn__back">
     <RaisedButton
         label="Вернуться"
@@ -10,4 +11,8 @@ const Back = ({history}) => (
   </div>
 );
 
-export default Back;
+BtnBack.propTypes = {
+   history: PropTypes.string
+}
+
+export default BtnBack;

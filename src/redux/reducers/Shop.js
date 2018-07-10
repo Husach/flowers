@@ -4,9 +4,9 @@ class Shop {
     constructor() {
         this.items = [];
         this.sortedItems = [];
-        this.sortBy = null;
+        this.sortBy = 1;
         this.homeItems = [];
-        this.selectedCity = null;
+        this.selectedCity = 11;
     }
 
     getState() {
@@ -29,6 +29,15 @@ class Shop {
         const category = ["tulips", "roses"];
         let items = this.items.filter(_item => _item.category.some((_category) => category.some(_filteredCategory => _category === _filteredCategory)));
         this.homeItems = [items.slice(0, 6), items.slice(6, 12)];
+        this.setSortItems();
+    }
+
+    setSortItems(sortBy) {
+
+        if (sortBy) {
+            this.sortedItems = this.items.filter(item => item.sortBy.some((itm) => itm === sortBy));
+        }
+        return this.sortedItems;
     }
 
 }
@@ -39,6 +48,9 @@ export default function cardReducer(state = shop.getState(), action) {
     switch(action.type) {
         case SHOP_TYPES.SET_ITEMS:
             shop.setItems(action.payload);
+            break;
+        case SHOP_TYPES.SET_SORT_ITEMS:
+            shop.setSortItems(action.payload);
             break;
         default:
             return state;

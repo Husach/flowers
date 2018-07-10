@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import ReactPaginate from 'react-paginate';
+import PropTypes from "prop-types";
+import ReactPaginate from "react-paginate";
 import Select from "../components/Select.jsx";
 import Card from "./Card.jsx";
-
-
-//import { compose } from "recompose";
 import { sortCard } from "../redux/reducers/Shop";
 
 const sort = [
@@ -49,20 +47,19 @@ class Content extends Component {
     }
 
     componentWillReceiveProps() {
-        debugger
       this.setState({currentPage: 1},
           () => this.getNumberPages.bind(this, this.props.items)
       )
     }
 
-    sortChange(event, index, value) {
+    /*sortChange(event, index, value) {
         this.props.sorter(value);
     }
 
     cityChange(event, index, value) {
         this.props.city(value);
     }
-
+*/
     pageChange(data) {
         this.setState({
             currentPage: data.selected + 1
@@ -76,7 +73,6 @@ class Content extends Component {
 
     newData() {
         let items = this.props.items;
-        debugger
 
         /*let array = [];
         if(!this.props.data.length) return array;
@@ -126,15 +122,17 @@ class Content extends Component {
         return (
             <div className="page-main">
                 <div className="filter">
-                    <Select options={citys}
-                            selected={this.props.currentCity}
-                            name="Город"
-                            handleChange={::this.cityChange}
+                    <Select
+                        options={citys}
+                        selected={this.props.currentCity}
+                        name="Город"
+                        /*handleChange={::this.cityChange}*/
                     />
-                    <Select options={sort}
-                            selected={this.props.sortValue}
-                            name="Сортировка"
-                            handleChange={::this.sortChange}
+                    <Select
+                        options={sort}
+                        selected={this.props.sortValue}
+                        name="Сортировка"
+                        /*handleChange={::this.sortChange}*/
                     />
                 </div>
                 {this.renderContent.call(this)}
@@ -142,5 +140,13 @@ class Content extends Component {
         );
     }
 }
+
+Content.propTypes = {
+    items: PropTypes.array,
+    currentCity: PropTypes.number,
+    sortValue: PropTypes.string,
+    sorter: PropTypes.func,
+    city: PropTypes.func
+};
 
 export default Content;

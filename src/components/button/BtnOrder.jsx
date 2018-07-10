@@ -1,6 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import RaisedButton from 'material-ui/RaisedButton';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
+import RaisedButton from "material-ui/RaisedButton";
 
 const btnStyle = {
   width: 230
@@ -17,5 +18,9 @@ const BtnOrder = ({ item }) => (
       </div>
   </Link>
 );
+
+BtnOrder.propTypes = {
+    item: PropTypes.array
+};
 
 export default BtnOrder;
