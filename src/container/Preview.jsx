@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import Btn from "../components/button/Btn.jsx";
-import { Link } from 'react-router-dom';
 
 const btnStyle = {
   width: 150
@@ -30,5 +31,9 @@ class Preview extends Component {
     );
   }
 }
+
+Preview.propTypes = {
+    item: PropTypes.object
+};
 
 export default Preview;

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
 
 import Home from "./pages/index.jsx";
@@ -11,9 +13,9 @@ import Delivery from "./pages/delivery.jsx";
 import OurWorks from "./pages/ourworks.jsx";
 import Contacts from "./pages/contacts.jsx";
 import Franchise from "./pages/franchise.jsx";
+
 import { data } from "./data/data";
 import { setItems } from "./redux/actions/Items";
-import { connect } from "react-redux";
 
 class App extends Component {
 
@@ -42,6 +44,10 @@ class App extends Component {
           </div>
       );
   }
+}
+
+App.propTypes = {
+    dispatch: PropTypes.func
 }
 
 export default connect(null, null)(App);
