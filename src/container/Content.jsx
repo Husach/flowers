@@ -4,6 +4,8 @@ import ReactPaginate from "react-paginate";
 import Select from "../components/Select.jsx";
 import Card from "./Card.jsx";
 import { sortCard } from "../redux/reducers/Shop";
+import {connect} from "react-redux";
+import Shop from "../pages/shop";
 
 const sort = [
   {
@@ -94,7 +96,8 @@ class Content extends Component {
     }
 
     renderContent() {
-        let array = this.newData.call(this);
+        let array = this.props.sortedItems;
+
         return [
             <div className="content"
                  key="content-key-block"
@@ -103,17 +106,18 @@ class Content extends Component {
                     <Card item={item} key={index} />
                 )}
             </div>,
-            <ReactPaginate previousLabel={"previous"}
-                           nextLabel={"next"}
-                           pageCount={this.state.pages}
-                           pageRangeDisplayed={2}
-                           marginPagesDisplayed={1}
-                           breakClassName={"break-me"}
-                           containerClassName={"pagination"}
-                           subContainerClassName={"pages pagination"}
-                           activeClassName={"active"}
-                           onPageChange={::this.pageChange}
-                           key="content-key-pagination"
+            <ReactPaginate
+                previousLabel={"previous"}
+                nextLabel={"next"}
+                pageCount={this.state.pages}
+                pageRangeDisplayed={2}
+                marginPagesDisplayed={1}
+                breakClassName={"break-me"}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                activeClassName={"active"}
+                onPageChange={::this.pageChange}
+                key="content-key-pagination"
             />
         ];
     }
@@ -122,18 +126,18 @@ class Content extends Component {
         return (
             <div className="page-main">
                 <div className="filter">
-                    <Select
+                    {/*<Select
                         options={citys}
                         selected={this.props.currentCity}
                         name="Город"
-                        /*handleChange={::this.cityChange}*/
+                        handleChange={::this.cityChange}
                     />
                     <Select
                         options={sort}
                         selected={this.props.sortValue}
                         name="Сортировка"
-                        /*handleChange={::this.sortChange}*/
-                    />
+                        handleChange={::this.sortChange}
+                    />*/}
                 </div>
                 {this.renderContent.call(this)}
                 </div>
@@ -144,9 +148,14 @@ class Content extends Component {
 Content.propTypes = {
     items: PropTypes.array,
     currentCity: PropTypes.number,
+    sortedItems: PropTypes.array,
     sortValue: PropTypes.string,
     sorter: PropTypes.func,
     city: PropTypes.func
 };
 
-export default Content;
+export default connect(state => {
+    return {
+        sortedItems: state.shop.sortedItems
+    }
+})(Content);

@@ -2,8 +2,8 @@ import React from "react";
 import Preview from "../container/Preview.jsx";
 import Base from "../container/Base.jsx";
 import {connect} from "react-redux";
-//import { data } from "../data/data";
 
+//import { data } from "../data/data";
 //const category = ["tulips", "roses"];
 
 class Home extends Base {
@@ -31,6 +31,7 @@ class Home extends Base {
 
     renderContainer() {
         let {homeItems} = this.props;
+        debugger
         return (
             <div className="page-main">
                 {

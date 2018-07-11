@@ -6,3 +6,10 @@ export const setItems = (payload) => {
         payload
     }
 };
+
+export const setSortItems = (payload) => {
+    return {
+        type: SHOP_TYPES.SET_SORT_ITEMS,
+        payload
+    }
+};

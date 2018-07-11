@@ -1,9 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import Base from "../container/Base.jsx";
 import Content from "../container/Content.jsx";
-import { shop  } from "./../redux/reducers/Shop";
-import { connect } from "react-redux";
+import { shop } from "./../redux/reducers/Shop";
+
+import {setSortItems} from "../redux/actions/Items";
 
 class Shop extends Base {
     /*constructor(props) {
@@ -15,9 +17,9 @@ class Shop extends Base {
             items: []
         };
         this.getData = this.getData.bind(this);
-    }*/
+    }
 
-    /*componentDidMount() {
+    componentDidMount() {
         this.getCity.call(this);
     }
 
@@ -25,16 +27,22 @@ class Shop extends Base {
         this.setState({
             items: this.getData(this.state.datacity, props.match.params.category)
         });
-    }*/
+    }
 
-    /*  getData(d, category) {
+    getData(d, category) {
         if (category) {
               return d.filter(item => item.category.some((itm) => itm === category));
         }
         return d;
      }*/
 
-    sorter(value) {
+/*    componentDidMount() {
+        this.props.dispatch(setSortItems({
+
+        }))
+    }*/
+
+/*    sorter(value) {
         this.setState({
             sortValue: value
         });
@@ -58,7 +66,7 @@ class Shop extends Base {
             case "4": return this.mySort.call(this, "latest");
             default : return this.state.items;
         }
-    }
+    }*/
 
     /*getCity() {
         let {router: {route: {match: {params}}}} = this.context;
@@ -77,21 +85,17 @@ class Shop extends Base {
       });
     }*/
 
-    city(value) {
+/*    city(value) {
         this.setState({
             currentCity: value
         }, () => {
             this.getCity.call(this);
         });
-    }
+    }*/
 
     renderContainer() {
-
         return (
             <Content
-                items={this.sortedItems}
-                sortValue={this.sortBy}
-                currentCity={this.selectedCity}
                 /*items={this.getOptions.call(this)}
                 city={::this.city}
                 sorter={::this.sorter}
@@ -106,6 +110,4 @@ Shop.contextTypes = {
     router: PropTypes.object
 };
 
-export default connect(({ shop: {sortedItems} }) => ({
-    sortedItems
-}))(Shop);
+export default Shop;

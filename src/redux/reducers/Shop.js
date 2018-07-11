@@ -3,10 +3,10 @@ import SHOP_TYPES from "../types/Shop";
 class Shop {
     constructor() {
         this.items = [];
-        this.sortedItems = [];
         this.sortBy = 1;
         this.homeItems = [];
-        this.selectedCity = 11;
+        this.sortedItems = [];
+        this.selectedCity = 12;
     }
 
     getState() {
@@ -33,14 +33,24 @@ class Shop {
         this.setSortItems();
     }
 
-    setSortItems(sortBy) {
+    setSortItems() {
+        //let sortParam = sortBy ? sortBy: this.sortBy;
+        //this.sortedItems = this.items.filter(item => item.sortBy.some((itm) => itm === sortBy));
 
-        if (sortBy) {
-            this.sortedItems = this.items.filter(item => item.sortBy.some((itm) => itm === sortBy));
-        }
+        this.sortedItems = this.items;
+        this.sortedItems = this.sortCity();
         return this.sortedItems;
     }
 
+    sortCity() {
+        let data = [];
+        this.sortedItems.forEach(item => {
+            if (item.city === this.selectedCity) {
+                data.push(item)
+            }
+        })
+        return data;
+    }
 }
 
 const shop = new Shop();
