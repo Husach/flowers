@@ -23,6 +23,7 @@ class Shop {
             this.items.push(item);
         });
         this.setHomeItems();
+
     }
 
     setHomeItems() {
