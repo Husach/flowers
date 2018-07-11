@@ -1,45 +1,12 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 import ReactPaginate from "react-paginate";
 import Select from "../components/Select.jsx";
 import Card from "./Card.jsx";
 import { sortCard } from "../redux/reducers/Shop";
-import {connect} from "react-redux";
-import Shop from "../pages/shop";
-
-const sort = [
-  {
-    value: "1",
-    primaryText: "по рейтингу"
-  },
-  {
-    value: "2",
-    primaryText: "цена: по убыванию"
-  },
-  {
-    value: "3",
-    primaryText: "цена: по возрастанию"
-  },
-  {
-    value: "4",
-    primaryText: "новинки"
-  }
-];
-
-const citys = [
-  {
-    value: 11,
-    primaryText: "Кременчуг"
-  },
-  {
-    value: 12,
-    primaryText: "Киев"
-  },
-  {
-    value: 13,
-    primaryText: "Харьков"
-  }
-];
+//import {setSortItems} from "../redux/actions/Items";
+//import Shop from "../pages/shop";
 
 class Content extends Component {
     state = {
@@ -74,7 +41,7 @@ class Content extends Component {
     }
 
     newData() {
-        let items = this.props.items;
+        //let items = this.props.items;
 
         /*let array = [];
         if(!this.props.data.length) return array;
@@ -92,17 +59,15 @@ class Content extends Component {
 
         console.log("2 new array:", array);
         return array;*/
-        return [];
+        //return [];
     }
 
     renderContent() {
-        let array = this.props.sortedItems;
-
         return [
             <div className="content"
                  key="content-key-block"
             >
-                {array.map((item, index) =>
+                {this.props.sortedItems.map((item, index) =>
                     <Card item={item} key={index} />
                 )}
             </div>,
@@ -123,21 +88,22 @@ class Content extends Component {
     }
 
     render() {
+        debugger
         return (
             <div className="page-main">
                 <div className="filter">
-                    {/*<Select
-                        options={citys}
-                        selected={this.props.currentCity}
+                    <Select
+                        options={this.props.citys}
+                        selected={this.props.selectedCity}
                         name="Город"
-                        handleChange={::this.cityChange}
+                        /*handleChange={::this.cityChange}*/
                     />
                     <Select
-                        options={sort}
-                        selected={this.props.sortValue}
+                        options={this.props.sortValue}
+                        selected={this.props.sortBy}
                         name="Сортировка"
-                        handleChange={::this.sortChange}
-                    />*/}
+                        /*handleChange={::this.sortChange}*/
+                    />
                 </div>
                 {this.renderContent.call(this)}
                 </div>
@@ -147,15 +113,19 @@ class Content extends Component {
 
 Content.propTypes = {
     items: PropTypes.array,
-    currentCity: PropTypes.number,
     sortedItems: PropTypes.array,
-    sortValue: PropTypes.string,
-    sorter: PropTypes.func,
-    city: PropTypes.func
+    sortValue: PropTypes.array,
+    citys: PropTypes.array,
+    sortBy: PropTypes.number,
+    selectedCity: PropTypes.number
 };
 
 export default connect(state => {
     return {
-        sortedItems: state.shop.sortedItems
+        sortedItems: state.shop.sortedItems,
+        citys: state.shop.citys,
+        selectedCity: state.shop.selectedCity,
+        sortValue: state.shop.sortValue,
+        sortBy: state.shop.sortBy
     }
 })(Content);

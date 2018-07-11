@@ -17,3 +17,9 @@
     @include bg-gradient();
   }
 }
+
+@media only screen and (max-width: 1500px) {
+  .page-main {
+    width: $width-laptop;
+  }
+}

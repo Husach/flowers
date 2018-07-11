@@ -7,6 +7,8 @@ class Shop {
         this.homeItems = [];
         this.sortedItems = [];
         this.selectedCity = 12;
+        this.citys = [];
+        this.sortValue = [];
     }
 
     getState() {
@@ -14,22 +16,31 @@ class Shop {
             sortBy: this.sortBy,
             homeItems: this.homeItems,
             sortedItems: this.sortedItems,
-            selectedCity: this.selectedCity
+            selectedCity: this.selectedCity,
+            citys: this.citys,
+            sortValue: this.sortValue
         };
     }
 
-    setItems({items}) {
+    setItems({items, location, sortParams}) {
         items.forEach(item => {
             this.items.push(item);
         });
-        this.setHomeItems();
 
+        location.forEach(item => {
+            this.citys.push(item);
+        });
+
+        sortParams.forEach(item => {
+            this.sortValue.push(item);
+        });
+        this.setHomeItems();
     }
 
     setHomeItems() {
         const category = ["tulips", "roses"];
         let items = this.items.filter(_item => _item.category.some((_category) => category.some(_filteredCategory => _category === _filteredCategory)));
-        this.homeItems = [items.slice(0, 6), items.slice(6, 12)];
+        this.homeItems = [items.slice(0, 5), items.slice(5, 10)];
         this.setSortItems();
     }
 
@@ -37,19 +48,18 @@ class Shop {
         //let sortParam = sortBy ? sortBy: this.sortBy;
         //this.sortedItems = this.items.filter(item => item.sortBy.some((itm) => itm === sortBy));
 
-        this.sortedItems = this.items;
         this.sortedItems = this.sortCity();
         return this.sortedItems;
     }
 
     sortCity() {
-        let data = [];
-        this.sortedItems.forEach(item => {
+        let arr = [];
+        this.items.forEach(item => {
             if (item.city === this.selectedCity) {
-                data.push(item)
+                arr.push(item)
             }
         })
-        return data;
+        return arr;
     }
 }
 
