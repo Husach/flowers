@@ -24,7 +24,7 @@ class Card extends Component {
 }
 
 Card.propTypes = {
-    item: PropTypes.array
+    item: PropTypes.object
 };
 
 export default Card;

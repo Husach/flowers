@@ -6,9 +6,11 @@ class Shop {
         this.sortBy = 1;
         this.homeItems = [];
         this.sortedItems = [];
-        this.selectedCity = 12;
-        this.citys = [];
+        this.selectedCity = 11;
+        this.locations = [];
         this.sortValue = [];
+        this.category = "";
+        this.isLoadedData = false;
     }
 
     getState() {
@@ -17,8 +19,10 @@ class Shop {
             homeItems: this.homeItems,
             sortedItems: this.sortedItems,
             selectedCity: this.selectedCity,
-            citys: this.citys,
-            sortValue: this.sortValue
+            locations: this.locations,
+            sortValue: this.sortValue,
+            category: this.category,
+            isLoadedData: this.isLoadedData
         };
     }
 
@@ -28,38 +32,64 @@ class Shop {
         });
 
         location.forEach(item => {
-            this.citys.push(item);
+            this.locations.push(item);
         });
 
         sortParams.forEach(item => {
             this.sortValue.push(item);
         });
         this.setHomeItems();
+        this.isLoadedData = true;
     }
 
     setHomeItems() {
         const category = ["tulips", "roses"];
         let items = this.items.filter(_item => _item.category.some((_category) => category.some(_filteredCategory => _category === _filteredCategory)));
         this.homeItems = [items.slice(0, 5), items.slice(5, 10)];
-        this.setSortItems();
+        this.sortItems();
     }
 
-    setSortItems() {
-        //let sortParam = sortBy ? sortBy: this.sortBy;
-        //this.sortedItems = this.items.filter(item => item.sortBy.some((itm) => itm === sortBy));
-
-        this.sortedItems = this.sortCity();
-        return this.sortedItems;
+    //TODO
+    sortItems() {
+        this.sortCity();
     }
 
+    sortCategory({category}) {
+        this.sortedItems = this.sortCity().filter(item => item.category.some((itm) => itm === category));
+    }
+
+    //TODO
     sortCity() {
-        let arr = [];
+        this.selectedCity = this.selectedCity ? this.selectedCity: 11;
+        console.log("sortCity")
+        let tmp = [];
         this.items.forEach(item => {
             if (item.city === this.selectedCity) {
-                arr.push(item)
+                tmp.push(item)
             }
-        })
-        return arr;
+        });
+        return tmp;
+    }
+
+    //TODO
+    sortOrder() {
+        switch (this.sortBy) {
+            case "1": return this.setOrder.call(this, "rating");
+            case "2": return this.setOrder.call(this, "price");
+            case "3": return this.setOrder.call(this, "price").reverse();
+            case "4": return this.setOrder.call(this, "latest");
+            default : return this.sortedItems;
+        }
+    }
+
+    //TODO
+    setOrder(field) {
+        let tmp = [...this.sortedItems];
+        this.sortedItems =  tmp.sort((a, b) => {
+            if (a[field] > b[field]) return -1;
+            if (a[field] < b[field]) return 1;
+            return 0;
+        });
     }
 }
 
@@ -70,8 +100,17 @@ export default function cardReducer(state = shop.getState(), action) {
         case SHOP_TYPES.SET_ITEMS:
             shop.setItems(action.payload);
             break;
-        case SHOP_TYPES.SET_SORT_ITEMS:
-            shop.setSortItems(action.payload);
+        case SHOP_TYPES.SORT_CITY:
+            shop.sortCity(action.payload);
+            break;
+        case SHOP_TYPES.SORT_ITEMS:
+            shop.sortItems(action.payload);
+            break;
+        case SHOP_TYPES.SORT_ORDER:
+            shop.sortOrder(action.payload);
+            break;
+        case SHOP_TYPES.SORT_CATEGORY:
+            shop.sortCategory(action.payload);
             break;
         default:
             return state;

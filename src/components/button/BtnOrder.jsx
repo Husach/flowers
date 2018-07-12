@@ -20,7 +20,7 @@ const BtnOrder = ({ item }) => (
 );
 
 BtnOrder.propTypes = {
-    item: PropTypes.array
+    item: PropTypes.object
 };
 
 export default BtnOrder;

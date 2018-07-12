@@ -6,10 +6,27 @@ export const setItems = (payload) => {
         payload
     }
 };
-
-export const setSortItems = (payload) => {
+export const sortCity = (payload) => {
     return {
-        type: SHOP_TYPES.SET_SORT_ITEMS,
+        type: SHOP_TYPES.SORT_CITY,
+        payload
+    }
+};
+export const sortItems = (payload) => {
+    return {
+        type: SHOP_TYPES.SORT_ITEMS,
+        payload
+    }
+};
+export const sortOrder = (payload) => {
+    return {
+        type: SHOP_TYPES.SORT_ORDER,
+        payload
+    }
+};
+export const sortCategory = (payload) => {
+    return {
+        type: SHOP_TYPES.SORT_CATEGORY,
         payload
     }
 };
