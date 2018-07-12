@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30af408f-41b6-4e05-b701-80f5b2ad3ae4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/SortParams.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.bundle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.bundle.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/container/Content.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/container/Content.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/data-simple.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/shop.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/shop.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/reducers/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/reducers/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/base/page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/base/page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/base/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/base/variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scss/layout/content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/scss/layout/content.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/public/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,15 +24,10 @@
           <file leaf-file-name="shop.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/pages/shop.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+                <state relative-caret-position="1240">
+                  <caret line="66" selection-start-line="66" selection-end-line="66" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
-                    <element signature="e#326#968#0" />
-                    <element signature="e#970#1061#0" />
-                    <element signature="e#1063#1789#0" />
-                    <element signature="e#1795#2180#0" />
-                    <element signature="e#2195#2341#0" />
                   </folding>
                 </state>
               </provider>
@@ -51,13 +36,11 @@
           <file leaf-file-name="Content.jsx" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/container/Content.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="952">
+                <state relative-caret-position="1720">
                   <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
                   <folding>
                     <element signature="e#0#41#0" expanded="true" />
-                    <element signature="e#793#861#0" />
                     <element signature="n#!!block;n#componentWillReceiveProps#0;n#Content#0" />
-                    <element signature="e#1019#1174#0" />
                     <element signature="n#!!block;n#pageChange#0;n#Content#0" />
                     <element signature="n#!!block;n#getNumberPages#0;n#Content#0" />
                     <element signature="n#!!block;n#newData#0;n#Content#0" />
@@ -82,7 +65,7 @@
           <file leaf-file-name="Shop.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/redux/reducers/Shop.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1220">
+                <state relative-caret-position="323">
                   <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
                 </state>
               </provider>
@@ -244,6 +227,11 @@
               <item name="redux" type="462c0819:PsiDirectoryNode" />
               <item name="types" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="flowers" type="b2602c69:ProjectViewProjectNode" />
+              <item name="flowers" type="462c0819:PsiDirectoryNode" />
+              <item name="temp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -293,15 +281,16 @@
       <workItem from="1531294857869" duration="68000" />
       <workItem from="1531317526153" duration="2865000" />
       <workItem from="1531325559704" duration="5352000" />
+      <workItem from="1531339151004" duration="35000" />
+      <workItem from="1531415354837" duration="593000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11101000" />
+    <option name="totallyTimeSpent" value="11729000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12381454" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -338,15 +327,86 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/pages/shop.jsx">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1320">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/Content.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#componentWillReceiveProps#0;n#Content#0" />
+            <element signature="n#!!block;n#pageChange#0;n#Content#0" />
+            <element signature="n#!!block;n#getNumberPages#0;n#Content#0" />
+            <element signature="n#!!block;n#newData#0;n#Content#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/SortParams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/Shop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/shop.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1240">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/container/Content.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#componentWillReceiveProps#0;n#Content#0" />
+            <element signature="n#!!block;n#pageChange#0;n#Content#0" />
+            <element signature="n#!!block;n#getNumberPages#0;n#Content#0" />
+            <element signature="n#!!block;n#newData#0;n#Content#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/SortParams.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/redux/reducers/Shop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/shop.jsx">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1666">
           <caret line="98" selection-start-line="98" selection-end-line="98" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#326#968#0" />
-            <element signature="e#970#1061#0" />
-            <element signature="e#1063#1789#0" />
-            <element signature="e#1795#2180#0" />
-            <element signature="e#2195#2341#0" />
           </folding>
         </state>
       </provider>
@@ -357,9 +417,7 @@
           <caret line="103" column="13" selection-start-line="103" selection-start-column="13" selection-end-line="103" selection-end-column="13" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#793#861#0" />
             <element signature="n#!!block;n#componentWillReceiveProps#0;n#Content#0" />
-            <element signature="e#1019#1174#0" />
             <element signature="n#!!block;n#pageChange#0;n#Content#0" />
             <element signature="n#!!block;n#getNumberPages#0;n#Content#0" />
             <element signature="n#!!block;n#newData#0;n#Content#0" />
@@ -400,11 +458,6 @@
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#326#968#0" />
-            <element signature="e#970#1061#0" />
-            <element signature="e#1063#1789#0" />
-            <element signature="e#1795#2180#0" />
-            <element signature="e#2195#2341#0" />
           </folding>
         </state>
       </provider>
@@ -415,9 +468,7 @@
           <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#793#861#0" />
             <element signature="n#!!block;n#componentWillReceiveProps#0;n#Content#0" />
-            <element signature="e#1019#1174#0" />
             <element signature="n#!!block;n#pageChange#0;n#Content#0" />
             <element signature="n#!!block;n#getNumberPages#0;n#Content#0" />
             <element signature="n#!!block;n#newData#0;n#Content#0" />
@@ -454,11 +505,6 @@
           <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#326#968#0" />
-            <element signature="e#970#1061#0" />
-            <element signature="e#1063#1789#0" />
-            <element signature="e#1795#2180#0" />
-            <element signature="e#2195#2341#0" />
           </folding>
         </state>
       </provider>
@@ -469,9 +515,7 @@
           <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#793#861#0" />
             <element signature="n#!!block;n#componentWillReceiveProps#0;n#Content#0" />
-            <element signature="e#1019#1174#0" />
             <element signature="n#!!block;n#pageChange#0;n#Content#0" />
             <element signature="n#!!block;n#getNumberPages#0;n#Content#0" />
             <element signature="n#!!block;n#newData#0;n#Content#0" />
@@ -532,11 +576,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/data/data-simple.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1734" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/data/data-simple.js" />
     <entry file="file://$PROJECT_DIR$/src/data/data.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -594,15 +634,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/shop.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
+        <state relative-caret-position="1240">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#326#968#0" />
-            <element signature="e#970#1061#0" />
-            <element signature="e#1063#1789#0" />
-            <element signature="e#1795#2180#0" />
-            <element signature="e#2195#2341#0" />
           </folding>
         </state>
       </provider>
@@ -616,20 +651,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/redux/reducers/Shop.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1220">
+        <state relative-caret-position="323">
           <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/container/Content.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
+        <state relative-caret-position="1720">
           <caret line="117" column="4" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="4" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#793#861#0" />
             <element signature="n#!!block;n#componentWillReceiveProps#0;n#Content#0" />
-            <element signature="e#1019#1174#0" />
             <element signature="n#!!block;n#pageChange#0;n#Content#0" />
             <element signature="n#!!block;n#getNumberPages#0;n#Content#0" />
             <element signature="n#!!block;n#newData#0;n#Content#0" />
