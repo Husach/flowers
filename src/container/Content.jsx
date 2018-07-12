@@ -5,22 +5,42 @@ import ReactPaginate from "react-paginate";
 import Select from "../components/Select.jsx";
 import Card from "./Card.jsx";
 import { sortCard } from "../redux/reducers/Shop";
-//import {setSortItems} from "../redux/actions/Items";
-//import Shop from "../pages/shop";
+import {location, sortParams} from "../data/SortParams";
+import {setCategoryItems} from "../redux/actions/Items";
+import { withRouter } from "react-router";
 
 class Content extends Component {
     state = {
         currentPage: 1,
         limiter: 8,
         pages: 0
+    };
+
+    componentDidMount() {
+        this.setCategory.call(this, this.props);
     }
 
-    componentWillReceiveProps() {
+    componentWillReceiveProps(props) {
+        this.setCategory.call(this, props);
+    }
+
+    setCategory(props) {
+        if(!props.isLoadedData) return null;
+
+        let {match: {params: {category}}} = props;
+        let {match: {params: {category: oldCategory}}} = this.props;
+        if (!this.props.isLoadedData && props.isLoadedData ||
+            category !== oldCategory) {
+            this.props.dispatch(setCategoryItems({
+                category
+            }))
+        }
+    }
+    /*    componentWillReceiveProps() {
       this.setState({currentPage: 1},
           () => this.getNumberPages.bind(this, this.props.items)
       )
-    }
-
+    }*/
     /*sortChange(event, index, value) {
         this.props.sorter(value);
     }
@@ -29,7 +49,7 @@ class Content extends Component {
         this.props.city(value);
     }
 */
-    pageChange(data) {
+    /*pageChange(data) {
         this.setState({
             currentPage: data.selected + 1
         });
@@ -43,7 +63,7 @@ class Content extends Component {
     newData() {
         //let items = this.props.items;
 
-        /*let array = [];
+        /!*let array = [];
         if(!this.props.data.length) return array;
 
         console.log("1 length:", this.props.data.length, "pages:", this.state.pages, "data:", this.props.data);
@@ -58,11 +78,11 @@ class Content extends Component {
         }
 
         console.log("2 new array:", array);
-        return array;*/
+        return array;*!/
         //return [];
-    }
-
+    }*/
     renderContent() {
+        debugger
         return [
             <div className="content"
                  key="content-key-block"
@@ -81,14 +101,13 @@ class Content extends Component {
                 containerClassName={"pagination"}
                 subContainerClassName={"pages pagination"}
                 activeClassName={"active"}
-                onPageChange={::this.pageChange}
+                /*onPageChange={::this.pageChange}*/
                 key="content-key-pagination"
             />
         ];
     }
 
     render() {
-        debugger
         return (
             <div className="page-main">
                 <div className="filter">
@@ -117,15 +136,19 @@ Content.propTypes = {
     sortValue: PropTypes.array,
     citys: PropTypes.array,
     sortBy: PropTypes.number,
-    selectedCity: PropTypes.number
+    selectedCity: PropTypes.number,
+    dispatch: PropTypes.func,
+    category: PropTypes.string,
+    isLoadedData: PropTypes.bool
 };
 
-export default connect(state => {
+export default withRouter(connect(state => {
     return {
+        isLoadedData: state.shop.isLoadedData,
         sortedItems: state.shop.sortedItems,
         citys: state.shop.citys,
         selectedCity: state.shop.selectedCity,
         sortValue: state.shop.sortValue,
         sortBy: state.shop.sortBy
     }
-})(Content);
+})(Content));

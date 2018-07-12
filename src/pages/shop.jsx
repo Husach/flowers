@@ -5,22 +5,25 @@ import Content from "../container/Content.jsx";
 import { shop } from "./../redux/reducers/Shop";
 
 class Shop extends Base {
-    /*constructor(props) {
-        super(props);
-        this.state = {
-            sortValue: "1",
-            currentCity: 11,
-            datacity: [],
-            items: []
-        };
-        this.getData = this.getData.bind(this);
+
+    constructor(props, context) {
+        super(props, context);
+        /*let {router: {route: {match: {params}}}} = this.context;
+        this.category = params.category*/
     }
 
-    componentDidMount() {
+   /* componentWillReceiveProps(props) {
+        let {router: {route: {match: {params}}}} = this.context;
+        this.category = params.category
+        debugger
+    }*/
+
+
+    /*componentDidMount() {
         this.getCity.call(this);
-    }
+    }*/
 
-    componentWillReceiveProps(props) {
+    /*componentWillReceiveProps(props) {
         this.setState({
             items: this.getData(this.state.datacity, props.match.params.category)
         });
@@ -32,12 +35,6 @@ class Shop extends Base {
         }
         return d;
      }*/
-
-    /*    componentDidMount() {
-        this.props.dispatch(setSortItems({
-
-        }))
-    }*/
 
     /*    sorter(value) {
         this.setState({
@@ -92,7 +89,10 @@ class Shop extends Base {
 
     renderContainer() {
         return (
-            <Content /*items={this.getOptions.call(this)} city={::this.city} sorter={::this.sorter} sortValue={this.state.sortValue} currentCity={this.state.currentCity}*/ />
+            <Content
+               /* category={this.category}*/
+                /*items={this.getOptions.call(this)} city={::this.city} sorter={::this.sorter} sortValue={this.state.sortValue} currentCity={this.state.currentCity}*/
+            />
         );
     }
 }

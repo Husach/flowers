@@ -9,6 +9,8 @@ class Shop {
         this.selectedCity = 12;
         this.citys = [];
         this.sortValue = [];
+        this.category = "";
+        this.isLoadedData = false;
     }
 
     getState() {
@@ -18,7 +20,9 @@ class Shop {
             sortedItems: this.sortedItems,
             selectedCity: this.selectedCity,
             citys: this.citys,
-            sortValue: this.sortValue
+            sortValue: this.sortValue,
+            category: this.category,
+            isLoadedData: this.isLoadedData
         };
     }
 
@@ -35,21 +39,20 @@ class Shop {
             this.sortValue.push(item);
         });
         this.setHomeItems();
+        this.isLoadedData = true;
     }
 
     setHomeItems() {
         const category = ["tulips", "roses"];
         let items = this.items.filter(_item => _item.category.some((_category) => category.some(_filteredCategory => _category === _filteredCategory)));
         this.homeItems = [items.slice(0, 5), items.slice(5, 10)];
-        this.setSortItems();
+        this.sortItems();
     }
 
-    setSortItems() {
+    sortItems() {
         //let sortParam = sortBy ? sortBy: this.sortBy;
         //this.sortedItems = this.items.filter(item => item.sortBy.some((itm) => itm === sortBy));
-
-        this.sortedItems = this.sortCity();
-        return this.sortedItems;
+        this.sortCity();
     }
 
     sortCity() {
@@ -58,8 +61,14 @@ class Shop {
             if (item.city === this.selectedCity) {
                 arr.push(item)
             }
-        })
+        });
         return arr;
+    }
+
+    setCategoryItems({category}) {
+        debugger
+        this.sortedItems = this.sortCity().filter(item => item.category.some((itm) => itm === category));
+        debugger
     }
 }
 
@@ -70,8 +79,11 @@ export default function cardReducer(state = shop.getState(), action) {
         case SHOP_TYPES.SET_ITEMS:
             shop.setItems(action.payload);
             break;
-        case SHOP_TYPES.SET_SORT_ITEMS:
-            shop.setSortItems(action.payload);
+        case SHOP_TYPES.SORT_ITEMS:
+            shop.sortItems(action.payload);
+            break;
+        case SHOP_TYPES.SET_CATEGORY_ITEMS:
+            shop.setCategoryItems(action.payload);
             break;
         default:
             return state;

@@ -7,9 +7,16 @@ export const setItems = (payload) => {
     }
 };
 
-export const setSortItems = (payload) => {
+export const sortItems = (payload) => {
     return {
-        type: SHOP_TYPES.SET_SORT_ITEMS,
+        type: SHOP_TYPES.SORT_ITEMS,
+        payload
+    }
+};
+
+export const setCategoryItems = (payload) => {
+    return {
+        type: SHOP_TYPES.SET_CATEGORY_ITEMS,
         payload
     }
 };

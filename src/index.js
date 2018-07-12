@@ -1,25 +1,24 @@
 import React from "react";
 import { render } from "react-dom";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 import { HashRouter } from "react-router-dom";
+import reducers from "./redux/reducers/index";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 
 import App from "./App";
 import "./scss/base.scss";
 
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-//import { composeWithDevTools } from "redux-devtools-extension";
-import reducers from "./redux/reducers/index";
-
 const store = createStore(reducers);
+//const App = withRouter(App);
 
 render (
     <MuiThemeProvider>
-        <HashRouter>
-            <Provider store={store}>
+        <Provider store={store}>
+            <HashRouter>
                 <App />
-            </Provider>
-        </HashRouter>
+            </HashRouter>
+        </Provider>
     </MuiThemeProvider>,
     document.getElementById("root")
 );

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Switch, Route } from "react-router-dom";
-
+import { withRouter } from "react-router";
 import Home from "./pages/index.jsx";
 import Shop from "./pages/shop.jsx";
 import About from "./pages/about.jsx";
@@ -13,7 +13,6 @@ import Delivery from "./pages/delivery.jsx";
 import OurWorks from "./pages/ourworks.jsx";
 import Contacts from "./pages/contacts.jsx";
 import Franchise from "./pages/franchise.jsx";
-
 import { setItems } from "./redux/actions/Items";
 import { data } from "./data/data";
 import { location } from "./data/SortParams";
@@ -54,4 +53,4 @@ App.propTypes = {
     dispatch: PropTypes.func
 }
 
-export default connect(null, null)(App);
+export default withRouter(connect(null, null)(App));
