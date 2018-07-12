@@ -15,7 +15,7 @@ body {
 
 .content {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   padding-bottom: 10px; }
 
@@ -439,5 +439,9 @@ body {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=1 );
   /* IE6-9 */ }
+
+@media only screen and (max-width: 1500px) {
+  .page-main {
+    width: 1080px; } }
 
 /*# sourceMappingURL=app.styles.css.map*/

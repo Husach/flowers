@@ -31,7 +31,7 @@ class Home extends Base {
 
     renderContainer() {
         let {homeItems} = this.props;
-        debugger
+
         return (
             <div className="page-main">
                 {

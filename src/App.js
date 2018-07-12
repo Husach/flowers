@@ -14,14 +14,18 @@ import OurWorks from "./pages/ourworks.jsx";
 import Contacts from "./pages/contacts.jsx";
 import Franchise from "./pages/franchise.jsx";
 
-import { data } from "./data/data";
 import { setItems } from "./redux/actions/Items";
+import { data } from "./data/data";
+import { location } from "./data/SortParams";
+import { sortParams } from "./data/SortParams";
 
 class App extends Component {
 
     componentDidMount() {
         this.props.dispatch(setItems({
-            items: data
+            items: data,
+            location: location,
+            sortParams: sortParams
         }))
     }
 

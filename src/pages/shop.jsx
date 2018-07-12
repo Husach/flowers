@@ -1,11 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
 import Base from "../container/Base.jsx";
 import Content from "../container/Content.jsx";
 import { shop } from "./../redux/reducers/Shop";
-
-import {setSortItems} from "../redux/actions/Items";
 
 class Shop extends Base {
     /*constructor(props) {
@@ -36,13 +33,13 @@ class Shop extends Base {
         return d;
      }*/
 
-/*    componentDidMount() {
+    /*    componentDidMount() {
         this.props.dispatch(setSortItems({
 
         }))
     }*/
 
-/*    sorter(value) {
+    /*    sorter(value) {
         this.setState({
             sortValue: value
         });
@@ -85,7 +82,7 @@ class Shop extends Base {
       });
     }*/
 
-/*    city(value) {
+     /*city(value) {
         this.setState({
             currentCity: value
         }, () => {
@@ -95,13 +92,7 @@ class Shop extends Base {
 
     renderContainer() {
         return (
-            <Content
-                /*items={this.getOptions.call(this)}
-                city={::this.city}
-                sorter={::this.sorter}
-                sortValue={this.state.sortValue}
-                currentCity={this.state.currentCity}*/
-            />
+            <Content /*items={this.getOptions.call(this)} city={::this.city} sorter={::this.sorter} sortValue={this.state.sortValue} currentCity={this.state.currentCity}*/ />
         );
     }
 }
