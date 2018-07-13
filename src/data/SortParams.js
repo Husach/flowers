@@ -29,5 +29,25 @@ export const location = [
     {
         value: 13,
         primaryText: "Харьков"
+    },
+    {
+        value: 14,
+        primaryText: "Днепр"
+    },
+    {
+        value: 15,
+        primaryText: "Запорожье"
+    },
+    {
+        value: 16,
+        primaryText: "Одесса"
+    },
+    {
+        value: 17,
+        primaryText: "Львов"
+    },
+    {
+        value: 18,
+        primaryText: "Полтава"
     }
 ];

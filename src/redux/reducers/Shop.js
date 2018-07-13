@@ -74,13 +74,19 @@ class Shop {
     }
 
     setOrder({sortBy}) {
-        switch (sortBy) {
+        this.sortBy = sortBy;
+        switch (this.sortBy) {
             case 1: return this.sorter.call(this, "rating");
             case 2: return this.sorter.call(this, "price");
-            case 3: return this.sorter.call(this, "price").reverse();
+            case 3: return this.reverseOrder.call(this, "price");
             case 4: return this.sorter.call(this, "latest");
             default : return this.items;
         }
+    }
+
+    reverseOrder(field) {
+        this.sorter(field);
+        this.sortedItems.reverse();
     }
 }
 
