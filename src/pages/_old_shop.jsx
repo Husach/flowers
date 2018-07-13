@@ -4,7 +4,7 @@
 
     sorter(value) {
         this.setState({
-            sortValue: value        });    }
+            sortParams: value        });    }
 
     mySort(field) {
         let list = [...this.state.items];
@@ -15,7 +15,7 @@
         return list;    }
 
     getOptions() {
-        switch (this.state.sortValue) {
+        switch (this.state.sortParams) {
             case "1": return this.mySort.call(this, "rating");
             case "2": return this.mySort.call(this, "price");
             case "3": return this.mySort.call(this, "price").reverse();

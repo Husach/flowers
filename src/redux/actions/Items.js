@@ -1,32 +1,32 @@
 import SHOP_TYPES from "../types/Shop";
 
+export const sorter = (payload) => {
+    return {
+        type: SHOP_TYPES.SORTER,
+        payload
+    }
+};
+export const setCity = (payload) => {
+    return {
+        type: SHOP_TYPES.SET_CITY,
+        payload
+    }
+};
 export const setItems = (payload) => {
     return {
         type: SHOP_TYPES.SET_ITEMS,
         payload
     }
 };
-export const sortCity = (payload) => {
+export const setOrder = (payload) => {
     return {
-        type: SHOP_TYPES.SORT_CITY,
+        type: SHOP_TYPES.SET_ORDER,
         payload
     }
 };
-export const sortItems = (payload) => {
+export const setCategory = (payload) => {
     return {
-        type: SHOP_TYPES.SORT_ITEMS,
-        payload
-    }
-};
-export const sortOrder = (payload) => {
-    return {
-        type: SHOP_TYPES.SORT_ORDER,
-        payload
-    }
-};
-export const sortCategory = (payload) => {
-    return {
-        type: SHOP_TYPES.SORT_CATEGORY,
+        type: SHOP_TYPES.SET_CATEGORY,
         payload
     }
 };

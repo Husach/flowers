@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import { withRouter } from "react-router";
 import ReactPaginate from "react-paginate";
-import { sortCity, sortOrder, sortCategory } from "../redux/actions/Items";
+import { setCity, setOrder, setCategory } from "../redux/actions/Items";
 import Select from "../components/Select.jsx";
 import Card from "./Card.jsx";
 import Base from "./Base.jsx";
@@ -24,7 +24,7 @@ class Content extends Base {
         let {match: {params: {category: oldCategory}}} = this.props;
         if (!this.props.isLoadedData && props.isLoadedData ||
             category !== oldCategory) {
-            this.props.dispatch(sortCategory({
+            this.props.dispatch(setCategory({
                 category
             }))
         }
@@ -91,29 +91,27 @@ class Content extends Base {
     }
 
     renderContainer() {
-        debugger
-
         return (
             <div className="page-main">
                 <div className="filter">
                     <Select
-                        options={this.props.locations}
+                        options={this.props.location}
                         selected={this.props.selectedCity}
                         name="Город"
                         handleChange={(city) => {
-                            this.props.dispatch(sortCity({
+                            this.props.dispatch(setCity({
                                 city
                             }))
                         }}
                     />
                     <Select
-                        options={this.props.sortValue}
+                        options={this.props.order}
                         selected={this.props.sortBy}
                         name="Сортировка"
-                        handleChange={() => {
-                            /*this.props.dispatch(sortOrder({
-                                sortBy: this.sortBy
-                            }))*/
+                        handleChange={(sortBy) => {
+                            this.props.dispatch(setOrder({
+                                sortBy
+                            }))
                         }}
                     />
                 </div>
@@ -124,16 +122,16 @@ class Content extends Base {
 }
 
 Content.propTypes = {
+    order: PropTypes.array,
     items: PropTypes.array,
     sortBy: PropTypes.number,
     dispatch: PropTypes.func,
+    location: PropTypes.array,
     category: PropTypes.string,
-    sortValue: PropTypes.array,
-    locations: PropTypes.array,
     sortedItems: PropTypes.array,
     isLoadedData: PropTypes.bool,
-    selectedCity: PropTypes.number,
-    handleChange: PropTypes.func
+    handleChange: PropTypes.func,
+    selectedCity: PropTypes.number
 };
 
 export default withRouter(connect(state => {
@@ -141,8 +139,8 @@ export default withRouter(connect(state => {
         isLoadedData: state.shop.isLoadedData,
         selectedCity: state.shop.selectedCity,
         sortedItems: state.shop.sortedItems,
-        locations: state.shop.locations,
-        sortValue: state.shop.sortValue,
-        sortBy: state.shop.sortBy
+        location: state.shop.location,
+        sortBy: state.shop.sortBy,
+        order: state.shop.order
     }
 })(Content));

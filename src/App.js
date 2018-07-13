@@ -16,17 +16,16 @@ import Franchise from "./pages/franchise.jsx";
 import Content from "./container/Content.jsx";
 
 import { setItems } from "./redux/actions/Items";
+import { order, location } from "./data/SortParams";
 import { data } from "./data/data";
-import { location } from "./data/SortParams";
-import { sortParams } from "./data/SortParams";
 
 class App extends Component {
 
     componentDidMount() {
         this.props.dispatch(setItems({
-            items: data,
             location: location,
-            sortParams: sortParams
+            order: order,
+            items: data
         }))
     }
 

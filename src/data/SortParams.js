@@ -1,4 +1,4 @@
-export const sortParams = [
+export const order = [
     {
         value: 1,
         primaryText: "по рейтингу"
