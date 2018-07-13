@@ -55,8 +55,11 @@ class Shop {
     }
 
     sortCategory({category}) {
+        this.category = category;
         this.sortedItems = this.sortCity().filter(item => item.category.some((itm) => itm === category));
     }
+
+
 
     //TODO
     sortCity() {
@@ -91,6 +94,11 @@ class Shop {
             return 0;
         });
     }
+
+    setCity({city}) {
+        this.selectedCity = city;
+        this.sortCategory({category: this.category});
+    }
 }
 
 const shop = new Shop();
@@ -101,7 +109,7 @@ export default function cardReducer(state = shop.getState(), action) {
             shop.setItems(action.payload);
             break;
         case SHOP_TYPES.SORT_CITY:
-            shop.sortCity(action.payload);
+            shop.setCity(action.payload);
             break;
         case SHOP_TYPES.SORT_ITEMS:
             shop.sortItems(action.payload);

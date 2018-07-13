@@ -100,21 +100,21 @@ class Content extends Base {
                         options={this.props.locations}
                         selected={this.props.selectedCity}
                         name="Город"
-                        handleChange={
+                        handleChange={(city) => {
                             this.props.dispatch(sortCity({
-                                selectedCity: this.selectedCity
+                                city
                             }))
-                        }
+                        }}
                     />
                     <Select
                         options={this.props.sortValue}
                         selected={this.props.sortBy}
                         name="Сортировка"
-                        handleChange={
-                           this.props.dispatch(sortOrder({
-                               sortBy: this.sortBy
-                           }))
-                       }
+                        handleChange={() => {
+                            /*this.props.dispatch(sortOrder({
+                                sortBy: this.sortBy
+                            }))*/
+                        }}
                     />
                 </div>
                 {this.renderContent.call(this)}

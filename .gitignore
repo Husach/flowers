@@ -9,6 +9,11 @@
 # production
 /build
 
+/.idea
+/public/js
+
+.gitignore
+
 # misc
 .DS_Store
 .env.local

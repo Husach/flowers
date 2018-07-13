@@ -8,13 +8,13 @@ const Select = ({options, handleChange, selected, name}) => (
         className="Select"
         value={selected}
         floatingLabelText={name}
-        onChange={handleChange}
     >
         {options.map((item, index) => {
             return (
                 <MenuItem
                     key={index}
                     value={item.value}
+                    onClick={handleChange.bind(this, item.value)}
                     primaryText={item.primaryText}
                 />
             );

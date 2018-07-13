@@ -13,7 +13,7 @@ import Delivery from "./pages/delivery.jsx";
 import OurWorks from "./pages/ourworks.jsx";
 import Contacts from "./pages/contacts.jsx";
 import Franchise from "./pages/franchise.jsx";
-import Content from "./container/content.jsx";
+import Content from "./container/Content.jsx";
 
 import { setItems } from "./redux/actions/Items";
 import { data } from "./data/data";
