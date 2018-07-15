@@ -11,6 +11,9 @@ class Shop {
         this.location = [];
         this.category = "";
         this.isLoadedData = false;
+        this.currentPage = 1;
+        this.itemsLimiter = 8;
+        this.pages = 1;
     }
 
     getState() {
@@ -22,7 +25,10 @@ class Shop {
             selectedCity: this.selectedCity,
             location: this.location,
             category: this.category,
-            isLoadedData: this.isLoadedData
+            isLoadedData: this.isLoadedData,
+            currentPage: this.currentPage,
+            itemsLimiter: this.itemsLimiter,
+            pages: this.pages
         };
     }
 
@@ -61,10 +67,28 @@ class Shop {
             if (a[field] < b[field]) return 1;
             return 0;
         });
+
+        //sort Paginate
+
+        this.pages = Math.ceil(sortedItems.length / this.itemsLimiter);
+
+        let pageItems = [];
+        for (let i = 0; i < this.itemsLimiter; i++) {
+            if (this.currentPage === 1 && this.sortedItems[i] !== undefined) {
+                pageItems[i] = this.sortedItems[i];
+            } else if (this.sortedItems[((this.currentPage - 1) * this.itemsLimiter) + i] !== undefined) {
+                pageItems[i] = this.sortedItems[((this.currentPage - 1) * this.itemsLimiter) + i];
+            } else {
+                i = this.itemsLimiter;
+            }
+        }
+        //TODO передавать в другой массив, отрисовывать уже новый массив
+        this.sortedItems = pageItems;
     }
 
     setCategory({category}) {
         this.category = category;
+        this.currentPage = 1;
         this.sorter();
     }
 
@@ -88,6 +112,38 @@ class Shop {
         this.sorter(field);
         this.sortedItems.reverse();
     }
+
+    changePage(value) {
+        debugger
+        this.currentPage = value.selected + 1;
+        this.sorter();
+    }
+
+    /*pageChange(data) {
+        this.setState({
+            currentPage: data.selected + 1        });    }
+
+    getNumberPages(items) {
+        let pages = Math.ceil(items.size / this.state.limiter);
+        this.setState({pages});
+    }
+
+    newData() {
+        let items = this.props.items;
+        let array = [];
+        if(!this.props.data.length) return array;
+        console.log("1 length:", this.props.data.length, "pages:", this.state.pages, "data:", this.props.data);
+        for (let i = 0; i < this.state.limiter; i++) {
+            if (this.state.currentPage === 1 && this.props.data[i] !== undefined) {
+                array[i] = this.props.data[i];
+            } else if (this.props.data[((this.state.currentPage - 1) * this.state.limiter) + i] !== undefined) {
+                array[i] = this.props.data[((this.state.currentPage - 1) * this.state.limiter) + i];
+            } else {
+                i = this.state.limiter;
+            }        }
+        console.log("2 new array:", array);
+        return array;
+        return [];    }*/
 }
 
 const shop = new Shop();
@@ -108,6 +164,9 @@ export default function cardReducer(state = shop.getState(), action) {
             break;
         case SHOP_TYPES.SET_CATEGORY:
             shop.setCategory(action.payload);
+            break;
+        case SHOP_TYPES.CHANGE_PAGE:
+            shop.changePage(action.payload);
             break;
         default:
             return state;

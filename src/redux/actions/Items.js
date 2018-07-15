@@ -24,6 +24,12 @@ export const setOrder = (payload) => {
         payload
     }
 };
+export const changePage = (payload) => {
+    return {
+        type: SHOP_TYPES.CHANGE_PAGE,
+        payload
+    }
+};
 export const setCategory = (payload) => {
     return {
         type: SHOP_TYPES.SET_CATEGORY,

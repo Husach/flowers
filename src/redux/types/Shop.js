@@ -3,5 +3,6 @@ export default {
     SET_CITY: "SET_CITY",
     SET_ITEMS: "SET_ITEMS",
     SET_ORDER: "SET_ORDER",
+    CHANGE_PAGE: "CHANGE_PAGE",
     SET_CATEGORY: "SET_CATEGORY"
 };
