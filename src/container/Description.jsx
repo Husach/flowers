@@ -1,24 +1,20 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 import BtnOrder from "../components/button/BtnOrder.jsx";
 
-const database = require("../data/data");
-
 class Description extends Component {
-    state = {
-        data: {}
-    };
 
     getItem() {
         let { id } = this.props.params;
-        let item = database.data.find(itm => itm.id == id);
+        let item = this.props.sortedItems.find(itm => itm.id === id);
         if(!item) {
             return {};
         }
         return item;
     }
 
-    note(item) {
+    renderNote(item) {
         if (item.note) {
             return <div className="description__note">{item.note}</div>;
         }
@@ -36,15 +32,20 @@ class Description extends Component {
                     <BtnOrder item={item} />
                     <div className="description__text">{item.description}</div>
                     <div className="description__text"><b>Состав:</b> {item.composition}</div>
-                    {this.note.call(this, item)}
-                    </div>
+                    {this.renderNote.call(this, item)}
+                </div>
             </div>
         );
     }
 }
 
 Description.propTypes = {
-    params: PropTypes.array
-}
+    params: PropTypes.object,
+    sortedItems: PropTypes.array
+};
 
-export default Description;
+export default connect((state) => {
+    return {
+        sortedItems: state.shop.sortedItems
+    }
+})(Description);

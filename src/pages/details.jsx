@@ -22,7 +22,7 @@ const Details = ({match: {params}, history}) => {
 Details.propTypes = {
     router: PropTypes.object,
     match: PropTypes.object,
-    history: PropTypes.string
+    history: PropTypes.object
 };
 
 export default Details;

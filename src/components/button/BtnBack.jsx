@@ -12,7 +12,7 @@ const BtnBack = ({history}) => (
 );
 
 BtnBack.propTypes = {
-   history: PropTypes.string
+   history: PropTypes.object
 }
 
 export default BtnBack;

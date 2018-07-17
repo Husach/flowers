@@ -7,9 +7,9 @@ import { setCity,
          setOrder,
          changePage,
          setCategory } from "../redux/actions/Items";
-import Select from "../components/Select.jsx";
-import Card from "./Card.jsx";
-import Base from "./Base.jsx";
+import Select from "./select/index.jsx";
+import Card from "../container/Card.jsx";
+import Base from "../container/Base.jsx";
 
 class Content extends Base {
 
