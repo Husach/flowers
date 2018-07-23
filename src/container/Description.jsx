@@ -6,8 +6,9 @@ import BtnOrder from "../components/button/BtnOrder.jsx";
 class Description extends Component {
 
     getItem() {
+        debugger
         let { id } = this.props.params;
-        let item = this.props.sortedItems.find(itm => itm.id === id);
+        let item = this.props.items.find(itm => itm.id === id);
         if(!item) {
             return {};
         }
@@ -41,11 +42,11 @@ class Description extends Component {
 
 Description.propTypes = {
     params: PropTypes.object,
-    sortedItems: PropTypes.array
+    items: PropTypes.array
 };
 
 export default connect((state) => {
     return {
-        sortedItems: state.shop.sortedItems
+        items: state.shop.items
     }
 })(Description);

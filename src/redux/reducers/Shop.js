@@ -2,24 +2,26 @@ import SHOP_TYPES from "../types/Shop";
 
 class Shop {
     constructor() {
-        this.items = [];
-        this.homeItems = [];
-        this.sortedItems = [];
+        this.items = [];            //all items
+        this.homeItems = [];        //for start page
+        this.sortedItems = [];      //sort with params
+        this.pageItems = [];        //item for current page
         this.sortBy = 1;
         this.order = [];
         this.selectedCity = 11;
-        this.location = [];
+        this.location = [];         //all citys
         this.category = "";
         this.isLoadedData = false;
-        this.currentPage = 1;
+        this.currentPage = 0;
         this.itemsLimiter = 8;
-        this.pages = 1;
+        this.totalPages = 1;
     }
 
     getState() {
-        return {
+        return {...{
             homeItems: this.homeItems,
             sortedItems: this.sortedItems,
+            pageItems: this.pageItems,
             sortBy: this.sortBy,
             order: this.order,
             selectedCity: this.selectedCity,
@@ -28,11 +30,13 @@ class Shop {
             isLoadedData: this.isLoadedData,
             currentPage: this.currentPage,
             itemsLimiter: this.itemsLimiter,
-            pages: this.pages
-        };
+            totalPages: this.totalPages,
+            items: this.items
+        }};
     }
 
     setItems({items, location, order}) {
+        debugger
         items.forEach(item => {
             this.items.push(item);
         });
@@ -54,41 +58,9 @@ class Shop {
         this.homeItems = [items.slice(0, 5), items.slice(5, 10)];
     }
 
-    sorter(field) {
-        //sort Category
-        let sortedItems = this.items.filter(item => item.category.some((itm) => itm === this.category));
-
-        //sort City
-        sortedItems = sortedItems.filter(item => {return (item.city === this.selectedCity)});
-
-        //sort Order
-        this.sortedItems =  sortedItems.sort((a, b) => {
-            if (a[field] > b[field]) return -1;
-            if (a[field] < b[field]) return 1;
-            return 0;
-        });
-
-        //sort Paginate
-
-        this.pages = Math.ceil(sortedItems.length / this.itemsLimiter);
-
-        let pageItems = [];
-        for (let i = 0; i < this.itemsLimiter; i++) {
-            if (this.currentPage === 1 && this.sortedItems[i] !== undefined) {
-                pageItems[i] = this.sortedItems[i];
-            } else if (this.sortedItems[((this.currentPage - 1) * this.itemsLimiter) + i] !== undefined) {
-                pageItems[i] = this.sortedItems[((this.currentPage - 1) * this.itemsLimiter) + i];
-            } else {
-                i = this.itemsLimiter;
-            }
-        }
-        //TODO передавать в другой массив, отрисовывать уже новый массив
-        this.sortedItems = pageItems;
-    }
-
     setCategory({category}) {
         this.category = category;
-        this.currentPage = 1;
+        this.currentPage = 0;
         this.sorter();
     }
 
@@ -114,36 +86,46 @@ class Shop {
     }
 
     changePage(value) {
-        debugger
-        this.currentPage = value.selected + 1;
+        this.currentPage = value.selected;
         this.sorter();
     }
 
-    /*pageChange(data) {
-        this.setState({
-            currentPage: data.selected + 1        });    }
+    sorter(field) {
+        //sort Category
+        let sortedItems = this.items.filter(item => item.category.some((itm) => itm === this.category));
 
-    getNumberPages(items) {
-        let pages = Math.ceil(items.size / this.state.limiter);
-        this.setState({pages});
+        //sort City
+        sortedItems = sortedItems.filter(item => {return (item.city === this.selectedCity)});
+
+        //sort Order
+        this.sortedItems =  sortedItems.sort((a, b) => {
+            if (a[field] > b[field]) return -1;
+            if (a[field] < b[field]) return 1;
+            return 0;
+        });
+
+        this.sorterPage.call(this);
     }
 
-    newData() {
-        let items = this.props.items;
-        let array = [];
-        if(!this.props.data.length) return array;
-        console.log("1 length:", this.props.data.length, "pages:", this.state.pages, "data:", this.props.data);
-        for (let i = 0; i < this.state.limiter; i++) {
-            if (this.state.currentPage === 1 && this.props.data[i] !== undefined) {
-                array[i] = this.props.data[i];
-            } else if (this.props.data[((this.state.currentPage - 1) * this.state.limiter) + i] !== undefined) {
-                array[i] = this.props.data[((this.state.currentPage - 1) * this.state.limiter) + i];
+    sorterPage() {
+        debugger
+        //sort for Paginate
+        this.totalPages = Math.ceil(this.sortedItems.length / this.itemsLimiter);
+
+        let tmp = [];
+        for (let i = 0; i < this.itemsLimiter; i++) {
+            if (this.currentPage === 0 && this.sortedItems[i] !== undefined) {
+                tmp.push(this.sortedItems[i]);
+            } else if (this.sortedItems[((this.currentPage) * this.itemsLimiter) + i] !== undefined) {
+                tmp.push(this.sortedItems[((this.currentPage) * this.itemsLimiter) + i]);
             } else {
-                i = this.state.limiter;
-            }        }
-        console.log("2 new array:", array);
-        return array;
-        return [];    }*/
+                i = this.itemsLimiter;
+            }
+        }
+
+        this.sortedItems = tmp;
+        //this.pageItems = tmp;
+    }
 }
 
 const shop = new Shop();

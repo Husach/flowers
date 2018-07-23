@@ -14,19 +14,20 @@ import Base from "../container/Base.jsx";
 class Content extends Base {
 
     componentDidMount() {
-        this.setCategory.call(this, this.props);
+        let start = true;
+        this.setCategory.call(this, this.props, start);
     }
 
     componentWillReceiveProps(props) {
         this.setCategory.call(this, props);
     }
 
-    setCategory(props) {
+    setCategory(props, start) {
         if(!props.isLoadedData) return null;
         let {match: {params: {category}}} = props;
         let {match: {params: {category: oldCategory}}} = this.props;
         if (!this.props.isLoadedData && props.isLoadedData ||
-            category !== oldCategory) {
+            category !== oldCategory || start) {
             this.props.dispatch(setCategory({
                 category
             }))
@@ -34,7 +35,7 @@ class Content extends Base {
     }
 
     renderContent() {
-
+        debugger
         return [
             <div className="content" key="content-key-block" >
                 {this.props.sortedItems.map((item, index) =>
@@ -46,12 +47,14 @@ class Content extends Base {
                 marginPagesDisplayed={1}
                 previousLabel={"previous"}
                 nextLabel={"next"}
-                pageCount={this.props.pages}
+                pageCount={this.props.totalPages}
+                forcePage={this.props.currentPage}
                 activeClassName={"active"}
                 breakClassName={"break-me"}
                 containerClassName={"pagination"}
                 subContainerClassName={"pages pagination"}
                 onPageChange={(value) => {
+                    debugger
                     this.props.dispatch(changePage((
                         value
                     )))
@@ -105,10 +108,12 @@ Content.propTypes = {
     dispatch: PropTypes.func,
     location: PropTypes.array,
     category: PropTypes.string,
+    pageItems: PropTypes.array,
     sortedItems: PropTypes.array,
     isLoadedData: PropTypes.bool,
     handleChange: PropTypes.func,
-    selectedCity: PropTypes.number
+    selectedCity: PropTypes.number,
+    totalPages: PropTypes.number
 };
 
 export default withRouter(connect(state => {
@@ -116,9 +121,11 @@ export default withRouter(connect(state => {
         isLoadedData: state.shop.isLoadedData,
         selectedCity: state.shop.selectedCity,
         sortedItems: state.shop.sortedItems,
+        pageItems: state.shop.sortedItems,
+        currentPage: state.shop.currentPage,
         location: state.shop.location,
         sortBy: state.shop.sortBy,
-        pages: state.shop.pages,
+        totalPages: state.shop.totalPages,
         order: state.shop.order
     }
 })(Content));

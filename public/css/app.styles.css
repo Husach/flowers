@@ -17,7 +17,7 @@ body {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  padding-bottom: 10px; }
+  padding-bottom: 50px; }
 
 .footer__wrapper {
   display: flex;
