@@ -35,10 +35,9 @@ class Content extends Base {
     }
 
     renderContent() {
-        debugger
         return [
             <div className="content" key="content-key-block" >
-                {this.props.sortedItems.map((item, index) =>
+                {this.props.pageItems.map((item, index) =>
                     <Card item={item} key={index} />
                 )}
             </div>,
@@ -121,7 +120,7 @@ export default withRouter(connect(state => {
         isLoadedData: state.shop.isLoadedData,
         selectedCity: state.shop.selectedCity,
         sortedItems: state.shop.sortedItems,
-        pageItems: state.shop.sortedItems,
+        pageItems: state.shop.pageItems,
         currentPage: state.shop.currentPage,
         location: state.shop.location,
         sortBy: state.shop.sortBy,

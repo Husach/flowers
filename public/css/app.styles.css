@@ -269,6 +269,7 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 10px;
   overflow: hidden; }
   .preview__card {
     display: flex;

@@ -36,7 +36,6 @@ class Shop {
     }
 
     setItems({items, location, order}) {
-        debugger
         items.forEach(item => {
             this.items.push(item);
         });
@@ -108,7 +107,6 @@ class Shop {
     }
 
     sorterPage() {
-        debugger
         //sort for Paginate
         this.totalPages = Math.ceil(this.sortedItems.length / this.itemsLimiter);
 
@@ -123,8 +121,7 @@ class Shop {
             }
         }
 
-        this.sortedItems = tmp;
-        //this.pageItems = tmp;
+        this.pageItems = tmp;
     }
 }
 
