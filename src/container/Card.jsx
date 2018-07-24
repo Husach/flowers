@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import BtnOrder from "../components/button/BtnOrder.jsx";
 
 class Card extends Component {
-
     render() {
         return (
             <div className="card">

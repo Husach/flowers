@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import ReactPaginate from "react-paginate";
 import { setCity,
@@ -14,17 +14,17 @@ import Base from "../container/Base.jsx";
 import { setItems } from "../redux/actions/Items";
 import { order, location } from "../data/SortParams";
 import { data } from "../data/Data";
+//import Paginate from "paginate/index.jsx";
 
 class Content extends Base {
 
     componentDidMount() {
+        let start = true;
         this.props.dispatch(setItems({
             location: location,
             order: order,
             items: data
         }));
-
-        let start = true;
         this.setCategory.call(this, this.props, start);
     }
 
@@ -38,24 +38,13 @@ class Content extends Base {
         let {match: {params: {category: oldCategory}}} = this.props;
         if (!this.props.isLoadedData && props.isLoadedData ||
             category !== oldCategory || start) {
-            this.props.dispatch(setCategory({
-                category
-            }))
+            this.props.dispatch(setCategory({category}))
         }
     }
 
-/*<div className="content" key="content-key-block" >
-{this.props.pageItemsMap.map((item, index) =>
-    <Card item={item} key={index} />
-)}</div>,*/
-
     renderCard() {
-        debugger
         let arr = [];
-        if (this.props.sortedItems !== undefined) {
-            this.props.sortedItems.forEach((item) => arr.push(<Card item={item} key={item.index}/>))
-        }
-
+        this.props.sortedItemsMap.forEach((item) => arr.push(<Card item={item} key={item.index}/>));
         return arr;
     }
 
@@ -65,22 +54,22 @@ class Content extends Base {
                 {this.renderCard()}
             </div>,
             <ReactPaginate
-                pageRangeDisplayed={2}
-                marginPagesDisplayed={1}
-                previousLabel={"previous"}
-                nextLabel={"next"}
                 pageCount={this.props.totalPages}
                 forcePage={this.props.currentPage}
-                activeClassName={"active"}
-                breakClassName={"break-me"}
-                containerClassName={"pagination"}
-                subContainerClassName={"pages pagination"}
-                key="content-key-pagination"
                 onPageChange={(value) => {
                     this.props.dispatch(setPage((
                         value
                     )))
                 }}
+                pageRangeDisplayed={2}
+                marginPagesDisplayed={1}
+                previousLabel={"previous"}
+                nextLabel={"next"}
+                activeClassName={"active"}
+                breakClassName={"break-me"}
+                containerClassName={"pagination"}
+                subContainerClassName={"pages pagination"}
+                key="content-key-pagination"
             />
         ];
     }
@@ -93,9 +82,7 @@ class Content extends Base {
                     options={this.props.location}
                     selected={this.props.selectedCity}
                     handleChange={(city) => {
-                        this.props.dispatch(setCity({
-                            city
-                        }))
+                        this.props.dispatch(setCity({city}))
                     }}
                 />
                 <Select
@@ -103,9 +90,7 @@ class Content extends Base {
                     options={this.props.order}
                     selected={this.props.sortBy}
                     handleChange={(sortBy) => {
-                        this.props.dispatch(setOrder({
-                            sortBy
-                        }))
+                        this.props.dispatch(setOrder({sortBy}))
                     }}
                 />
             </div>
@@ -123,33 +108,36 @@ class Content extends Base {
 }
 
 Content.propTypes = {
-    order: PropTypes.array,
     items: PropTypes.array,
-    sortBy: PropTypes.number,
-    dispatch: PropTypes.func,
-    location: PropTypes.array,
-    category: PropTypes.string,
     pageItems: PropTypes.array,
-    totalPages: PropTypes.number,
-    isLoadedData: PropTypes.bool,
+    order: PropTypes.array,
+    location: PropTypes.array,
+
+    dispatch: PropTypes.func,
     handleChange: PropTypes.func,
+    sortBy: PropTypes.number,
     selectedCity: PropTypes.number,
+    category: PropTypes.string,
+    isLoadedData: PropTypes.bool,
+    totalPages: PropTypes.number,
+
     pageItemsMap: PropTypes.func,
-    sortedItemsMap: PropTypes.object,
-    sortedItems: PropTypes.object
+    sortedItemsMap: PropTypes.object
 };
 
 export default withRouter(connect(state => {
     return {
-        sortedItems: state.shop.sortedItems,
-        pageItemsMap: state.shop.pageItemsMap,
-        isLoadedData: state.shop.isLoadedData,
+        pageItems: state.shop.pageItems,
+        order: state.shop.order,
+        location: state.shop.location,
+
+        sortBy: state.shop.number,
         selectedCity: state.shop.selectedCity,
+        isLoadedData: state.shop.isLoadedData,
         currentPage: state.shop.currentPage,
         totalPages: state.shop.totalPages,
-        pageItems: state.shop.pageItems,
-        location: state.shop.location,
-        sortBy: state.shop.number,
-        order: state.shop.order
+
+        pageItemsMap: state.shop.pageItemsMap,
+        sortedItemsMap: state.shop.sortedItemsMap
     }
 })(Content));

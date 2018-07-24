@@ -27,7 +27,7 @@ Btn.defaultProps = {
     labelColor: "",
     bgColor: "",
     className: ""
-}
+};
 
 Btn.propTypes = {
     className: PropTypes.string,
@@ -36,6 +36,6 @@ Btn.propTypes = {
     bgColor: PropTypes.string,
     onClick: PropTypes.func,
     style: PropTypes.object
-}
+};
 
 export default Btn;

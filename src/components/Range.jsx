@@ -33,24 +33,21 @@ const menu = [
 ];
 
 class Range extends Component {
-
-  render() {
-    return (
-      <div className="range">
-        <div className="range__wrapper">
-          {menu.map((item, index) =>
-            <div className="range__item" key={index}>
-              <Link to={item.link}
-                    className="range__link"
-              >
-                {item.label}
-              </Link>
+    render() {
+        return (
+            <div className="range">
+                <div className="range__wrapper">
+                    {menu.map((item, index) =>
+                        <div className="range__item" key={index}>
+                            <Link to={item.link} className="range__link">
+                                {item.label}
+                            </Link>
+                        </div>
+                    )}
+                </div>
             </div>
-          )}
-        </div>
-      </div>
-    );
-  }
+        );
+    }
 }
 
 export default Range;

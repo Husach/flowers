@@ -29,22 +29,19 @@ const menu = [
 ];
 
 class Menu extends Component {
-
-  render() {
-    return (
-      <div className="menu">
-          {menu.map((item, index) =>
-            <div className="menu__item" key={index} >
-              <Link to={item.link}
-                    className="menu__link"
-              >
-                {item.label}
-              </Link>
+    render() {
+        return (
+            <div className="menu">
+                {menu.map((item, index) =>
+                    <div className="menu__item" key={index} >
+                        <Link to={item.link} className="menu__link">
+                            {item.label}
+                            </Link>
+                    </div>
+                )}
             </div>
-          )}
-      </div>
-    );
-  }
+        );
+    }
 }
 
 export default Menu;

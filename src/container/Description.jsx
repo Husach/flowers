@@ -4,7 +4,6 @@ import {connect} from "react-redux";
 import BtnOrder from "../components/button/BtnOrder.jsx";
 
 class Description extends Component {
-
     getItem() {
         let { id } = this.props.params;
         let item = this.props.items.find(itm => itm.id === id);

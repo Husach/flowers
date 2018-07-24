@@ -3,17 +3,14 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { setHomeItems } from "../redux/actions/Items";
-import Preview from "../container/Preview.jsx";
-import Base from "../container/Base.jsx";
+import Preview from "./Preview.jsx";
+import Base from "./Base.jsx";
 import { data } from "../data/Data";
-
 
 class Home extends Base {
 
     componentDidMount() {
-        this.props.dispatch(setHomeItems({
-            items: data
-        }))
+        this.props.dispatch(setHomeItems({items: data}))
     }
 
     renderPreview() {
@@ -38,7 +35,5 @@ Home.propTypes = {
 };
 
 export default withRouter(connect(state => {
-    return {
-        homeItemsMap: state.shop.homeItemsMap
-    }
+    return {homeItemsMap: state.shop.homeItemsMap}
 })(Home));

@@ -3,15 +3,16 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { Switch, Route } from "react-router-dom";
 
-import Home from "./pages/index.jsx";
+import Home from "./container/index.jsx";
 import About from "./pages/About.jsx";
-import Order from "./pages/Order.jsx";
 import Error from "./pages/Error.jsx";
-import Details from "./pages/Details.jsx";
 import Delivery from "./pages/Delivery.jsx";
 import OurWorks from "./pages/OurWorks.jsx";
 import Contacts from "./pages/Contacts.jsx";
 import Franchise from "./pages/Franchise.jsx";
+
+import Order from "./container/Order.jsx";
+import Details from "./container/Details.jsx";
 import Content from "./components/Content.jsx";
 
 class App extends Component {

@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Header from "../container/Header.jsx";
-import Footer from "../container/Footer.jsx";
+import Header from "./Header.jsx";
+import Footer from "./Footer.jsx";
 import BtnBack from "../components/button/BtnBack.jsx";
-import Description from "../container/Description.jsx";
+import Description from "./Description.jsx";
 
 const Details = ({match: {params}, history}) => {
 
