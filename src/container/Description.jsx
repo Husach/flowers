@@ -6,7 +6,6 @@ import BtnOrder from "../components/button/BtnOrder.jsx";
 class Description extends Component {
 
     getItem() {
-        debugger
         let { id } = this.props.params;
         let item = this.props.items.find(itm => itm.id === id);
         if(!item) {
@@ -16,9 +15,7 @@ class Description extends Component {
     }
 
     renderNote(item) {
-        if (item.note) {
-            return <div className="description__note">{item.note}</div>;
-        }
+        if (item.note) return <div className="description__note">{item.note}</div>
     }
 
     render() {

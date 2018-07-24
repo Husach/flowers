@@ -10,25 +10,25 @@ const btnStyle = {
 class Preview extends Component {
 
   render() {
-    return (
-      <div className="preview__card">
-          <img className="preview__img" src={this.props.item.src} alt={this.props.item.name} />
-          <div className="preview__name">{this.props.item.name}</div>
-          <div className="preview__price">{this.props.item.price} грн.</div>
-          <div className="preview__btn">
+      return (
+          <div className="preview__card">
+              <img className="preview__img" src={this.props.item.src} alt={this.props.item.name} />
+              <div className="preview__name">{this.props.item.name}</div>
+              <div className="preview__price">{this.props.item.price} грн.</div>
+              <div className="preview__btn">
 
-            <Link to={`/order/${this.props.item.id}`}>
-              <Btn
-                className="btn__order"
-                label="ДОБАВИТЬ"
-                backgroundColor="#fff"
-                labelColor="#d73925"
-                style={btnStyle}
-              />
-            </Link>
+                  <Link to={`/order/${this.props.item.id}`}>
+                      <Btn
+                          className="btn__order"
+                          label="ДОБАВИТЬ"
+                          backgroundColor="#fff"
+                          labelColor="#d73925"
+                          style={btnStyle}
+                      />
+                  </Link>
+              </div>
           </div>
-      </div>
-    );
+      );
   }
 }
 

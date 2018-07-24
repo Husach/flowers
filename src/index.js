@@ -10,7 +10,6 @@ import App from "./App";
 import "./scss/base.scss";
 
 const store = createStore(reducers);
-//const App = withRouter(App);
 
 render (
     <MuiThemeProvider>
