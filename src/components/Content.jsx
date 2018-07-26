@@ -10,7 +10,6 @@ import { setCity,
 import Select from "./select/index.jsx";
 import Card from "../container/Card.jsx";
 import Base from "../container/Base.jsx";
-
 import { setItems } from "../redux/actions/Items";
 import { order, location } from "../data/SortParams";
 import { data } from "../data/Data";
@@ -44,7 +43,7 @@ class Content extends Base {
 
     renderCard() {
         let arr = [];
-        this.props.sortedItemsMap.forEach((item) => arr.push(<Card item={item} key={item.index}/>));
+        this.props.pageItemsMap.forEach((item) => arr.push(<Card item={item} key={item.index}/>));
         return arr;
     }
 
@@ -108,11 +107,6 @@ class Content extends Base {
 }
 
 Content.propTypes = {
-    items: PropTypes.array,
-    pageItems: PropTypes.array,
-    order: PropTypes.array,
-    location: PropTypes.array,
-
     dispatch: PropTypes.func,
     handleChange: PropTypes.func,
     sortBy: PropTypes.number,
@@ -120,24 +114,20 @@ Content.propTypes = {
     category: PropTypes.string,
     isLoadedData: PropTypes.bool,
     totalPages: PropTypes.number,
-
-    pageItemsMap: PropTypes.func,
-    sortedItemsMap: PropTypes.object
+    order: PropTypes.array,
+    location: PropTypes.array,
+    pageItemsMap: PropTypes.object,
 };
 
 export default withRouter(connect(state => {
     return {
-        pageItems: state.shop.pageItems,
-        order: state.shop.order,
-        location: state.shop.location,
-
         sortBy: state.shop.number,
         selectedCity: state.shop.selectedCity,
         isLoadedData: state.shop.isLoadedData,
         currentPage: state.shop.currentPage,
         totalPages: state.shop.totalPages,
-
-        pageItemsMap: state.shop.pageItemsMap,
-        sortedItemsMap: state.shop.sortedItemsMap
+        order: state.shop.order,
+        location: state.shop.location,
+        pageItemsMap: state.shop.pageItemsMap
     }
 })(Content));
