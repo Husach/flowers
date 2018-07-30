@@ -121,7 +121,7 @@ Content.propTypes = {
 
 export default withRouter(connect(state => {
     return {
-        sortBy: state.shop.number,
+        sortBy: state.shop.sortBy,
         selectedCity: state.shop.selectedCity,
         isLoadedData: state.shop.isLoadedData,
         currentPage: state.shop.currentPage,

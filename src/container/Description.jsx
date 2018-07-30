@@ -14,6 +14,7 @@ class Description extends Component {
     }
 
     renderNote(item) {
+
         if (item.note) return <div className="description__note">{item.note}</div>
     }
 
