@@ -6,7 +6,7 @@ import BtnOrder from "../components/button/BtnOrder.jsx";
 class Description extends Component {
     getItem() {
         let { id } = this.props.params;
-        let item = this.props.items.find(itm => itm.id === id);
+        let item = this.props.itemsMap.get(id);
         if(!item) {
             return {};
         }
@@ -14,7 +14,6 @@ class Description extends Component {
     }
 
     renderNote(item) {
-
         if (item.note) return <div className="description__note">{item.note}</div>
     }
 
@@ -39,11 +38,11 @@ class Description extends Component {
 
 Description.propTypes = {
     params: PropTypes.object,
-    items: PropTypes.array
+    itemsMap: PropTypes.object
 };
 
 export default connect((state) => {
     return {
-        items: state.shop.items
+        itemsMap: state.shop.itemsMap
     }
 })(Description);

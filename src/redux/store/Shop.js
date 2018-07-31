@@ -1,4 +1,4 @@
-import { Map } from "immutable";
+import { OrderedMap, Map } from "immutable";
 
 class ShopStore {
     constructor() {
@@ -11,10 +11,10 @@ class ShopStore {
         this.totalPages = 1;
         this.order = [];                    //variants for sort
         this.location = [];                 //all citys
-        this.itemsMap = Map();              //all items
-        this.homeItemsMap = Map();          //for start page
-        this.sortedItemsMap = Map();        //sort with params
-        this.pageItemsMap = Map();          //item for current page
+        this.itemsMap = OrderedMap();              //all items
+        this.homeItemsMap = OrderedMap();          //for start page
+        this.sortedItemsMap = OrderedMap();        //sort with params
+        this.pageItemsMap = OrderedMap();          //item for current page
         this.descriptionItemMap = Map();    //item for description page
     }
 
@@ -78,7 +78,7 @@ class ShopStore {
 
     reverseOrder(field) {
         this.sorter(field);
-        this.sortedItemsMap.reverse();
+        this.sortedItemsMap = this.sortedItemsMap.reverse();
     }
 
     setPage(value) {
