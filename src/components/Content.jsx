@@ -83,6 +83,7 @@ class Content extends Base {
                     handleChange={(city) => {
                         this.props.dispatch(setCity({city}))
                     }}
+                    maxHeight={200}
                 />
                 <Select
                     name="Сортировка"

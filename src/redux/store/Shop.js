@@ -1,4 +1,4 @@
-import { OrderedMap, Map } from "immutable";
+import { OrderedMap } from "immutable";
 
 class ShopStore {
     constructor() {
@@ -6,16 +6,16 @@ class ShopStore {
         this.selectedCity = 11;
         this.category = "";
         this.isLoadedData = false;
+        this.reverse = false;
         this.itemsLimiter = 8;
         this.currentPage = 0;
         this.totalPages = 1;
-        this.order = [];                    //variants for sort
-        this.location = [];                 //all citys
+        this.order = [];                           //variants for sort
+        this.location = [];                        //all citys
         this.itemsMap = OrderedMap();              //all items
         this.homeItemsMap = OrderedMap();          //for start page
         this.sortedItemsMap = OrderedMap();        //sort with params
         this.pageItemsMap = OrderedMap();          //item for current page
-        this.descriptionItemMap = Map();    //item for description page
     }
 
     getState() {
@@ -32,8 +32,7 @@ class ShopStore {
             itemsMap: this.itemsMap,
             homeItemsMap: this.homeItemsMap,
             sortedItemsMap: this.sortedItemsMap,
-            pageItemsMap: this.pageItemsMap,
-            descriptionItemMap: this.descriptionItemMap
+            pageItemsMap: this.pageItemsMap
         }};
     }
 
@@ -65,6 +64,11 @@ class ShopStore {
         this.sorter();
     }
 
+    setPage(value) {
+        this.currentPage = value.selected;
+        this.divideIntoPages();
+    }
+
     setOrder({sortBy}) {
         this.sortBy = sortBy;
         switch (this.sortBy) {
@@ -77,13 +81,8 @@ class ShopStore {
     }
 
     reverseOrder(field) {
+        this.reverse = true;
         this.sorter(field);
-        this.sortedItemsMap = this.sortedItemsMap.reverse();
-    }
-
-    setPage(value) {
-        this.currentPage = value.selected;
-        this.divideIntoPages();
     }
 
     sorter(field) {
@@ -97,11 +96,17 @@ class ShopStore {
             if (a[field] < b[field]) return 1;
             return 0;
         });
+        //reverse Sort
+        if (this.reverse) {
+            this.sortedItemsMap = this.sortedItemsMap.reverse();
+            this.reverse = false;
+        }
+
         this.divideIntoPages.call(this);
     }
 
     divideIntoPages() {
-        //sort for Paginate
+        //breakdown for Paginate
         this.totalPages = Math.ceil(this.sortedItemsMap.size / this.itemsLimiter);
         let start = this.currentPage * 8;
         let end = (this.currentPage + 1) * 8;
