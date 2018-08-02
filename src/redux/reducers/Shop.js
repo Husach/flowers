@@ -1,5 +1,6 @@
 import SHOP_TYPES from "../types/index";
 import shop from "../store/Shop";
+//import API from "../../API/index.js"
 
 export default function cardReducer(state = shop.getState(), action) {
     switch(action.type) {
@@ -15,6 +16,9 @@ export default function cardReducer(state = shop.getState(), action) {
         case SHOP_TYPES.SET_ITEMS:
             shop.setItems(action.payload);
             break;
+        /*case SHOP_TYPES.SET_ITEMS:
+            API.setItems(action.payload);
+            break;*/
         case SHOP_TYPES.SET_ORDER:
             shop.setOrder(action.payload);
             break;

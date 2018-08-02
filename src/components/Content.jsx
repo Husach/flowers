@@ -10,7 +10,10 @@ import { setCity,
 import Select from "./select/index.jsx";
 import Card from "../container/Card.jsx";
 import Base from "../container/Base.jsx";
+
 import { setItems } from "../redux/actions/Items";
+//import { setItems } from "../API/index.js";
+
 import { order, location } from "../data/SortParams";
 import { data } from "../data/Data";
 //import Paginate from "paginate/index.jsx";
@@ -18,6 +21,7 @@ import { data } from "../data/Data";
 class Content extends Base {
 
     componentDidMount() {
+        debugger
         let start = true;
         this.props.dispatch(setItems({
             location: location,
