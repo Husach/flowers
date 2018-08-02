@@ -1,45 +1,28 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
-import ReactPaginate from "react-paginate";
-import {setPage} from "../../redux/actions/Items";
+import React from "react";
 import PropTypes from "prop-types";
+import ReactPaginate from "react-paginate";
 
-class Paginate extends Component {
-    render() {
-        return (
-            <ReactPaginate
-                pageCount={this.props.totalPages}
-                forcePage={this.props.currentPage}
-                onPageChange={(value) => {
-                    this.props.dispatch(setPage((
-                        value
-                    )))
-                }}
-                pageRangeDisplayed={2}
-                marginPagesDisplayed={1}
-                previousLabel={"previous"}
-                nextLabel={"next"}
-                activeClassName={"active"}
-                breakClassName={"break-me"}
-                containerClassName={"pagination"}
-                subContainerClassName={"pages pagination"}
-                key="content-key-pagination"
-            />
-        )
-    }
-}
+const Paginate = ({pageCount, forcePage, onChange}) => (
+    <ReactPaginate
+        pageCount={pageCount}
+        forcePage={forcePage}
+        onPageChange={onChange}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
+        previousLabel={"previous"}
+        nextLabel={"next"}
+        activeClassName={"active"}
+        breakClassName={"break-me"}
+        containerClassName={"pagination"}
+        subContainerClassName={"pages pagination"}
+        key="content-key-pagination"
+    />
+);
 
 Paginate.propTypes = {
-    dispatch: PropTypes.func,
-    handleChange: PropTypes.func,
-    currentPage: PropTypes.number,
-    totalPages: PropTypes.number
+    forcePage: PropTypes.number,
+    pageCount: PropTypes.number,
+    onChange: PropTypes.func
 };
 
-export default withRouter(connect(state => {
-    return {
-        currentPage: state.shop.currentPage,
-        totalPages: state.shop.totalPages,
-    }
-})(Paginate));
+export default Paginate;

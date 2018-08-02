@@ -1,4 +1,5 @@
 import SHOP_TYPES from "../types/index";
+import * as api from "../../api/index";
 
 export const sorter = (payload) => {
     return {type: SHOP_TYPES.SORTER, payload}
@@ -20,4 +21,13 @@ export const setCategory = (payload) => {
 };
 export const setHomeItems = (payload) => {
     return {type: SHOP_TYPES.SET_HOME_ITEMS,payload}
+};
+
+export const getDescription = (id) => (dispatch) => {
+    api.getDescription(id).then(payload => {
+        dispatch({
+            type: SHOP_TYPES.SET_DESCRIPTION,
+            payload
+        })
+    })
 };

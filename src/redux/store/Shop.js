@@ -16,6 +16,7 @@ class ShopStore {
         this.homeItemsMap = OrderedMap();          //for start page
         this.sortedItemsMap = OrderedMap();        //sort with params
         this.pageItemsMap = OrderedMap();          //item for current page
+        this.description = {};
     }
 
     getState() {
@@ -32,7 +33,8 @@ class ShopStore {
             itemsMap: this.itemsMap,
             homeItemsMap: this.homeItemsMap,
             sortedItemsMap: this.sortedItemsMap,
-            pageItemsMap: this.pageItemsMap
+            pageItemsMap: this.pageItemsMap,
+            description: this.description
         }};
     }
 
@@ -111,6 +113,10 @@ class ShopStore {
         let start = this.currentPage * 8;
         let end = (this.currentPage + 1) * 8;
         this.pageItemsMap = this.sortedItemsMap.slice(start, end);
+    }
+
+    setDescription(description) {
+        this.description = description;
     }
 }
 

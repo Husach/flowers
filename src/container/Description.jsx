@@ -2,34 +2,31 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import BtnOrder from "../components/button/BtnOrder.jsx";
+import {getDescription} from "./../redux/actions/Items";
 
 class Description extends Component {
-    getItem() {
+    componentDidMount() {
         let { id } = this.props.params;
-        let item = this.props.itemsMap.get(id);
-        if(!item) {
-            return {};
-        }
-        return item;
+        this.props.dispatch(getDescription(id))
     }
 
-    renderNote(item) {
-        if (item.note) return <div className="description__note">{item.note}</div>
+
+    renderNote(description) {
+        if (description.note) return <div className="description__note">{description.note}</div>
     }
 
     render() {
-        let item = this.getItem.call(this);
-
+        let {description} = this.props;
         return (
             <div className="description">
-                <img className="description__img" src={item.src} alt={item.name} />
+                <img className="description__img" src={description.src} alt={description.name} />
                 <div className="description__info">
-                    <div className="description__name">{item.name}</div>
-                    <div className="description__price">{item.price} грн.</div>
-                    <BtnOrder item={item} />
-                    <div className="description__text">{item.description}</div>
-                    <div className="description__text"><b>Состав:</b> {item.composition}</div>
-                    {this.renderNote.call(this, item)}
+                    <div className="description__name">{description.name}</div>
+                    <div className="description__price">{description.price} грн.</div>
+                    <BtnOrder item={description} />
+                    <div className="description__text">{description.description}</div>
+                    <div className="description__text"><b>Состав:</b> {description.composition}</div>
+                    {this.renderNote.call(this, description)}
                 </div>
             </div>
         );
@@ -38,11 +35,12 @@ class Description extends Component {
 
 Description.propTypes = {
     params: PropTypes.object,
-    itemsMap: PropTypes.object
+    description: PropTypes.object,
+    dispatch: PropTypes.func
 };
 
 export default connect((state) => {
     return {
-        itemsMap: state.shop.itemsMap
+        description: state.shop.description
     }
 })(Description);
