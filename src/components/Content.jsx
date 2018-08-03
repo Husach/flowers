@@ -42,6 +42,10 @@ class Content extends Base {
 
     renderCard() {
         let arr = [];
+
+        //debugger
+        //let tmpPrint = this.props.pageItemsMap.toArray();
+
         this.props.pageItemsMap.forEach((item) => arr.push(<Card item={item} key={item.index}/>));
         return arr;
     }

@@ -17,9 +17,7 @@ class Order extends Base {
   getItem() {
     let { id } = this.props.match.params;
     let item = this.state.data.find(itm => itm.id == id);
-    if(!item) {
-      return {};
-    }
+    if(!item) return {};
     return item;
   }
 

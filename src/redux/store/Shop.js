@@ -58,6 +58,7 @@ class ShopStore {
         this.category = category;
         this.currentPage = 0;
         this.sorter();
+        //this.setOrder(this.sortBy);
     }
 
     setCity({city}) {
@@ -113,6 +114,9 @@ class ShopStore {
         let start = this.currentPage * 8;
         let end = (this.currentPage + 1) * 8;
         this.pageItemsMap = this.sortedItemsMap.slice(start, end);
+
+        //debugger
+        //let tmpPrint = this.pageItemsMap.toArray();
     }
 
     setDescription(description) {
