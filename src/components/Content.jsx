@@ -40,10 +40,8 @@ class Content extends Base {
         }
     }
 
-    addCityToUrl(city) {
-        //debugger
-        this.props.history.push(`?city=${city}`);
-        console.log(this.props.history.location.pathname)
+    addParamsToUrl(city, sortBy) {
+        this.props.history.push(`?city=${city}?sortBy=${sortBy}`);
     }
 
     renderCard() {
@@ -79,7 +77,7 @@ class Content extends Base {
                     this.props.dispatch(setCity({
                         city
                     }));
-                    this.addCityToUrl(this.props.selectedCity);
+                    this.addParamsToUrl(city, this.props.sortBy);
                 }}
                 maxHeight={208}
             />
@@ -93,7 +91,10 @@ class Content extends Base {
                 options={this.props.order}
                 selected={this.props.sortBy}
                 handleChange={(sortBy) => {
-                    this.props.dispatch(setOrder({sortBy}))
+                    this.props.dispatch(setOrder({
+                        sortBy
+                    }));
+                    this.addParamsToUrl(this.props.selectedCity, sortBy);
                 }}
             />
         )
