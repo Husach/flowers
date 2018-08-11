@@ -40,12 +40,14 @@ class Content extends Base {
         }
     }
 
+    addCityToUrl(city) {
+        //debugger
+        this.props.history.push(`?city=${city}`);
+        console.log(this.props.history.location.pathname)
+    }
+
     renderCard() {
         let arr = [];
-
-        //debugger
-        //let tmpPrint = this.props.pageItemsMap.toArray();
-
         this.props.pageItemsMap.forEach((item) => arr.push(<Card item={item} key={item.index}/>));
         return arr;
     }
@@ -67,26 +69,41 @@ class Content extends Base {
         ];
     }
 
+    renderSelectCity() {
+        return (
+            <Select
+                name="Город"
+                options={this.props.location}
+                selected={this.props.selectedCity}
+                handleChange={(city) => {
+                    this.props.dispatch(setCity({
+                        city
+                    }));
+                    this.addCityToUrl(this.props.selectedCity);
+                }}
+                maxHeight={208}
+            />
+        )
+    }
+
+    renderSelectSort() {
+        return (
+            <Select
+                name="Сортировка"
+                options={this.props.order}
+                selected={this.props.sortBy}
+                handleChange={(sortBy) => {
+                    this.props.dispatch(setOrder({sortBy}))
+                }}
+            />
+        )
+    }
+
     renderFilters() {
         return (
             <div className="filter">
-                <Select
-                    name="Город"
-                    options={this.props.location}
-                    selected={this.props.selectedCity}
-                    handleChange={(city) => {
-                        this.props.dispatch(setCity({city}))
-                    }}
-                    maxHeight={208}
-                />
-                <Select
-                    name="Сортировка"
-                    options={this.props.order}
-                    selected={this.props.sortBy}
-                    handleChange={(sortBy) => {
-                        this.props.dispatch(setOrder({sortBy}))
-                    }}
-                />
+                {this.renderSelectCity()}
+                {this.renderSelectSort()}
             </div>
         )
     }

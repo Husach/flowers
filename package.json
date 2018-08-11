@@ -21,6 +21,7 @@
     "react-router-redux": "^4.0.8",
     "react-swipeable-views": "^0.12.14",
     "react-swipeable-views-native": "^0.12.9",
+    "react-url-query": "^1.4.0",
     "redux": "3.7.2",
     "redux-promise-middleware": "^5.1.1",
     "redux-thunk": "^2.3.0",

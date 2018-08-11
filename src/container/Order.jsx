@@ -1,5 +1,5 @@
 import React from "react";
-import Btn from "../components/button/Btn.jsx";
+import Index from "../components/button/index.jsx";
 import Base from "./Base.jsx";
 import Preview from "./Preview.jsx";
 import { data } from "../data/Data";
@@ -43,16 +43,16 @@ class Order extends Base {
           <div className="calc-block__title">Укажите количество</div>
 
           <div className="calc-block__inner">
-            <Btn className="calc-block__btn"
-                 label={"-"}
-                 onClick={this.calc.bind(this, "MINUS")}
+            <Index className="calc-block__btn"
+                   label={"-"}
+                   onClick={this.calc.bind(this, "MINUS")}
             />
 
             <div className="calc-block__value">{this.state.amount}</div>
 
-            <Btn className="calc-block__btn"
-                 label={"+"}
-                 onClick={this.calc.bind(this, "PLUS")}
+            <Index className="calc-block__btn"
+                   label={"+"}
+                   onClick={this.calc.bind(this, "PLUS")}
             />
           </div>
         </div>
