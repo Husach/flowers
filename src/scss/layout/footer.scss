@@ -13,10 +13,9 @@
       align-items: center;
       height: 100%;
 
-      &__link {
-        padding: 5px;
-      }
+      &__link { padding: 5px }
     }
+
     & .range {
       background: none;
       height: 100%;
@@ -27,11 +26,9 @@
         justify-content: space-around;
         align-items: center;
       }
-      &__item {
-        &:hover {
-          border: 1px solid transparent;
-          text-decoration: underline;
-        }
+      &__item:hover {
+        border: 1px solid transparent;
+        text-decoration: underline;
       }
 
       &__link {
@@ -48,9 +45,7 @@
       flex-direction: row;
       justify-content: center;
 
-      & .social__item {
-        margin: 0 15px;
-      }
+      & .social__item { margin: 0 15px }
 
       & .social__link {
         display: block;
@@ -79,7 +74,12 @@
     }
   }
 
-  &__social {
-    height: 50px;
+  &__social { height: 50px }
+}
+
+@media only screen and (max-width: $laptop-mode) {
+  .footer {
+    &__wrapper { width: $width-laptop }
+    &__item { width: calc(#{$width-laptop} / 3); }
   }
 }

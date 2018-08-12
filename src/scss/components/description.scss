@@ -13,9 +13,7 @@
     height: 100%;
   }
 
-  &__info {
-    width: 30%;
-  }
+  &__info { width: 30% }
 
   &__name {
     font-size: 24px;
@@ -28,9 +26,7 @@
     margin-bottom: 30px;
   }
 
-  &__text {
-    margin-top: 25px;
-  }
+  &__text { margin-top: 25px }
 
   &__note {
     font-style: italic;
@@ -39,13 +35,11 @@
   }
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: $laptop-mode) {
   .description {
     margin-top: 20px;
 
-    &__img {
-      width: 57%;
-    }
+    &__img { width: 57% }
 
     &__name {
       font-size: 22px;

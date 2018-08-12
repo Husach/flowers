@@ -1,8 +1,7 @@
 .page {
-  &-header {
-    position: relative;
-    min-height: $height-header;
-  }
+  height: 100%;
+
+  &-header { position: relative }
 
   &-main {
     display: flex;
@@ -18,8 +17,6 @@
   }
 }
 
-@media only screen and (max-width: 1500px) {
-  .page-main {
-    width: $width-laptop;
-  }
+@media only screen and (max-width: $laptop-mode) {
+  .page-main { width: $width-laptop }
 }

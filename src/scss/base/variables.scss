@@ -1,14 +1,9 @@
 $width: 1280px;
-$width-laptop: 1080px;
 
-$height-header: 170px;
-
-$height-menu: 50px;
-$height-menu-laptop: 40px;
-
+$height-menu: 40px;
 $height-range: 50px;
-$height-range-laptop: 40px;
 
+$height-header: 160px;
 $height-footer: 180px;
 
 $logo: calc(#{$height-header} - #{$height-menu});
@@ -19,4 +14,17 @@ $range-items: 7;
 $card: 4;
 
 $img-size: 250px;
+
+//laptop
+$laptop-mode: 1500px;
+
+$width-laptop: 1080px;
+
+$height-menu-laptop: 40px;
+$height-range-laptop: 40px;
+
+$height-header-laptop: 160px;
+
+$logo-laptop: calc(#{$height-header-laptop} - #{$height-menu-laptop});
+
 $img-size-laptop: 200px;

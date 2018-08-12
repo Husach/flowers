@@ -1,35 +1,39 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import Index from "../components/button/index.jsx";
-
-const btnStyle = {width: 230};
+import BtnOrder from "../components/button/BtnOrder.jsx";
 
 class Preview extends Component {
-    renderBtnOrder() {
+    renderInner() {
         return (
-            <div className="preview__btn">
-                <Link to={`/order/${this.props.item.id}`}>
-                    <Index
-                        className="btn__order"
-                        label="ДОБАВИТЬ"
-                        backgroundColor="#fff"
-                        labelColor="#d73925"
-                        style={btnStyle}
-                    />
-                </Link>
+            <Link to={`/shop/details/${this.props.item.id}`} className="preview__inner">
+                <img
+                    className="preview__img"
+                    src={this.props.item.src}
+                    alt={this.props.item.name}
+                />
+                <div className="preview__name">{this.props.item.name}</div>
+            </Link>
+        )
+    }
+
+    renderFooter() {
+        return (
+            <div className="preview__footer">
+                <div className="preview__price">{this.props.item.price} грн.</div>
+                <BtnOrder
+                    item={this.props.item}
+                    style={{width: 120}}
+                />
             </div>
         )
     }
 
     render() {
-        //debugger
         return (
             <div className="preview__card" key={this.props.item.id + this.props.item.id}>
-                <img className="preview__img" src={this.props.item.src} alt={this.props.item.name} />
-                <div className="preview__name">{this.props.item.name}</div>
-                <div className="preview__price">{this.props.item.price} грн.</div>
-                {this.renderBtnOrder()}
+                {this.renderInner()}
+                {this.renderFooter()}
             </div>
         );
     }

@@ -18,9 +18,7 @@
     border: 1px solid transparent;
     border-radius: 4px;
 
-    &:hover {
-      border: 1px solid #000;
-    }
+    &:hover { border: 1px solid #000 }
   }
 
   &__link {
@@ -36,11 +34,11 @@
   }
 }
 
-@media only screen and (max-width: 1500px) {
+@media only screen and (max-width: $laptop-mode) {
   .range {
     min-height: $height-menu-laptop;
-    &__link {
-      line-height: calc(#{$height-range-laptop} - 2px);
-    }
+
+    &__item { width: calc(#{$width-laptop} / 7) }
+    &__link { line-height: calc(#{$height-range-laptop} - 2px) }
   }
 }

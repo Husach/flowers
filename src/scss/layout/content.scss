@@ -4,3 +4,7 @@
   flex-wrap: wrap;
   padding-bottom: 50px;
 }
+
+@media only screen and (max-width: $laptop-mode) {
+  .content { padding-bottom: 30px }
+}

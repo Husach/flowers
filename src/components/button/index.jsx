@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import RaisedButton from "material-ui/RaisedButton";
 
-class Index extends Component {
+class Btn extends Component {
     constructor(props) {
         super(props);
     }
@@ -22,14 +22,14 @@ class Index extends Component {
     }
 }
 
-Index.defaultProps = {
+Btn.defaultProps = {
     label: "",
     labelColor: "",
     bgColor: "",
     className: ""
 };
 
-Index.propTypes = {
+Btn.propTypes = {
     className: PropTypes.string,
     label: PropTypes.string,
     labelColor: PropTypes.string,
@@ -38,4 +38,4 @@ Index.propTypes = {
     style: PropTypes.object
 };
 
-export default Index;
+export default Btn;

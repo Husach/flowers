@@ -14,7 +14,10 @@ class Card extends Component {
                         <div className="card__price">{this.props.item.price} грн.</div>
                     </Link>
                     <div className="card__btn">
-                        <BtnOrder item={this.props.item} />
+                        <BtnOrder
+                            item={this.props.item}
+                            style={{width: 230}}
+                        />
                     </div>
                 </div>
             </div>

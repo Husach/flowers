@@ -10,7 +10,7 @@ body {
   font-family: 'Roboto', sans-serif; }
 
 .app {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100vh; }
 
 .content {
@@ -18,6 +18,10 @@ body {
   justify-content: flex-start;
   flex-wrap: wrap;
   padding-bottom: 50px; }
+
+@media only screen and (max-width: 1500px) {
+  .content {
+    padding-bottom: 30px; } }
 
 .footer__wrapper {
   display: flex;
@@ -78,11 +82,17 @@ body {
 .footer__social {
   height: 50px; }
 
+@media only screen and (max-width: 1500px) {
+  .footer__wrapper {
+    width: 1080px; }
+  .footer__item {
+    width: calc(1080px / 3); } }
+
 .header {
   position: relative;
   display: flex;
   max-width: 1280px;
-  height: calc(170px - 50px);
+  height: calc(160px - 50px);
   margin: 0 auto; }
   .header:after {
     content: 'flowet';
@@ -104,56 +114,70 @@ body {
     font-size: 16px;
     line-height: 150px;
     font-style: italic; }
-  .header__top {
-    width: calc(100% - calc(170px - 50px)); }
-  .header__logo {
-    width: calc(170px - 50px);
-    height: calc(170px - 50px);
-    margin-right: 200px; }
   .header__content {
+    width: calc(100% - calc(160px - 40px)); }
+  .header__logo {
+    width: calc(160px - 40px);
+    height: calc(160px - 40px);
+    margin-right: 200px; }
+  .header__contacts {
     display: flex;
     justify-content: flex-end;
     font-size: 26px;
     line-height: 50px; }
-  .header__tel {
+  .header__phone {
     padding-left: 30px; }
   .header__viber {
     width: 30px;
     height: 30px;
     margin: 10px; }
+  .header__basket {
+    display: flex;
+    align-items: center;
+    width: 140px;
+    padding: 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc; }
+    .header__basket-svg {
+      width: 20px;
+      height: 20px;
+      fill: #888; }
+    .header__basket-value {
+      margin-left: 10px;
+      font-size: 12px;
+      line-height: 14px; }
+
+@media only screen and (max-width: 1500px) {
+  .header {
+    height: calc(160px - 40px);
+    max-width: 1080px; } }
 
 .btn__back {
   text-align: right;
   margin-bottom: 20px; }
 
-.calc-block {
+.calc {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 20px;
-  margin-top: 20px; }
-  .calc-block__inner {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; }
-  .calc-block__title {
+  padding: 20px; }
+  .calc__title {
     margin-bottom: 10px; }
-  .calc-block__btn {
+  .calc__btn {
     margin: 0 20px; }
-    .calc-block__btn div {
+    .calc__btn div {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 30px !important;
       min-width: 30px !important; }
-    .calc-block__btn button {
+    .calc__btn button {
       height: 30px !important; }
-    .calc-block__btn span {
+    .calc__btn span {
       padding: 0 !important; }
-  .calc-block__value {
+  .calc__value {
     min-width: 25px;
     font-size: 20px;
     text-align: center; }
@@ -180,7 +204,7 @@ body {
       left: -6px;
       height: calc((1280px / 4) + 125px);
       width: calc(1280px / 4 + 10px);
-      box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.3);
       background: #fff;
       transition: box-shadow 0.2s ease; }
   .card__info {
@@ -209,7 +233,7 @@ body {
 
 @media only screen and (max-width: 1500px) {
   .card {
-    height: calc(1080px / 4);
+    height: calc((1080px / 4) + 40px);
     width: calc(1080px / 4); }
     .card__wrapper:hover {
       height: calc((1080px / 4) + 100px);
@@ -269,27 +293,51 @@ body {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 10px;
+  padding-top: 10px;
   overflow: hidden; }
+  .preview:hover:after {
+    content: '';
+    position: absolute; }
   .preview__card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 256px;
-    height: 250px;
+    width: 236px;
+    margin-bottom: 15px;
+    padding: 10px 20px 20px;
+    transition: all 0.24s ease; }
+    .preview__card:hover {
+      box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.75); }
+  .preview__inner {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 20px;
-    padding: 0 50px; }
+    text-decoration: none !important; }
   .preview__img {
-    width: 120px;
-    height: 120px; }
+    margin: 0 auto 10px auto;
+    width: 140px;
+    height: 140px; }
   .preview__name {
-    font-size: 14px;
+    display: block;
+    height: 57px;
+    padding: 0 20px;
+    font-size: 16px;
+    color: #454545;
     text-align: center;
-    min-height: 38px; }
-  .preview:hover:after {
-    content: '';
-    position: absolute; }
+    overflow: hidden; }
+  .preview__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; }
+
+@media only screen and (max-width: 1500px) {
+  .preview {
+    padding: 10px 5px 0 5px; }
+    .preview__card {
+      width: calc((1080px - 10px) / 5);
+      padding: 10px 8px; } }
 
 .filter {
   display: flex;
@@ -301,14 +349,14 @@ body {
   display: -ms-flex;
   display: flex;
   justify-content: flex-end;
-  min-height: 50px; }
+  min-height: 40px; }
   .menu__item {
     display: flex;
     align-items: center;
     border-radius: 4px; }
   .menu__link {
     display: inline-block;
-    padding: 15px;
+    padding: 13px;
     text-align: center;
     font-size: 12px;
     text-transform: uppercase;
@@ -317,14 +365,35 @@ body {
     .menu__link:hover {
       text-decoration: underline; }
 
-.order__top {
-  display: flex;
-  justify-content: space-around;
-  padding: 50px 100px; }
+.order__title {
+  padding: 20px;
+  font-size: 24px;
+  text-align: center;
+  text-decoration: underline; }
 
-.order__img {
-  width: 250px;
-  height: 250px; }
+.order__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px; }
+  .order__item-img {
+    width: 150px;
+    height: 150px; }
+  .order__item-name {
+    width: 550px; }
+  .order__item-cost {
+    width: 150px;
+    font-size: 20px;
+    text-align: right; }
+  .order__item--post-card .calc {
+    visibility: hidden; }
+
+.order__summary {
+  display: flex;
+  justify-content: flex-end; }
+  .order__summary-wrapper {
+    width: 400px;
+    border-top: 1px solid #ccc; }
 
 .order__extra-title {
   text-align: center;
@@ -345,7 +414,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 10px;
+    margin: 0 5px;
     min-width: 40px;
     height: 40px;
     border-radius: 4px;
@@ -406,6 +475,8 @@ body {
 @media only screen and (max-width: 1500px) {
   .range {
     min-height: 40px; }
+    .range__item {
+      width: calc(1080px / 7); }
     .range__link {
       line-height: calc(40px - 2px); } }
 
@@ -414,33 +485,32 @@ body {
   right: 5px;
   top: 3px; }
   .social__img {
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
     margin-top: 5px; }
 
-.page-header {
-  position: relative;
-  min-height: 170px; }
-
-.page-main {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 170px - 180px);
-  width: 1280px;
-  margin: 0 auto; }
-
-.page-footer {
-  padding: 15px;
-  background: #b4e391;
-  /* Old browsers */
-  background: -webkit-linear-gradient(left, #b4e391 0%, #61c419 50%, #b4e391 100%);
-  background: -o-linear-gradient(left, #b4e391 0%, #61c419 50%, #b4e391 100%);
-  background: linear-gradient(to right, #b4e391 0%, #61c419 50%, #b4e391 100%);
-  /* FF3.6-15 */
-  /* Chrome10-25,Safari5.1-6 */
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=1 );
-  /* IE6-9 */ }
+.page {
+  height: 100%; }
+  .page-header {
+    position: relative; }
+  .page-main {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 160px - 180px);
+    width: 1280px;
+    margin: 0 auto; }
+  .page-footer {
+    padding: 15px;
+    background: #b4e391;
+    /* Old browsers */
+    background: -webkit-linear-gradient(left, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    background: -o-linear-gradient(left, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    background: linear-gradient(to right, #b4e391 0%, #61c419 50%, #b4e391 100%);
+    /* FF3.6-15 */
+    /* Chrome10-25,Safari5.1-6 */
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b4e391', endColorstr='#b4e391',GradientType=1 );
+    /* IE6-9 */ }
 
 @media only screen and (max-width: 1500px) {
   .page-main {

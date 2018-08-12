@@ -1,13 +1,43 @@
 .order {
-  &__top {
-    display: flex;
-    justify-content: space-around;
-    padding: 50px 100px;
+  &__title {
+    padding: 20px;
+    font-size: 24px;
+    text-align: center;
+    text-decoration: underline;
   }
 
-  &__img {
-    width: 250px;
-    height: 250px;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    &-img {
+      width: 150px;
+      height: 150px;
+    }
+
+    &-name { width: 550px }
+
+    &-cost {
+      width: 150px;
+      font-size: 20px;
+      text-align: right;
+    }
+
+    &--post-card {
+      .calc { visibility: hidden }
+    }
+  }
+
+  &__summary {
+    display: flex;
+    justify-content: flex-end;
+
+    &-wrapper {
+      width: 400px;
+      border-top: 1px solid #ccc;
+    }
   }
 
   &__extra {
@@ -18,6 +48,7 @@
       letter-spacing: 0.5em;
       margin-bottom: 10px;
     }
+
     &-preview {
       display: flex;
       flex-wrap: wrap;

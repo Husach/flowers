@@ -1,25 +1,27 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import RaisedButton from "material-ui/RaisedButton";
+import Btn from "./index.jsx"
 
-const btnStyle = {width: 230};
-
-const BtnOrder = ({item}) => (
-    <Link to={`/order/${item.id}`}>
-        <div className="btn__order">
-            <RaisedButton
-                label="ЗАКАЗАТЬ"
-                backgroundColor="#d73925"
-                labelColor="#fff"
-                style={btnStyle}
-            />
-        </div>
-    </Link>
-);
+class BtnOrder extends Component {
+    render() {
+        return (
+            <Link to={`/order/${this.props.item.id}`}>
+                <Btn
+                    className="btn__order"
+                    label="ЗАКАЗАТЬ"
+                    labelColor="#fff"
+                    bgColor="#7bb262"
+                    style={this.props.style}
+                />
+            </Link>
+        )
+    }
+}
 
 BtnOrder.propTypes = {
-    item: PropTypes.object
+    item: PropTypes.object,
+    style: PropTypes.object
 };
 
 export default BtnOrder;
