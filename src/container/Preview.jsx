@@ -31,7 +31,7 @@ class Preview extends Component {
 
     render() {
         return (
-            <div className="preview__card" key={this.props.item.id + this.props.item.id}>
+            <div className="preview__card">
                 {this.renderInner()}
                 {this.renderFooter()}
             </div>

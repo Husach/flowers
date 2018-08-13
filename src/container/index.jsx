@@ -15,7 +15,7 @@ class Home extends Base {
 
     renderPreview() {
         let arr = [];
-        this.props.homeItemsMap.forEach((item) => arr.push(<Preview item={item} key={`preview-${item.index}`}/>));
+        this.props.homeItemsMap.forEach((item) => arr.push(<Preview item={item} key={`preview1-${item.id}`} />));
         return arr;
     }
 

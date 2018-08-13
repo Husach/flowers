@@ -111,7 +111,7 @@ class Order extends Base {
         return (
             <div className="order__summary">
                 <div className="order__summary-wrapper">
-
+                    1
                 </div>
             </div>
         )

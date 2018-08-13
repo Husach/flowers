@@ -34,6 +34,7 @@ class Content extends Base {
         if(!props.isLoadedData) return null;
         let {match: {params: {category}}} = props;
         let {match: {params: {category: oldCategory}}} = this.props;
+        debugger
         if (!this.props.isLoadedData && props.isLoadedData ||
             category !== oldCategory || start) {
             this.props.dispatch(setCategory({category}))
@@ -41,12 +42,13 @@ class Content extends Base {
     }
 
     addParamsToUrl(city, sortBy) {
-        this.props.history.push(`?city=${city}?sortBy=${sortBy}`);
+        debugger
+        this.props.history.push(`?city=${city}&sortBy=${sortBy}`);
     }
 
     renderCard() {
         let arr = [];
-        this.props.pageItemsMap.forEach((item) => arr.push(<Card item={item} key={item.index}/>));
+        this.props.pageItemsMap.forEach((item) => arr.push(<Card item={item} key={item.id}/>));
         return arr;
     }
 
