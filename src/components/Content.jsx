@@ -34,15 +34,16 @@ class Content extends Base {
         if(!props.isLoadedData) return null;
         let {match: {params: {category}}} = props;
         let {match: {params: {category: oldCategory}}} = this.props;
-        debugger
+        let city = +this.props.history.location.search.substr(6, 2);
+        let sort = +this.props.history.location.search.substr(-1);
+
         if (!this.props.isLoadedData && props.isLoadedData ||
             category !== oldCategory || start) {
-            this.props.dispatch(setCategory({category}))
+            this.props.dispatch(setCategory({category, city, sort}))
         }
     }
 
     addParamsToUrl(city, sortBy) {
-        debugger
         this.props.history.push(`?city=${city}&sortBy=${sortBy}`);
     }
 

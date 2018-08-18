@@ -56,10 +56,14 @@ class ShopStore {
         });
     }
 
-    setCategory({category}) {
+    setCategory({category, city, sort}) {
+        debugger
+        if (city) { this.selectedCity = city }
+        if (sort) { this.sortBy = sort }
         this.category = category;
         this.currentPage = 0;
-        this.sorter();
+        //debugger
+        this.setOrder(this.sortBy);
     }
 
     setCity({city}) {
@@ -74,7 +78,7 @@ class ShopStore {
     }
 
     setOrder({sortBy}) {
-        this.sortBy = sortBy;
+        if (sortBy) { this.sortBy = sortBy }
         switch (this.sortBy) {
             case 1: return this.sorter.call(this, "rating");
             case 2: return this.sorter.call(this, "price");

@@ -1,6 +1,6 @@
-import React from 'react';
-import IconButton from 'material-ui/IconButton';
-import ContentClear from 'material-ui/svg-icons/content/clear';
+import React from "react";
+import IconButton from "material-ui/IconButton";
+import ContentClear from "material-ui/svg-icons/content/clear";
 
 const BtnIconClear = () => (
     <IconButton
