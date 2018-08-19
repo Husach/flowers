@@ -40,7 +40,6 @@ class ShopStore {
 
     setItems({items, location, order}) {
         this.isLoadedData = true;
-
         if (this.order.length === 0) order.forEach(item => {this.order.push(item)});
         if (this.location.length === 0) location.forEach(item => {this.location.push(item)});
 
@@ -57,12 +56,10 @@ class ShopStore {
     }
 
     setCategory({category, city, sort}) {
-        debugger
         if (city) { this.selectedCity = city }
         if (sort) { this.sortBy = sort }
         this.category = category;
         this.currentPage = 0;
-        //debugger
         this.setOrder(this.sortBy);
     }
 
@@ -109,7 +106,6 @@ class ShopStore {
             this.sortedItemsMap = this.sortedItemsMap.reverse();
             this.reverse = false;
         }
-
         this.divideIntoPages.call(this);
     }
 

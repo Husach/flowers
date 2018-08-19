@@ -31,3 +31,7 @@ export const getDescription = (id) => (dispatch) => {
         })
     })
 };
+
+export const addItem = (payload) => {
+    return {type: SHOP_TYPES.ADD_ITEM,payload}
+};

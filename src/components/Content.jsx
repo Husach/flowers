@@ -2,17 +2,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
-import { setCity,
-         setPage,
-         setItems,
-         setOrder,
-         setCategory } from "../redux/actions/Items";
 import Card from "../container/Card.jsx";
 import Base from "../container/Base.jsx";
 import Select from "./select/index.jsx";
 import Paginate from "./paginate/index.jsx";
 import { order, location } from "../data/SortParams";
 import { data } from "../data/Data";
+import {setCity,
+        setPage,
+        setItems,
+        setOrder,
+        setCategory } from "../redux/actions/Items";
 
 class Content extends Base {
 
@@ -39,7 +39,11 @@ class Content extends Base {
 
         if (!this.props.isLoadedData && props.isLoadedData ||
             category !== oldCategory || start) {
-            this.props.dispatch(setCategory({category, city, sort}))
+            this.props.dispatch(setCategory({
+                category,
+                city,
+                sort
+            }))
         }
     }
 
@@ -83,6 +87,7 @@ class Content extends Base {
                     this.addParamsToUrl(city, this.props.sortBy);
                 }}
                 maxHeight={208}
+                key="key-select-for-city"
             />
         )
     }
@@ -99,13 +104,14 @@ class Content extends Base {
                     }));
                     this.addParamsToUrl(this.props.selectedCity, sortBy);
                 }}
+                key="key-select-for-sort"
             />
         )
     }
 
     renderFilters() {
         return (
-            <div className="filter">
+            <div className="filter" key="content-key-filter">
                 {this.renderSelectCity()}
                 {this.renderSelectSort()}
             </div>
@@ -123,15 +129,15 @@ class Content extends Base {
 }
 
 Content.propTypes = {
-    order: PropTypes.array,
-    sortBy: PropTypes.number,
-    dispatch: PropTypes.func,
-    location: PropTypes.array,
-    category: PropTypes.string,
+    pageItemsMap: PropTypes.object,
+    selectedCity: PropTypes.number,
     isLoadedData: PropTypes.bool,
     totalPages: PropTypes.number,
-    pageItemsMap: PropTypes.object,
-    selectedCity: PropTypes.number
+    category: PropTypes.string,
+    location: PropTypes.array,
+    dispatch: PropTypes.func,
+    sortBy: PropTypes.number,
+    order: PropTypes.array
 };
 
 export default withRouter(connect(state => {

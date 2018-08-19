@@ -10,7 +10,9 @@ import { data } from "../data/Data";
 class Home extends Base {
 
     componentDidMount() {
-        this.props.dispatch(setHomeItems({items: data}))
+        this.props.dispatch(setHomeItems({
+            items: data
+        }))
     }
 
     renderPreview() {
