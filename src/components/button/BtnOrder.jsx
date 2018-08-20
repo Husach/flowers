@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Btn from "./index.jsx"
 import { addItem } from "../../redux/actions/Items";
@@ -34,4 +35,4 @@ BtnOrder.propTypes = {
     item: PropTypes.object
 };
 
-export default BtnOrder;
+export default connect()(BtnOrder);

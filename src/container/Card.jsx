@@ -6,7 +6,7 @@ import BtnOrder from "../components/button/BtnOrder.jsx";
 class Card extends Component {
     render() {
         return (
-            <div className="card" key={this.props.item.id}>
+            <div className="card">
                 <div className="card__wrapper">
                     <Link
                         className="card__info"

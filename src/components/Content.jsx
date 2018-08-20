@@ -70,6 +70,7 @@ class Content extends Base {
                         value
                     )))
                 }}
+                key="content-paginate-key"
             />
         ];
     }
@@ -87,7 +88,6 @@ class Content extends Base {
                     this.addParamsToUrl(city, this.props.sortBy);
                 }}
                 maxHeight={208}
-                key="key-select-for-city"
             />
         )
     }
@@ -104,14 +104,13 @@ class Content extends Base {
                     }));
                     this.addParamsToUrl(this.props.selectedCity, sortBy);
                 }}
-                key="key-select-for-sort"
             />
         )
     }
 
     renderFilters() {
         return (
-            <div className="filter" key="content-key-filter">
+            <div className="filter">
                 {this.renderSelectCity()}
                 {this.renderSelectSort()}
             </div>

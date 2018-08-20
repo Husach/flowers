@@ -1,9 +1,6 @@
 import SHOP_TYPES from "../types/index";
 import * as api from "../../api/index";
 
-export const sorter = (payload) => {
-    return {type: SHOP_TYPES.SORTER, payload}
-};
 export const setCity = (payload) => {
     return {type: SHOP_TYPES.SET_CITY, payload}
 };

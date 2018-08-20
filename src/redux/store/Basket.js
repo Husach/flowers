@@ -12,6 +12,7 @@ class BasketStore {
     addItem({item}) {
         debugger;
         console.log("BasketStore debugger", item);
+
     }
 
 }
