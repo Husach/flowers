@@ -4,26 +4,15 @@ import { connect } from "react-redux";
 import { delItem } from "../redux/actions/Items";
 import Btn from "../components/button/index.jsx";
 import BtnIconClear from "../components/button/BtnIconClear.jsx";
+import { setQuantity } from "../redux/actions/Items";
 
 class OrderItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            amount: 1
-        };
-    }
-
-    calc(value) {
-        if (value === "PLUS") {
-            this.setState({
-                amount: this.state.amount + 1
-            });
-        } else if (value === "MINUS") {
-            if (this.state.amount === 1) return null;
-            this.setState({
-                amount: this.state.amount - 1
-            });
-        }
+    prepareSign(value) {
+        let id = this.props.item.id;
+        this.props.dispatch(setQuantity({
+            value,
+            id
+        }))
     }
 
     renderAmount() {
@@ -32,13 +21,14 @@ class OrderItem extends Component {
                 <Btn
                     className="calc__btn"
                     label={"-"}
-                    onClick={this.calc.bind(this, "MINUS")}
+                    value="MINUS"
+                    onClick={this.prepareSign.bind(this, "MINUS")}
                 />
-                <div className="calc__value">{this.state.amount}</div>
+                <div className="calc__value">{this.props.item.quantity}</div>
                 <Btn
                     className="calc__btn"
                     label={"+"}
-                    onClick={this.calc.bind(this, "PLUS")}
+                    onClick={this.prepareSign.bind(this, "PLUS")}
                 />
             </div>
         );
