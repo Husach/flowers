@@ -15,7 +15,6 @@ import {setCity,
         setCategory } from "../redux/actions/Items";
 
 class Content extends Base {
-
     componentDidMount() {
         let start = true;
         this.props.dispatch(setItems({

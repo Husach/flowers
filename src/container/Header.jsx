@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Social from "./Social.jsx";
 import Range from "../components/Range.jsx";
@@ -17,7 +19,16 @@ class Header extends Component {
         )
     }
 
-    renderBin() {
+    renderBasket() {
+        if(this.props.amount > 0) {
+            return (
+                <div className="header__basket header__basket--data">
+                    <div className="header__basket-value">Кол-во {this.props.number}</div>
+                    <div className="header__basket-value">Итого: {this.props.amount} грн.</div>
+                </div>
+            )
+        }
+
         return (
             <div className="header__basket">
                 <svg viewBox="0 0 24 24" className="header__basket-svg">
@@ -40,7 +51,7 @@ class Header extends Component {
                         src="img/social/viber.png"
                         alt="viber"
                     />
-                    {this.renderBin()}
+                    {this.renderBasket()}
                 </div>
             </div>
         )
@@ -66,4 +77,14 @@ class Header extends Component {
     }
 }
 
-export default Header;
+Header.propTypes = {
+    amount: PropTypes.number,
+    number: PropTypes.number
+}
+
+export default connect(state => {
+    return {
+        amount: state.basket.amount,
+        number: state.basket.number
+    }
+})(Header);

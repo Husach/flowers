@@ -16,8 +16,6 @@ class BtnOrder extends Component {
                     bgColor="#7bb262"
                     style={this.props.style}
                     onClick={() => {
-                        //debugger;
-                        console.log(this.props.item);
                         this.props.dispatch(addItem({
                             item: this.props.item
                         }));

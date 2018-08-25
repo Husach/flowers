@@ -1,17 +1,18 @@
 import React from "react";
-import Btn from "../components/button/index.jsx";
+import {connect} from "react-redux";
+import PropTypes from "prop-types";
 import Base from "./Base.jsx";
 import Preview from "./Preview.jsx";
 import { data } from "../data/Data";
 import BtnIconClear from "../components/button/BtnIconClear";
+import OrderItem from "./OrderItem.jsx";
 
 class Order extends Base {
     constructor(props) {
         super(props);
         this.state = {
             data: data,
-            dataTmp: {},
-            amount: 1
+            dataTmp: {}
         };
     }
 
@@ -24,37 +25,6 @@ class Order extends Base {
 
     getExtra(city) {
         return data.filter(item => item.category.some((itm) => itm === "sweets") && item.city === city);
-    }
-
-    calc(value) {
-        if (value === "PLUS") {
-            this.setState({
-                amount: this.state.amount + 1
-            });
-        } else if (value === "MINUS") {
-            if (this.state.amount === 1) return null;
-            this.setState({
-                amount: this.state.amount - 1
-            });
-        }
-    }
-
-    renderAmount() {
-        return (
-            <div className="calc">
-                <Btn
-                    className="calc__btn"
-                    label={"-"}
-                    onClick={this.calc.bind(this, "MINUS")}
-                />
-                <div className="calc__value">{this.state.amount}</div>
-                <Btn
-                    className="calc__btn"
-                    label={"+"}
-                    onClick={this.calc.bind(this, "PLUS")}
-                />
-            </div>
-        );
     }
 
     renderExtraBlock() {
@@ -73,24 +43,6 @@ class Order extends Base {
         )
     }
 
-    renderOrderItem() {
-        let item = this.getItem.call(this);
-
-        return (
-            <div className="order__item">
-                <img
-                    className="order__item-img"
-                    src={item.src}
-                    alt={item.name}
-                />
-                <div className="order__item-name">{item.name}</div>
-                {this.renderAmount.call(this)}
-                <div className="order__item-cost">{item.price} грн.</div>
-                <BtnIconClear />
-            </div>
-        )
-    }
-
     renderPost() {
         return (
             <div className="order__item order__item--post-card">
@@ -100,7 +52,6 @@ class Order extends Base {
                     alt="bonus_card"
                 />
                 <div className="order__item-name">Поздравительнная открытка</div>
-                {this.renderAmount.call(this)}
                 <div className="order__item-cost">Бесплатно</div>
                 <BtnIconClear />
             </div>
@@ -111,15 +62,19 @@ class Order extends Base {
         return (
             <div className="order__summary">
                 <div className="order__summary-wrapper">
-                    1
+                    <div className="">Кол-во {this.props.number}</div>
+                    <div className="">Итого: {this.props.amount} грн.</div>
                 </div>
             </div>
         )
     }
 
     renderOrder() {
+        debugger
         return [
-            this.renderOrderItem(),
+            this.props.inOrder.map((item, index) =>
+                <OrderItem item={item} key={index} />
+            ),
             this.renderPost(),
             this.renderSummary()
         ]
@@ -136,4 +91,16 @@ class Order extends Base {
     }
 }
 
-export default Order;
+Order.propTypes = {
+    inOrder: PropTypes.array,
+    amount: PropTypes.number,
+    number: PropTypes.number
+};
+
+export default connect(state => {
+    return {
+        inOrder: state.basket.inOrder,
+        amount: state.basket.amount,
+        number: state.basket.number
+    }
+})(Order);

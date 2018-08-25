@@ -94,7 +94,7 @@ body {
   max-width: 1280px;
   height: calc(160px - 50px);
   margin: 0 auto; }
-  .header:after {
+  .header::after {
     content: 'flowet';
     position: absolute;
     height: 80px;
@@ -104,7 +104,7 @@ body {
     font-size: 72px;
     line-height: 150px;
     font-style: italic; }
-  .header:before {
+  .header::before {
     content: '\41C\44B   \43F\435\440\435\434\430\434\438\43C   \412\430\448\443   \437\430\431\43E\442\443';
     position: absolute;
     height: 30px;
@@ -146,6 +146,9 @@ body {
       margin-left: 10px;
       font-size: 12px;
       line-height: 14px; }
+    .header__basket--data {
+      flex-direction: column;
+      align-items: flex-start; }
 
 @media only screen and (max-width: 1500px) {
   .header {
