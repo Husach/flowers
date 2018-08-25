@@ -15,6 +15,9 @@ class BasketStore {
 
     addItem({item}) {
         this.inOrder.push(item);
+        let length = this.inOrder.length - 1;
+        this.inOrder[length].quantity = 1;
+
         this.amount += item.price;
         this.total += 1;
     }

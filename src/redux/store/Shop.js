@@ -55,11 +55,12 @@ class ShopStore {
         });
     }
 
-    setCategory({category, city, sort}) {
-        if (city) { this.selectedCity = city }
-        if (sort) { this.sortBy = sort }
+    setCategory({category, city, sort, page}) {
         this.category = category;
         this.currentPage = 0;
+        if (city) { this.selectedCity = city }
+        if (page) { this.currentPage = page }
+        if (sort) { this.sortBy = sort }
         this.setOrder(this.sortBy);
     }
 
@@ -70,7 +71,6 @@ class ShopStore {
     }
 
     setPage(value) {
-        //debugger;
         this.currentPage = value.selected;
         this.divideIntoPages();
     }

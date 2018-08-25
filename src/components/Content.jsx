@@ -34,14 +34,16 @@ class Content extends Base {
         let {match: {params: {category}}} = props;
         let {match: {params: {category: oldCategory}}} = this.props;
         let city = +this.props.history.location.search.substr(6, 2);
-        let sort = +this.props.history.location.search.substr(-1);
+        let sort = +this.props.history.location.search.substr(16, 1);
+        let page = +this.props.history.location.search.substr(-1);
 
         if (!this.props.isLoadedData && props.isLoadedData ||
             category !== oldCategory || start) {
             this.props.dispatch(setCategory({
                 category,
                 city,
-                sort
+                sort,
+                page
             }))
         }
     }
