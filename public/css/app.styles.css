@@ -298,7 +298,7 @@ body {
   flex-wrap: wrap;
   padding-top: 10px;
   overflow: hidden; }
-  .preview:hover:after {
+  .preview:hover::after {
     content: '';
     position: absolute; }
   .preview__card {
@@ -369,7 +369,7 @@ body {
       text-decoration: underline; }
 
 .order__title {
-  padding: 20px;
+  padding-top: 20px;
   font-size: 24px;
   text-align: center;
   text-decoration: underline; }
@@ -389,19 +389,20 @@ body {
     width: 150px;
     font-size: 20px;
     text-align: right; }
-  .order__item--post-card .calc {
-    visibility: hidden; }
 
 .order__summary {
   display: flex;
-  justify-content: flex-end; }
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid #888; }
   .order__summary-wrapper {
-    width: 400px;
-    padding: 20px 0;
-    border-top: 1px solid #ccc; }
+    width: 400px; }
   .order__summary-item {
     font-size: 24px;
-    line-height: 36px; }
+    line-height: 48px;
+    border-bottom: 1px solid #ccc; }
+    .order__summary-item:first-child {
+      flex-grow: 1; }
   .order__summary-row {
     display: flex;
     justify-content: space-between; }

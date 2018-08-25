@@ -5,7 +5,7 @@
 
   &-main {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
     min-height: calc(100vh - #{$height-header} - #{$height-footer});
     width: $width;
     margin: 0 auto;

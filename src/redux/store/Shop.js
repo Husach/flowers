@@ -70,6 +70,7 @@ class ShopStore {
     }
 
     setPage(value) {
+        //debugger;
         this.currentPage = value.selected;
         this.divideIntoPages();
     }

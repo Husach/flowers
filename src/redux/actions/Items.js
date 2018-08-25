@@ -32,3 +32,6 @@ export const getDescription = (id) => (dispatch) => {
 export const addItem = (payload) => {
     return {type: SHOP_TYPES.ADD_ITEM,payload}
 };
+export const delItem = (payload) => {
+    return {type: SHOP_TYPES.DEL_ITEM,payload}
+};

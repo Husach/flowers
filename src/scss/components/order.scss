@@ -1,6 +1,6 @@
 .order {
   &__title {
-    padding: 20px;
+    padding-top: 20px;
     font-size: 24px;
     text-align: center;
     text-decoration: underline;
@@ -18,35 +18,29 @@
       margin-right: 20px;
     }
 
-    &-name {
-      //width: 550px
-      flex-grow: 1;
-    }
+    &-name { flex-grow: 1 }
 
     &-cost {
       width: 150px;
       font-size: 20px;
       text-align: right;
     }
-
-    &--post-card {
-      .calc { visibility: hidden }
-    }
   }
 
   &__summary {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid #888;
 
-    &-wrapper {
-      width: 400px;
-      padding: 20px 0;
-      border-top: 1px solid #ccc;
-    }
+    &-wrapper { width: 400px }
 
     &-item {
       font-size: 24px;
-      line-height: 36px;
+      line-height: 48px;
+      border-bottom: 1px solid #ccc;
+
+      &:first-child { flex-grow: 1 }
     }
 
     &-row {

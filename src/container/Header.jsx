@@ -23,7 +23,7 @@ class Header extends Component {
         if(this.props.amount > 0) {
             return (
                 <div className="header__basket header__basket--data">
-                    <div className="header__basket-value">Кол-во {this.props.number}</div>
+                    <div className="header__basket-value">Кол-во {this.props.total}</div>
                     <div className="header__basket-value">Итого: {this.props.amount} грн.</div>
                 </div>
             )
@@ -79,12 +79,12 @@ class Header extends Component {
 
 Header.propTypes = {
     amount: PropTypes.number,
-    number: PropTypes.number
+    total: PropTypes.number
 }
 
 export default connect(state => {
     return {
         amount: state.basket.amount,
-        number: state.basket.number
+        total: state.basket.total
     }
 })(Header);

@@ -8,11 +8,11 @@ import Select from "./select/index.jsx";
 import Paginate from "./paginate/index.jsx";
 import { order, location } from "../data/SortParams";
 import { data } from "../data/Data";
-import {setCity,
-        setPage,
-        setItems,
-        setOrder,
-        setCategory } from "../redux/actions/Items";
+import { setCity,
+         setPage,
+         setItems,
+         setOrder,
+         setCategory } from "../redux/actions/Items";
 
 class Content extends Base {
     componentDidMount() {
@@ -46,8 +46,8 @@ class Content extends Base {
         }
     }
 
-    addParamsToUrl(city, sortBy) {
-        this.props.history.push(`?city=${city}&sortBy=${sortBy}`);
+    addParamsToUrl(city, sortBy, page) {
+        this.props.history.push(`?city=${city}&sortBy=${sortBy}&page=${page}`);
     }
 
     renderCard() {
@@ -68,6 +68,7 @@ class Content extends Base {
                     this.props.dispatch(setPage((
                         value
                     )))
+                    this.addParamsToUrl(this.props.selectedCity, this.props.sortBy, value.selected);
                 }}
                 key="content-paginate-key"
             />
@@ -84,7 +85,7 @@ class Content extends Base {
                     this.props.dispatch(setCity({
                         city
                     }));
-                    this.addParamsToUrl(city, this.props.sortBy);
+                    this.addParamsToUrl(city, this.props.sortBy, this.props.currentPage);
                 }}
                 maxHeight={208}
             />
@@ -101,7 +102,7 @@ class Content extends Base {
                     this.props.dispatch(setOrder({
                         sortBy
                     }));
-                    this.addParamsToUrl(this.props.selectedCity, sortBy);
+                    this.addParamsToUrl(this.props.selectedCity, sortBy, this.props.currentPage);
                 }}
             />
         )

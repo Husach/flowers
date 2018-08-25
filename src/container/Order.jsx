@@ -6,13 +6,17 @@ import Preview from "./Preview.jsx";
 import { data } from "../data/Data";
 import BtnIconClear from "../components/button/BtnIconClear";
 import OrderItem from "./OrderItem.jsx";
+import Checkbox from "material-ui/Checkbox";
+import ActionFavorite from "material-ui/svg-icons/action/favorite";
+import ActionFavoriteBorder from "material-ui/svg-icons/action/favorite-border";
 
 class Order extends Base {
     constructor(props) {
         super(props);
         this.state = {
             data: data,
-            dataTmp: {}
+            dataExtra: {},
+            isPost: true
         };
     }
 
@@ -29,13 +33,13 @@ class Order extends Base {
 
     renderExtraBlock() {
         let item = this.getItem.call(this);
-        let dataTmp = this.getExtra.call(this, item.city);
+        let dataExtra = this.getExtra.call(this, item.city);
 
         return (
             <div className="order__extra">
                 <div className="order__extra-title">Добавить к букету:</div>
                 <div className="preview">
-                    {dataTmp.map((item, index) =>
+                    {dataExtra.map((item, index) =>
                         <Preview item={item} key={index} />
                     )}
                 </div>
@@ -44,23 +48,44 @@ class Order extends Base {
     }
 
     renderPost() {
-        return (
-            <div className="order__item order__item--post-card">
-                <img
-                    className="order__item-img"
-                    src="img/post-card.jpg"
-                    alt="bonus_card"
-                />
-                <div className="order__item-name">Поздравительнная открытка</div>
-                <div className="order__item-cost">Бесплатно</div>
-                <BtnIconClear />
-            </div>
-        )
+        if(this.state.isPost) {
+            return (
+                <div className="order__item">
+                    <img
+                        className="order__item-img"
+                        src="img/post-card.jpg"
+                        alt="bonus_card"
+                    />
+                    <div className="order__item-name">Поздравительнная открытка</div>
+                    <div className="order__item-cost">Бесплатно</div>
+                    <BtnIconClear
+                        onClick={() => {
+                            this.setState({
+                                isPost: !this.state.isPost
+                            })
+                        }}
+                    />
+                </div>
+            )
+        }
+        return null;
     }
 
     renderSummary() {
         return (
             <div className="order__summary">
+                <Checkbox
+                    checkedIcon={<ActionFavorite />}
+                    uncheckedIcon={<ActionFavoriteBorder />}
+                    label="Поздравительнная открытка"
+                    checked={this.state.isPost}
+                    onClick={() => {
+                        this.setState({
+                            isPost: !this.state.isPost
+                        })
+                    }}
+                />
+
                 <div className="order__summary-wrapper">
                     <div className="order__summary-row">
                         <div className="order__summary-item">Сумма: </div>
@@ -99,14 +124,12 @@ class Order extends Base {
 
 Order.propTypes = {
     inOrder: PropTypes.array,
-    amount: PropTypes.number,
-    number: PropTypes.number
+    amount: PropTypes.number
 };
 
 export default connect(state => {
     return {
         inOrder: state.basket.inOrder,
-        amount: state.basket.amount,
-        number: state.basket.number
+        amount: state.basket.amount
     }
 })(Order);

@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { delItem } from "../redux/actions/Items";
 import Btn from "../components/button/index.jsx";
 import BtnIconClear from "../components/button/BtnIconClear.jsx";
 
@@ -52,10 +55,20 @@ class OrderItem extends Component {
                 <div className="order__item-name">{this.props.item.name}</div>
                 {this.renderAmount.call(this)}
                 <div className="order__item-cost">{this.props.item.price} грн.</div>
-                <BtnIconClear />
+                <BtnIconClear
+                    onClick={() => {
+                        this.props.dispatch(delItem({
+                        }))
+                    }}
+                />
             </div>
         )
     }
 }
 
-export default OrderItem;
+OrderItem.propTypes = {
+    dispatch: PropTypes.func,
+    item: PropTypes.object
+}
+
+export default connect()(OrderItem);

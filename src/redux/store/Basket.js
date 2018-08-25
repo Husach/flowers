@@ -2,21 +2,25 @@ class BasketStore {
     constructor() {
         this.inOrder = [];
         this.amount = 0;
-        this.number = 0;
+        this.total = 0;
     }
 
     getState() {
         return {...{
             inOrder: this.inOrder,
             amount: this.amount,
-            number: this.number
+            total: this.total
         }};
     }
 
     addItem({item}) {
         this.inOrder.push(item);
         this.amount += item.price;
-        this.number += 1;
+        this.total += 1;
+    }
+
+    delItem() {
+        console.log("delItem WORKS !!!!")
     }
 }
 
