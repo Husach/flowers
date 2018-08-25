@@ -62,22 +62,28 @@ class Order extends Base {
         return (
             <div className="order__summary">
                 <div className="order__summary-wrapper">
-                    <div className="">Кол-во {this.props.number}</div>
-                    <div className="">Итого: {this.props.amount} грн.</div>
+                    <div className="order__summary-row">
+                        <div className="order__summary-item">Сумма: </div>
+                        <div className="order__summary-item"> {this.props.amount} грн.</div>
+                    </div>
+                    <div className="order__summary-row">
+                        <div className="order__summary-item">Доставка: </div>
+                        <div className="order__summary-item"> Бесплатно</div>
+                    </div>
                 </div>
             </div>
         )
     }
 
     renderOrder() {
-        debugger
-        return [
-            this.props.inOrder.map((item, index) =>
-                <OrderItem item={item} key={index} />
-            ),
-            this.renderPost(),
-            this.renderSummary()
-        ]
+        return (
+            <div className="order__body">
+                {this.props.inOrder.map((item, index) =>
+                    <OrderItem item={item} key={index} />)}
+                {this.renderPost()}
+                {this.renderSummary()}
+            </div>
+        )
     }
 
     renderContainer() {

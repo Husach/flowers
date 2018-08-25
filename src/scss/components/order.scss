@@ -18,7 +18,10 @@
       margin-right: 20px;
     }
 
-    &-name { width: 550px }
+    &-name {
+      //width: 550px
+      flex-grow: 1;
+    }
 
     &-cost {
       width: 150px;
@@ -37,7 +40,18 @@
 
     &-wrapper {
       width: 400px;
+      padding: 20px 0;
       border-top: 1px solid #ccc;
+    }
+
+    &-item {
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    &-row {
+      display: flex;
+      justify-content: space-between;
     }
   }
 
