@@ -28,13 +28,11 @@ class BasketStore {
 
     setQuantity({id, value}) {
         let item = this.inOrder.find(itm => itm.id === id);
-        debugger
 
         if (value === "PLUS") {
             item.quantity += 1;
             this.amount += item.price;
             this.total += 1;
-            this
         } else if (value === "MINUS" && this.total > 1 ) {
             item.quantity -= 1;
             this.amount -= item.price;
