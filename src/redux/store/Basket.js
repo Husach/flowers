@@ -22,8 +22,8 @@ class BasketStore {
         this.total += 1;
     }
 
-    delItem() {
-        console.log("delItem WORKS !!!!")
+    delItem({id}) {
+        return this.inOrder = this.inOrder.filter(item => item.id !== id);
     }
 
     setQuantity({id, value}) {
@@ -33,10 +33,16 @@ class BasketStore {
             item.quantity += 1;
             this.amount += item.price;
             this.total += 1;
-        } else if (value === "MINUS" && this.total > 1 ) {
+        } else if (value === "MINUS" && item.quantity > 1 ) {
             item.quantity -= 1;
             this.amount -= item.price;
             this.total -= 1;
+        }
+
+        for(let i in this.inOrder) {
+            if (this.inOrder[i].id === id) {
+                this.inOrder[i].quantity = item.quantity;
+            }
         }
     }
 }

@@ -1,39 +1,39 @@
 import React from "react";
-import {connect} from "react-redux";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
 import Base from "./Base.jsx";
 import Preview from "./Preview.jsx";
-import { data } from "../data/Data";
-import BtnIconClear from "../components/button/BtnIconClear";
 import OrderItem from "./OrderItem.jsx";
 import Checkbox from "material-ui/Checkbox";
+import BtnIconClear from "../components/button/BtnIconClear";
 import ActionFavorite from "material-ui/svg-icons/action/favorite";
 import ActionFavoriteBorder from "material-ui/svg-icons/action/favorite-border";
+//import { data } from "../data/Data";
 
 class Order extends Base {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: data,
-            dataExtra: {},
-            isPost: true
-        };
-    }
+    state = {
+        isPost: true
+    };
 
-    getItem() {
+    //data: data,
+    //dataExtra: {},
+    /*getItem() {
         let { id } = this.props.match.params;
         let item = this.state.data.find(itm => itm.id === id);
         if(!item) return {};
         return item;
     }
-
     getExtra(city) {
         return data.filter(item => item.category.some((itm) => itm === "sweets") && item.city === city);
-    }
+    }*/
 
     renderExtraBlock() {
-        let item = this.getItem.call(this);
-        let dataExtra = this.getExtra.call(this, item.city);
+        //let item = this.getItem.call(this);
+        //let dataExtra = this.getExtra.call(this, item.city);
+
+        let dataExtra = this.props.itemsMap.filter(item =>
+            item.category.some((itm) =>
+                itm === "sweets") && item.city === this.props.selectedCity);
 
         return (
             <div className="order__extra">
@@ -123,12 +123,16 @@ class Order extends Base {
 }
 
 Order.propTypes = {
+    selectedCity: PropTypes.number,
+    itemsMap: PropTypes.object,
     inOrder: PropTypes.array,
     amount: PropTypes.number
 };
 
 export default connect(state => {
     return {
+        selectedCity: state.shop.selectedCity,
+        itemsMap: state.shop.itemsMap,
         inOrder: state.basket.inOrder,
         amount: state.basket.amount
     }

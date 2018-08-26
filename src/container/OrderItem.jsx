@@ -21,7 +21,6 @@ class OrderItem extends Component {
                 <Btn
                     className="calc__btn"
                     label={"-"}
-                    value="MINUS"
                     onClick={this.prepareSign.bind(this, "MINUS")}
                 />
                 <div className="calc__value">{this.props.item.quantity}</div>
@@ -32,6 +31,13 @@ class OrderItem extends Component {
                 />
             </div>
         );
+    }
+
+    deleteItem() {
+        let id = this.props.item.id;
+        this.props.dispatch(delItem({
+            id
+        }))
     }
 
     render() {
@@ -46,10 +52,7 @@ class OrderItem extends Component {
                 {this.renderAmount.call(this)}
                 <div className="order__item-cost">{this.props.item.price} грн.</div>
                 <BtnIconClear
-                    onClick={() => {
-                        this.props.dispatch(delItem({
-                        }))
-                    }}
+                    onClick={this.deleteItem.bind(this)}
                 />
             </div>
         )

@@ -21,20 +21,20 @@ class ShopStore {
 
     getState() {
         return {...{
-            sortBy: this.sortBy,
-            selectedCity: this.selectedCity,
-            category: this.category,
-            isLoadedData: this.isLoadedData,
-            itemsLimiter: this.itemsLimiter,
-            currentPage: this.currentPage,
-            totalPages: this.totalPages,
             order: this.order,
+            sortBy: this.sortBy,
             location: this.location,
             itemsMap: this.itemsMap,
+            category: this.category,
+            totalPages: this.totalPages,
+            description: this.description,
+            currentPage: this.currentPage,
+            isLoadedData: this.isLoadedData,
+            itemsLimiter: this.itemsLimiter,
+            selectedCity: this.selectedCity,
             homeItemsMap: this.homeItemsMap,
-            sortedItemsMap: this.sortedItemsMap,
             pageItemsMap: this.pageItemsMap,
-            description: this.description
+            sortedItemsMap: this.sortedItemsMap
         }};
     }
 
