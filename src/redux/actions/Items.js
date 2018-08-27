@@ -1,5 +1,6 @@
 import SHOP_TYPES from "../types/index";
-import * as api from "../../api/index";
+/*import * as api from "../../api/index";*/
+import axios from "axios";
 
 export const setCity = (payload) => {
     return {type: SHOP_TYPES.SET_CITY, payload}
@@ -21,12 +22,18 @@ export const setHomeItems = (payload) => {
 };
 
 export const getDescription = (id) => (dispatch) => {
-    api.getDescription(id).then(payload => {
+    axios.post("https://node-az.herokuapp.com/api/get-flower-by-id", {id}).then(({data: payload}) => {
         dispatch({
             type: SHOP_TYPES.SET_DESCRIPTION,
             payload
         })
     })
+    /*api.getDescription(id).then(payload => {
+        dispatch({
+            type: SHOP_TYPES.SET_DESCRIPTION,
+            payload
+        })
+    })*/
 };
 
 export const addItem = (payload) => {

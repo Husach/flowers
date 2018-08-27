@@ -5,14 +5,19 @@ import { withRouter } from "react-router";
 import { setHomeItems } from "../redux/actions/Items";
 import Preview from "./Preview.jsx";
 import Base from "./Base.jsx";
-import { data } from "../data/Data";
+import axios from "axios";
 
 class Home extends Base {
 
     componentDidMount() {
-        this.props.dispatch(setHomeItems({
+        axios.post("https://node-az.herokuapp.com/api/get-flowers").then(({data}) => {
+            this.props.dispatch(setHomeItems({
+                items: data
+            }))
+        })
+        /*this.props.dispatch(setHomeItems({
             items: data
-        }))
+        })) */
     }
 
     renderPreview() {
