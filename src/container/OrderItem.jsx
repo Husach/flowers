@@ -34,9 +34,8 @@ class OrderItem extends Component {
     }
 
     deleteItem() {
-        let id = this.props.item.id;
         this.props.dispatch(delItem({
-            id
+            id: this.props.item.id
         }))
     }
 

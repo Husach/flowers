@@ -41,7 +41,7 @@ class Order extends Base {
                 <div className="preview">
                     {dataExtra.map((item, index) =>
                         <Preview item={item} key={index} />
-                    )}
+                    ).toArray()}
                 </div>
             </div>
         )
