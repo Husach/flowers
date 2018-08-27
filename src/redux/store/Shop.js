@@ -56,6 +56,7 @@ class ShopStore {
     }
 
     setCategory({category, city, sort, page}) {
+        debugger
         this.category = category;
         this.currentPage = 0;
         if (city) { this.selectedCity = city }

@@ -7,36 +7,32 @@ import BtnIconClear from "../components/button/BtnIconClear.jsx";
 import { setQuantity } from "../redux/actions/Items";
 
 class OrderItem extends Component {
-    prepareSign(value) {
-        let id = this.props.item.id;
-        this.props.dispatch(setQuantity({
-            value,
-            id
-        }))
-    }
-
     renderAmount() {
         return (
             <div className="calc">
                 <Btn
                     className="calc__btn"
                     label={"-"}
-                    onClick={this.prepareSign.bind(this, "MINUS")}
+                    onClick={
+                        this.props.dispatch(setQuantity({
+                            value: "MINUS",
+                            id: this.props.item.id
+                        }))
+                    }
                 />
                 <div className="calc__value">{this.props.item.quantity}</div>
                 <Btn
                     className="calc__btn"
                     label={"+"}
-                    onClick={this.prepareSign.bind(this, "PLUS")}
+                    onClick={
+                        this.props.dispatch(setQuantity({
+                            value: "PLUS",
+                            id: this.props.item.id
+                        }))
+                    }
                 />
             </div>
         );
-    }
-
-    deleteItem() {
-        this.props.dispatch(delItem({
-            id: this.props.item.id
-        }))
     }
 
     render() {
@@ -51,7 +47,11 @@ class OrderItem extends Component {
                 {this.renderAmount.call(this)}
                 <div className="order__item-cost">{this.props.item.price} грн.</div>
                 <BtnIconClear
-                    onClick={this.deleteItem.bind(this)}
+                    onClick={
+                        this.props.dispatch(delItem({
+                            id: this.props.item.id
+                        }))
+                    }
                 />
             </div>
         )
@@ -61,6 +61,6 @@ class OrderItem extends Component {
 OrderItem.propTypes = {
     dispatch: PropTypes.func,
     item: PropTypes.object
-}
+};
 
 export default connect()(OrderItem);
