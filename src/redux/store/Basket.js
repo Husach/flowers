@@ -36,7 +36,8 @@ class BasketStore {
         return this.inOrder = this.inOrder.filter(item => item.id !== id);
     }
 
-    setQuantity({id, value}) {
+    setQuantity() {
+    /*setQuantity({id, value}) {*/
         //let item = this.inOrder.find(itm => itm.id === id);
 
         /*if (value === "PLUS") {
