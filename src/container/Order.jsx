@@ -44,9 +44,7 @@ class Order extends Base {
                     <div className="order__item-cost">Бесплатно</div>
                     <BtnIconClear
                         onClick={() => {
-                            this.setState({
-                                isPost: !this.state.isPost
-                            })
+                            this.setState({isPost: !this.state.isPost})
                         }}
                     />
                 </div>
@@ -64,9 +62,7 @@ class Order extends Base {
                     label="Поздравительнная открытка"
                     checked={this.state.isPost}
                     onClick={() => {
-                        this.setState({
-                            isPost: !this.state.isPost
-                        })
+                        this.setState({isPost: !this.state.isPost})
                     }}
                 />
 
