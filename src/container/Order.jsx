@@ -83,8 +83,11 @@ class Order extends Base {
     renderOrder() {
         return (
             <div className="order__body">
-                {this.props.inOrder.map((item, index) =>
-                    <OrderItem item={item} key={index} />)}
+                {
+                    this.props.inOrderMap.map((item, index) =>
+                        <OrderItem {...item.toJS()} key={index} />
+                    ).toArray()
+                }
                 {this.renderPost()}
                 {this.renderSummary()}
             </div>
@@ -105,7 +108,7 @@ class Order extends Base {
 Order.propTypes = {
     selectedCity: PropTypes.number,
     itemsMap: PropTypes.object,
-    inOrder: PropTypes.array,
+    inOrderMap: PropTypes.array,
     amount: PropTypes.number
 };
 
@@ -113,7 +116,7 @@ export default connect(state => {
     return {
         selectedCity: state.shop.selectedCity,
         itemsMap: state.shop.itemsMap,
-        inOrder: state.basket.inOrder,
+        inOrderMap: state.basket.inOrderMap,
         amount: state.basket.amount
     }
 })(Order);

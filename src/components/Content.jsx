@@ -39,7 +39,6 @@ class Content extends Base {
 
         if (!this.props.isLoadedData && props.isLoadedData ||
             category !== oldCategory || start) {
-            debugger
             this.props.dispatch(setCategory({
                 category,
                 city,

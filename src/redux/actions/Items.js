@@ -28,12 +28,7 @@ export const getDescription = (id) => (dispatch) => {
             payload
         })
     })
-    /*api.getDescription(id).then(payload => {
-        dispatch({
-            type: SHOP_TYPES.SET_DESCRIPTION,
-            payload
-        })
-    })*/
+    /*api.getDescription(id).then(payload => { })*/
 };
 
 export const addItem = (payload) => {

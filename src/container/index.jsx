@@ -15,9 +15,6 @@ class Home extends Base {
                 items: data
             }))
         })
-        /*this.props.dispatch(setHomeItems({
-            items: data
-        })) */
     }
 
     renderPreview() {
