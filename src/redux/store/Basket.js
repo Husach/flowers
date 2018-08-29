@@ -2,7 +2,6 @@ import { OrderedMap, Map } from "immutable";
 
 class BasketStore {
     constructor() {
-        this.inOrder = [];
         this.amount = 0;
         this.total = 0;
         this.inOrderMap = OrderedMap();
@@ -30,21 +29,22 @@ class BasketStore {
         this.updateTotal();
     }
 
-    delItem({id}) {
-        return this.inOrder = this.inOrder.filter(item => item.id !== id);
+    delItem(/*{id}*/) {
+        /*return this.inOrder = this.inOrder.filter(item => item.id !== id);*/
     }
 
     updateTotal() {
-        /*for(let i in this.inOrder) {
-                    if (this.inOrder[i].id === id) {
-                        this.inOrder[i].quantity = item.quantity;
-                    }
-                }*/
+        this.amount = 0;
+        this.total = 0;
+        this.inOrderMap.forEach((item) => {
+            this.amount += item.get("itemSum");
+            this.total += item.get("count");
+        })
     }
 
     setCount({value, id}) {
         let count = this.inOrderMap.getIn([id, "count"]);
-        let itemSum = this.inOrderMap.getIn([id, "itemSum"]);
+        let item = this.inOrderMap.getIn([id, "item"]);
 
         if (value === "PLUS") {
             count += 1;
@@ -52,9 +52,9 @@ class BasketStore {
             count -= 1;
         }
 
-        itemSum = itemSum * count;
+        let itemSum = item.price * count;
         this.inOrderMap = this.inOrderMap.setIn([id, "count"], count);
-        this.inOrderMap = this.inOrderMap.setIn([id, "price"], itemSum);
+        this.inOrderMap = this.inOrderMap.setIn([id, "itemSum"], itemSum);
         this.updateTotal();
     }
 }
