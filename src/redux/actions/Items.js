@@ -37,6 +37,6 @@ export const addItem = (payload) => {
 export const delItem = (payload) => {
     return {type: SHOP_TYPES.DEL_ITEM,payload}
 };
-export const setQuantity = (payload) => {
-    return {type: SHOP_TYPES.SET_QUANTITY,payload}
+export const setCount = (payload) => {
+    return {type: SHOP_TYPES.SET_COUNT,payload}
 };

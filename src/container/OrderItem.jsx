@@ -2,34 +2,31 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { delItem } from "../redux/actions/Items";
-import { setQuantity } from "../redux/actions/Items";
+import { setCount } from "../redux/actions/Items";
 import Btn from "../components/button/index.jsx";
 import BtnIconClear from "../components/button/BtnIconClear.jsx";
 
 class OrderItem extends Component {
+    updateCount(value) {
+        this.props.dispatch(setCount({
+            id: this.props.item.id,
+            value
+        }))
+    }
+
     renderAmount() {
         return (
             <div className="calc">
                 <Btn
                     className="calc__btn"
                     label={"-"}
-                    onClick={
-                        this.props.dispatch(setQuantity({
-                            value: "MINUS",
-                            id: this.props.item.id
-                        }))
-                    }
+                    onClick={this.updateCount.bind(this, "MINUS")}
                 />
-                <div className="calc__value">{this.props.item.quantity}</div>
+                <div className="calc__value">{this.props.count}</div>
                 <Btn
                     className="calc__btn"
                     label={"+"}
-                    onClick={
-                        this.props.dispatch(setQuantity({
-                            value: "PLUS",
-                            id: this.props.item.id
-                        }))
-                    }
+                    onClick={this.updateCount.bind(this, "PLUS")}
                 />
             </div>
         );
@@ -61,6 +58,7 @@ class OrderItem extends Component {
 OrderItem.propTypes = {
     dispatch: PropTypes.func,
     price: PropTypes.string,
+    count: PropTypes.number,
     item: PropTypes.object
 };
 

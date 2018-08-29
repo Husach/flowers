@@ -9,8 +9,8 @@ export default function cardReducer(state = basket.getState(), action) {
         case SHOP_TYPES.DEL_ITEM:
             basket.delItem(action.payload);
             break;
-        case SHOP_TYPES.SET_QUANTITY:
-            basket.setQuantity(action.payload);
+        case SHOP_TYPES.SET_COUNT:
+            basket.setCount(action.payload);
             break;
         default:
             return state;
