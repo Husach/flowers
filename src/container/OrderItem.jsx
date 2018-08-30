@@ -44,11 +44,11 @@ class OrderItem extends Component {
                 {this.renderAmount.call(this)}
                 <div className="order__item-cost">{this.props.itemSum} грн.</div>
                 <BtnIconClear
-                    onClick={
-                        this.props.dispatch(delItem({
-                            id: this.props.item.id
-                        }))
-                    }
+                    onClick={() => {
+                        this.props.dispatch(delItem(
+                            this.props.item.id
+                        ))
+                    }}
                 />
             </div>
         )
@@ -56,8 +56,8 @@ class OrderItem extends Component {
 }
 
 OrderItem.propTypes = {
+    itemSum: PropTypes.number,
     dispatch: PropTypes.func,
-    itemSum: PropTypes.string,
     count: PropTypes.number,
     item: PropTypes.object
 };

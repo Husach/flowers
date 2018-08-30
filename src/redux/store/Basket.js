@@ -2,16 +2,16 @@ import { OrderedMap, Map } from "immutable";
 
 class BasketStore {
     constructor() {
+        this.inOrderMap = OrderedMap();
         this.amount = 0;
         this.total = 0;
-        this.inOrderMap = OrderedMap();
     }
 
     getState() {
         return {...{
-                inOrderMap: this.inOrderMap,
-                amount: this.amount,
-                total: this.total
+            inOrderMap: this.inOrderMap,
+            amount: this.amount,
+            total: this.total
         }};
     }
 
@@ -29,8 +29,9 @@ class BasketStore {
         this.updateTotal();
     }
 
-    delItem(/*{id}*/) {
-        /*return this.inOrder = this.inOrder.filter(item => item.id !== id);*/
+    delItem(id) {
+        this.inOrderMap = this.inOrderMap.delete(id);
+        this.updateTotal();
     }
 
     updateTotal() {

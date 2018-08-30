@@ -8,6 +8,7 @@ import Checkbox from "material-ui/Checkbox";
 import BtnIconClear from "../components/button/BtnIconClear";
 import ActionFavorite from "material-ui/svg-icons/action/favorite";
 import ActionFavoriteBorder from "material-ui/svg-icons/action/favorite-border";
+import {mapStateToProps} from "./ReselectHelper";
 
 class Order extends Base {
     state = {
@@ -15,9 +16,9 @@ class Order extends Base {
     };
 
     renderExtraBlock() {
-        let dataExtra = this.props.itemsMap.filter(item =>
+        let dataExtra = this.props.shop.itemsMap.filter(item =>
             item.category.some((itm) =>
-                itm === "sweets") && item.city === this.props.selectedCity);
+                itm === "sweets") && item.city === this.props.shop.selectedCity);
 
         return (
             <div className="order__extra">
@@ -69,7 +70,7 @@ class Order extends Base {
                 <div className="order__summary-wrapper">
                     <div className="order__summary-row">
                         <div className="order__summary-item">Сумма: </div>
-                        <div className="order__summary-item"> {this.props.amount} грн.</div>
+                        <div className="order__summary-item"> {this.props.basket.amount} грн.</div>
                     </div>
                     <div className="order__summary-row">
                         <div className="order__summary-item">Доставка: </div>
@@ -84,7 +85,7 @@ class Order extends Base {
         return (
             <div className="order__body">
                 {
-                    this.props.inOrderMap.map((item, index) =>
+                    this.props.basket.inOrderMap.map((item, index) =>
                         <OrderItem {...item.toJS()} key={index} />
                     ).toArray()
                 }
@@ -107,16 +108,9 @@ class Order extends Base {
 
 Order.propTypes = {
     selectedCity: PropTypes.number,
+    inOrderMap: PropTypes.object,
     itemsMap: PropTypes.object,
-    inOrderMap: PropTypes.array,
     amount: PropTypes.number
 };
 
-export default connect(state => {
-    return {
-        selectedCity: state.shop.selectedCity,
-        itemsMap: state.shop.itemsMap,
-        inOrderMap: state.basket.inOrderMap,
-        amount: state.basket.amount
-    }
-})(Order);
+export default connect(mapStateToProps)(Order);
