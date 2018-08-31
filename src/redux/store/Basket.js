@@ -15,6 +15,18 @@ class BasketStore {
         }};
     }
 
+    checkDifCity({item}) {
+        let newCity = item.city;
+        let oldMap = this.inOrderMap.first();
+
+        if(oldMap) {
+            let oldCity = oldMap.get("item").city;
+            if(newCity !== oldCity) alert("В одном заказе возможны позиции только из одного города")
+        }
+
+        this.inOrderMap = this.inOrderMap.set(item.id, Map({item, count: 1, itemSum: item.price}));
+    }
+
     addItem({item}) {
         if(this.inOrderMap.has(item.id)) {
             let count = this.inOrderMap.getIn([item.id, "count"]);
@@ -24,7 +36,7 @@ class BasketStore {
             this.inOrderMap = this.inOrderMap.setIn([item.id, "count"], count);
             this.inOrderMap = this.inOrderMap.setIn([item.id, "itemSum"], itemSum);
         } else {
-            this.inOrderMap = this.inOrderMap.set(item.id, Map({item, count: 1, itemSum: item.price}));
+            this.checkDifCity({item});
         }
         this.updateTotal();
     }
