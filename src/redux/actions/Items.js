@@ -21,13 +21,24 @@ export const setHomeItems = (payload) => {
     return {type: SHOP_TYPES.SET_HOME_ITEMS,payload}
 };
 
-export const getDescription = (id) => (dispatch) => {
-    axios.post("https://node-az.herokuapp.com/api/get-flower-by-id", {id}).then(({data: payload}) => {
+export const getDescription = (id) => async (dispatch) => {
+    try {
+        let {data: payload} = await axios.post("https://node-az.herokuapp.com/api/get-flower-by-id", {id});
+
         dispatch({
             type: SHOP_TYPES.SET_DESCRIPTION,
             payload
         })
+    } catch(err) {
+        console.error(err)
+    }
+
+    /*axios.post("https://node-az.herokuapp.com/api/get-flower-by-id", {id}).then(({data: payload}) => {
+    dispatch({
+        type: SHOP_TYPES.SET_DESCRIPTION,
+        payload
     })
+    })*/
     /*api.getDescription(id).then(payload => { })*/
 };
 
