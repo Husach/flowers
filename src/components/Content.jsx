@@ -69,7 +69,7 @@ class Content extends Base {
                 onChange={(value) => {
                     this.props.dispatch(setPage((
                         value
-                    )))
+                    )));
                     this.addParamsToUrl(this.props.selectedCity, this.props.sortBy, value.selected);
                 }}
                 key="content-paginate-key"
