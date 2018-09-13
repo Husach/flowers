@@ -12,6 +12,7 @@ const collectOrderByState = (store) => {
             itemsMap
         },
         basket: {
+            isModalFlag,
             inOrderMap,
             amount
         }} = store;
@@ -22,6 +23,7 @@ const collectOrderByState = (store) => {
             itemsMap
         },
         basket: {
+            isModalFlag,
             inOrderMap,
             amount
         }

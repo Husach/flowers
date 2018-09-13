@@ -368,6 +368,11 @@ body {
     .menu__link:hover {
       text-decoration: underline; }
 
+.modal__h4 {
+  max-width: 541px;
+  padding-right: 40px;
+  line-height: 1.5; }
+
 .order__title {
   padding-top: 20px;
   font-size: 24px;

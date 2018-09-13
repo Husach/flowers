@@ -3,27 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Btn from "./index.jsx"
-import { addItem } from "../../redux/actions/Items";
-//import Modal from "react-responsive-modal";
+import { isModal, addItem } from "../../redux/actions/Items";
 
 class BtnOrder extends Component {
-/*    constructor() {
-        super();
-        this.state = {
-            modalIsOpen: false
-        }
-    }
-
-    openModal() {
-        this.setState({modalIsOpen: true});
-        debugger;
-        console.log(this.state.modalIsOpen);
-    }
-
-    closeModal() {
-        this.setState({modalIsOpen: false});
-    }*/
-
     checkDifCity() {
         let item = this.props.item;
         let newCity = item.city;
@@ -32,8 +14,9 @@ class BtnOrder extends Component {
         if(oldMap) {
             let oldCity = oldMap.get("item").city;
             if(newCity !== oldCity) {
-                //this.openModal();
-                alert(`В одном заказе возможны позиции только из одного города. Ваш заказ оформлен для города ${oldCity}`)
+                this.props.dispatch(isModal({
+                    isModalFlag: true
+                }));
             } else {
                 this.addItem();
             }
@@ -49,8 +32,6 @@ class BtnOrder extends Component {
     }
 
     render() {
-        //let open = this.state.modalIsOpen;
-
         return (
             <Link to={`/order/${this.props.item.id}`}>
                 <Btn
@@ -61,9 +42,6 @@ class BtnOrder extends Component {
                     style={this.props.style}
                     onClick={() => this.checkDifCity()}
                 />
-                {/*<Modal open={open} onClose={this.closeModal} center>
-                    <h4>В одном заказе возможны позиции находящиеся только в одном городе</h4>
-                </Modal>*/}
             </Link>
         )
     }

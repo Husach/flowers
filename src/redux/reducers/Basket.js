@@ -12,6 +12,9 @@ export default function cardReducer(state = basket.getState(), action) {
         case SHOP_TYPES.SET_COUNT:
             basket.setCount(action.payload);
             break;
+        case SHOP_TYPES.IS_MODAL:
+            basket.isModal(action.payload);
+            break;
         default:
             return state;
     }

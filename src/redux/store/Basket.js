@@ -3,12 +3,14 @@ import { OrderedMap, Map } from "immutable";
 class BasketStore {
     constructor() {
         this.inOrderMap = OrderedMap();
+        this.isModalFlag = false;
         this.amount = 0;
         this.total = 0;
     }
 
     getState() {
         return {...{
+            isModalFlag: this.isModalFlag,
             inOrderMap: this.inOrderMap,
             amount: this.amount,
             total: this.total
@@ -26,13 +28,18 @@ class BasketStore {
         } else {
             this.inOrderMap = this.inOrderMap.set(item.id, Map({item, count: 1, itemSum: item.price}));
         }
-        localStorage.setItem(item.id, item.id);
+        localStorage.setItem("order", this.inOrderMap);
         this.updateTotal();
     }
 
     delItem(id) {
         this.inOrderMap = this.inOrderMap.delete(id);
         this.updateTotal();
+    }
+
+    isModal(action) {
+        //debugger
+        this.isModalFlag = action.isModalFlag;
     }
 
     updateTotal() {

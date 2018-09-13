@@ -9,5 +9,6 @@ export default {
     SET_DESCRIPTION: "SET_DESCRIPTION",
     ADD_ITEM: "ADD_ITEM",
     DEL_ITEM: "DEL_ITEM",
-    SET_COUNT: "SET_COUNT"
+    SET_COUNT: "SET_COUNT",
+    IS_MODAL: "IS_MODAL"
 };

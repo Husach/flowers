@@ -1,6 +1,6 @@
 import SHOP_TYPES from "../types/index";
-/*import * as api from "../../api/index";*/
 import axios from "axios";
+/*import * as api from "../../api/index";*/
 
 export const setCity = (payload) => {
     return {type: SHOP_TYPES.SET_CITY, payload}
@@ -50,4 +50,7 @@ export const delItem = (payload) => {
 };
 export const setCount = (payload) => {
     return {type: SHOP_TYPES.SET_COUNT,payload}
+};
+export const isModal = (payload) => {
+    return {type: SHOP_TYPES.IS_MODAL,payload}
 };

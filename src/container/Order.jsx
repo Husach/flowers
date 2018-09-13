@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
+import { connect } from "react-redux";
+import Modal from "react-responsive-modal";
 import Base from "./Base.jsx";
 import Preview from "./Preview.jsx";
 import OrderItem from "./OrderItem.jsx";
@@ -8,7 +9,8 @@ import Checkbox from "material-ui/Checkbox";
 import BtnIconClear from "../components/button/BtnIconClear";
 import ActionFavorite from "material-ui/svg-icons/action/favorite";
 import ActionFavoriteBorder from "material-ui/svg-icons/action/favorite-border";
-import {mapStateToProps} from "./ReselectHelper";
+import { mapStateToProps } from "./ReselectHelper";
+import { isModal } from "../redux/actions/Items";
 
 class Order extends Base {
     state = {
@@ -95,12 +97,35 @@ class Order extends Base {
         )
     }
 
+    onCloseModal = () => {
+        this.props.dispatch(isModal({
+            isModalFlag: false
+        }))
+    }
+
+    renderModal() {
+        let { isModalFlag } = this.props.basket;
+
+        return (
+            <Modal
+                open={isModalFlag}
+                onClose={this.onCloseModal}
+                center
+            >
+                <h4 className="modal__h4">Если Вы желаете сделать заказ для еще одного города, то завершите пожалуйста оформление заказа для текущего города.</h4>
+            </Modal>
+        )
+    }
+
     renderContainer() {
+        console.log(this.props.basket.isModalFlag);
+
         return (
             <div className="page-main">
                 <div className="order__title">Ваш заказ:</div>
                 {this.renderOrder()}
                 {this.renderExtraBlock.call(this)}
+                {this.renderModal()}
             </div>
         );
     }
